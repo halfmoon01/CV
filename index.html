@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanghyun Jun | DevOps/Cloud Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-dark-primary text-gray-100">
+    <!-- Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm transition-all duration-300">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-purple-400">Sanghyun Jun</a>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">About</a></li>
+                <li><a href="#skills" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Skills</a></li>
+                <li><a href="#experience" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Experience</a></li>
+                <li><a href="#projects" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 p-2">
+                <span class="hamburger-line w-6 h-0.5 bg-gray-300 transition-all duration-300"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-300 transition-all duration-300"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-300 transition-all duration-300"></span>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-dark-secondary border-t border-gray-800">
+            <ul class="flex flex-col py-4">
+                <li><a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">About</a></li>
+                <li><a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Skills</a></li>
+                <li><a href="#experience" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Experience</a></li>
+                <li><a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center hero-gradient pt-16 relative overflow-hidden">
+        <div class="grid-pattern"></div>
+        <div class="max-w-6xl mx-auto px-4 w-full relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text Content -->
+                <div class="fade-in">
+                    <p class="text-purple-400 text-lg mb-2">Hello, I'm</p>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white">Sanghyun</h1>
+                    <p class="text-2xl md:text-3xl italic text-gray-300 mb-6">DevOps/Cloud Engineer</p>
+                    <p class="text-gray-400 mb-8 max-w-lg leading-relaxed">
+                        B.S. in Computer Science & Applied Mathematics from SUNY Korea,
+                        currently pursuing a combined B.S./M.S. in Computer Science at Stony Brook University.
+                        Passionate about cloud infrastructure, DevOps practices, and distributed systems.
+                    </p>
+                    <a href="#contact" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold rounded-full hover:shadow-glow transition-all duration-300">
+                        Contact Me <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Right: Image Placeholder -->
+                <div class="flex justify-center md:justify-end fade-in">
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-2xl bg-gradient-to-br from-purple-600/30 to-cyan-500/30 border border-purple-500/30 flex items-center justify-center backdrop-blur-sm">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-xl bg-dark-secondary/50 flex items-center justify-center">
+                            <i class="fas fa-user text-8xl text-purple-400/50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark-secondary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">
+                <span class="section-title-dark">About</span>
+            </h2>
+            <p class="text-center text-purple-400 mb-12">Get to know me</p>
+            <div class="text-center fade-in-section">
+                <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                    I'm a Computer Science student with a strong foundation in mathematics, currently advancing
+                    my studies through a combined B.S./M.S. program at Stony Brook University (M.S. expected 2027).
+                    My academic journey began at SUNY Korea, where I developed a deep interest in cloud computing
+                    and DevOps methodologies.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                    I'm passionate about building scalable, reliable infrastructure using modern tools and practices.
+                    My hands-on experience spans containerization, orchestration, CI/CD pipelines, and monitoring systems.
+                    I thrive on automating complex workflows and optimizing system performance.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <span class="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full border border-purple-500/30">Cloud Infrastructure</span>
+                    <span class="px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full border border-cyan-500/30">Automation</span>
+                    <span class="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full border border-blue-500/30">Distributed Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark-primary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">
+                <span class="section-title-dark">Skills</span>
+            </h2>
+            <p class="text-center text-purple-400 mb-12">Technologies I work with</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cloud Platforms -->
+                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section">
+                    <div class="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cloud text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Cloud</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>AWS</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>GCP</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>Terraform</li>
+                    </ul>
+                </div>
+
+                <!-- Container & Orchestration -->
+                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-cyan-500/50 transition-all fade-in-section">
+                    <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cubes text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Containers</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>Docker</li>
+                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>Kubernetes</li>
+                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>Helm</li>
+                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>ArgoCD</li>
+                    </ul>
+                </div>
+
+                <!-- CI/CD & Automation -->
+                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all fade-in-section">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-sync-alt text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">CI/CD</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>GitHub Actions</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>Ansible</li>
+                    </ul>
+                </div>
+
+                <!-- Monitoring & Tools -->
+                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-pink-500/50 transition-all fade-in-section">
+                    <div class="w-12 h-12 bg-pink-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Monitoring</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Signoz</li>
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Netdata</li>
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Prometheus</li>
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Grafana</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-dark-secondary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">
+                <span class="section-title-dark">Experience</span>
+            </h2>
+            <p class="text-center text-purple-400 mb-12">My journey so far</p>
+            <div class="space-y-8">
+                <!-- Stony Brook University COMPAS Lab -->
+                <div class="relative pl-8 border-l-2 border-purple-500/30 fade-in-section">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-purple-600 rounded-full glow-purple"></div>
+                    <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-purple-400">Stony Brook University COMPAS Lab</h3>
+                                <p class="text-gray-500 text-sm">Stony Brook, NY</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-purple-900/30 px-3 py-1 rounded-full">Aug 2025 - Dec 2025</span>
+                        </div>
+                        <p class="text-gray-300 font-medium mb-3">Undergraduate Research Assistant (Advisor: Prof. Mike Ferdman)</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-purple-400 mt-1 mr-2 text-sm"></i>
+                                Diagnosed and resolved a critical failure in OpenStack Ironic baremetal provisioning, involving PXE boot, IPA agent communication, and deployment-image validation across a Kayobe-managed environment.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-purple-400 mt-1 mr-2 text-sm"></i>
+                                Recovered a failed deployment by reinitializing hardware RAID configurations, correcting root disk hints, and synchronizing deployment image checksums between Bifrost and Ironic.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kakao Tech Bootcamp -->
+                <div class="relative pl-8 border-l-2 border-cyan-500/30 fade-in-section">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-cyan-600 rounded-full glow-cyan"></div>
+                    <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-cyan-400">Kakao Tech Bootcamp</h3>
+                                <p class="text-gray-500 text-sm">Pangyo, Korea</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-cyan-900/30 px-3 py-1 rounded-full">Jan 2025 - Jul 2025</span>
+                        </div>
+                        <p class="text-gray-300 font-medium mb-3">Cloud Native Track Trainee</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-yellow-400 mr-2 text-sm"></i>
+                                <span>2nd Place - Kakao Tech Bootcamp Hackathon (Feb 2025)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-yellow-400 mr-2 text-sm"></i>
+                                <span>3rd Place - Server Load Testing Tournament (Jul 2025)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-users text-cyan-400 mr-2 text-sm"></i>
+                                <a href="#project-nemo" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                                    Team Project 'NEMO' - Group Participation Service <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CO;Ders US -->
+                <div class="relative pl-8 border-l-2 border-blue-500/30 fade-in-section">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-blue-600 rounded-full glow-blue"></div>
+                    <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-blue-400">CO;Ders US (Non-Profit Organization)</h3>
+                                <p class="text-gray-500 text-sm">Incheon, Korea</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-blue-900/30 px-3 py-1 rounded-full">Mar 2021 - Dec 2024</span>
+                        </div>
+                        <p class="text-gray-300 font-medium mb-3">Vice President (2021) | Member</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-400 mt-1 mr-2 text-sm"></i>
+                                Delivered programming education to promote technical skills and problem-solving abilities.
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-400 mt-1 mr-2 text-sm"></i>
+                                Taught elementary students scratch block coding; middle school students in Java programming.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark-primary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">
+                <span class="section-title-dark">Projects</span>
+            </h2>
+            <p class="text-center text-purple-400 mb-12">Things I've built</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- NEMO Project -->
+                <div id="project-nemo" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section">
+                    <div class="h-48 bg-gradient-to-br from-purple-600/30 to-cyan-500/30 flex items-center justify-center">
+                        <i class="fas fa-users text-purple-400 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">NEMO - Group Participation Service</h3>
+                        <p class="text-gray-400 mb-4">
+                            Migrated from single VM to 3-tier Dockerized architecture on GCP, then to AWS EKS.
+                            Built CI/CD with GitHub Actions and ArgoCD. Integrated Redis, Kafka, and Gemma models via vLLM.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-900/30 text-purple-300 rounded text-sm">AWS EKS</span>
+                            <span class="px-2 py-1 bg-cyan-900/30 text-cyan-300 rounded text-sm">ArgoCD</span>
+                            <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-sm">Kafka</span>
+                            <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">vLLM</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CI/CD Pipeline -->
+                <div class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all fade-in-section">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600/30 to-blue-500/30 flex items-center justify-center">
+                        <i class="fas fa-code-branch text-cyan-400 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">CI/CD Pipeline Framework</h3>
+                        <p class="text-gray-400 mb-4">
+                            Modular CI/CD pipeline framework supporting multiple languages
+                            with automated testing, security scanning, and deployments.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-sm">GitHub Actions</span>
+                            <span class="px-2 py-1 bg-cyan-900/30 text-cyan-300 rounded text-sm">Docker</span>
+                            <span class="px-2 py-1 bg-purple-900/30 text-purple-300 rounded text-sm">AWS</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                            <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-secondary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">
+                <span class="section-title-dark">Contact</span>
+            </h2>
+            <p class="text-center text-purple-400 mb-12">Get in touch</p>
+            <div class="grid md:grid-cols-4 gap-6 text-center fade-in-section">
+                <a href="mailto:sean.jun2001@gmail.com" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-900/30 rounded-full flex items-center justify-center group-hover:bg-purple-900/50 transition-colors">
+                        <i class="fas fa-envelope text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-white">Email</h3>
+                    <p class="text-gray-400 text-sm">sean.jun2001@gmail.com</p>
+                </a>
+
+                <a href="https://github.com/halfmoon01" target="_blank" rel="noopener noreferrer" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-cyan-500/50 transition-all group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-cyan-900/30 rounded-full flex items-center justify-center group-hover:bg-cyan-900/50 transition-colors">
+                        <i class="fab fa-github text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-white">GitHub</h3>
+                    <p class="text-gray-400 text-sm">github.com/halfmoon01</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/sean-jun" target="_blank" rel="noopener noreferrer" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-900/30 rounded-full flex items-center justify-center group-hover:bg-blue-900/50 transition-colors">
+                        <i class="fab fa-linkedin-in text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-white">LinkedIn</h3>
+                    <p class="text-gray-400 text-sm">linkedin.com/in/sean-jun</p>
+                </a>
+
+                <a href="https://www.instagram.com/im__halfmoon/" target="_blank" rel="noopener noreferrer" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-pink-500/50 transition-all group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-pink-900/30 rounded-full flex items-center justify-center group-hover:bg-pink-900/50 transition-colors">
+                        <i class="fab fa-instagram text-pink-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-white">Instagram</h3>
+                    <p class="text-gray-400 text-sm">@im__halfmoon</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-primary border-t border-gray-800 py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-gray-500 mb-4">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
+            <div class="flex justify-center gap-4">
+                <a href="mailto:sean.jun2001@gmail.com" class="text-gray-500 hover:text-red-400 transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="https://github.com/halfmoon01" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-purple-400 transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sean-jun" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400 transition-colors">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/im__halfmoon/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-pink-400 transition-colors">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

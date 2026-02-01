@@ -1,0 +1,181 @@
+// DOM Elements
+const header = document.getElementById('header');
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+// Mobile Menu Toggle
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('menu-open');
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Close mobile menu when clicking a link
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuBtn.classList.remove('menu-open');
+        mobileMenu.classList.add('hidden');
+    });
+});
+
+// Header Style Change on Scroll
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // Add shadow and background when scrolled
+    if (currentScroll > 50) {
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+    }
+
+    lastScroll = currentScroll;
+});
+
+// Smooth Scroll for Navigation Links
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+
+        // Only handle internal links
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
+// Intersection Observer for Fade-in Animations
+const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const fadeInObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Optional: stop observing once visible
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe all fade-in sections
+fadeInSections.forEach(section => {
+    fadeInObserver.observe(section);
+});
+
+// Active Navigation Link Highlight - Dark Theme
+const sections = document.querySelectorAll('section[id]');
+
+const highlightNavLink = () => {
+    const scrollPosition = window.pageYOffset + 100;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // Remove active class from all links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-purple-400');
+                link.classList.add('text-gray-300');
+            });
+
+            // Add active class to current section link
+            const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.remove('text-gray-300');
+                activeLink.classList.add('text-purple-400');
+            }
+        }
+    });
+};
+
+window.addEventListener('scroll', highlightNavLink);
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Trigger initial scroll check
+    highlightNavLink();
+
+    // Add stagger delay to skill cards
+    const skillCards = document.querySelectorAll('#skills .fade-in-section');
+    skillCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+
+    // Add stagger delay to project cards
+    const projectCards = document.querySelectorAll('#projects .fade-in-section');
+    projectCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.15}s`;
+    });
+
+    // Add stagger delay to contact cards
+    const contactCards = document.querySelectorAll('#contact .fade-in-section');
+    contactCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+});
+
+// Typing Effect for Hero Section (Optional Enhancement)
+const typeWriter = (element, text, speed = 100) => {
+    let i = 0;
+    element.textContent = '';
+
+    const type = () => {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    };
+
+    type();
+};
+
+// Parallax Effect for Hero Section (Subtle)
+window.addEventListener('scroll', () => {
+    const hero = document.getElementById('hero');
+    if (hero) {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.3;
+        // Apply subtle parallax to grid pattern
+        const gridPattern = hero.querySelector('.grid-pattern');
+        if (gridPattern) {
+            gridPattern.style.transform = `translateY(${rate * 0.5}px)`;
+        }
+    }
+});
+
+// Mouse Move Effect for Hero Section (Subtle glow following cursor)
+const heroSection = document.getElementById('hero');
+if (heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        heroSection.style.setProperty('--mouse-x', `${x}px`);
+        heroSection.style.setProperty('--mouse-y', `${y}px`);
+    });
+}
