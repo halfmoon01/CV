@@ -179,3 +179,56 @@ if (heroSection) {
         heroSection.style.setProperty('--mouse-y', `${y}px`);
     });
 }
+
+// Demo Popup for NEMO project
+function showDemoPopup(event) {
+    event.preventDefault();
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center';
+    overlay.id = 'demo-popup-overlay';
+
+    // Create popup
+    overlay.innerHTML = `
+        <div class="bg-dark-secondary border border-gray-700 rounded-xl p-8 max-w-md mx-4 text-center shadow-2xl">
+            <div class="w-16 h-16 mx-auto mb-4 bg-yellow-900/30 rounded-full flex items-center justify-center">
+                <i class="fas fa-exclamation-triangle text-yellow-400 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Service Temporarily Unavailable</h3>
+            <p class="text-gray-400 mb-6">
+                The live demo is currently suspended due to budget constraints.
+                Please check the GitHub repository for more details.
+            </p>
+            <button onclick="closeDemoPopup()" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">
+                Close
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // Close on overlay click
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeDemoPopup();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', handleEscKey);
+}
+
+function closeDemoPopup() {
+    const overlay = document.getElementById('demo-popup-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+    document.removeEventListener('keydown', handleEscKey);
+}
+
+function handleEscKey(e) {
+    if (e.key === 'Escape') {
+        closeDemoPopup();
+    }
+}
