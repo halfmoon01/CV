@@ -247,7 +247,7 @@ function showVideoPopup(event) {
             <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-purple-400 transition-colors">
                 <i class="fas fa-times text-2xl"></i>
             </button>
-            <video controls autoplay class="w-full rounded-xl shadow-2xl">
+            <video controls autoplay class="w-full max-h-[80vh] rounded-xl shadow-2xl">
                 <source src="assets/videos/project1.MP4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
