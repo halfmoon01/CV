@@ -5,7 +5,9 @@
       "Bash(gh repo create:*)",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd profile and project images\n\n- Add profile photo to hero section\n- Add NEMO project image\n- Add Live Demo popup with service unavailable message\n- Link GitHub repo for NEMO project\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
     ]
   }
 }

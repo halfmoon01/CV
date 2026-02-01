@@ -230,5 +230,46 @@ function closeDemoPopup() {
 function handleEscKey(e) {
     if (e.key === 'Escape') {
         closeDemoPopup();
+        closeVideoPopup();
+    }
+}
+
+// Video Popup for NEMO project demo
+function showVideoPopup(event) {
+    event.preventDefault();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
+    overlay.id = 'video-popup-overlay';
+
+    overlay.innerHTML = `
+        <div class="relative w-full max-w-4xl">
+            <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-purple-400 transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <video controls autoplay class="w-full rounded-xl shadow-2xl">
+                <source src="assets/videos/project1.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeVideoPopup();
+        }
+    });
+
+    document.addEventListener('keydown', handleEscKey);
+}
+
+function closeVideoPopup() {
+    const overlay = document.getElementById('video-popup-overlay');
+    if (overlay) {
+        const video = overlay.querySelector('video');
+        if (video) video.pause();
+        overlay.remove();
     }
 }
