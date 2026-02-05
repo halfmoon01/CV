@@ -267,33 +267,16 @@
             <p class="text-center text-purple-400 mb-12">Things I've built</p>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- NEMO Project -->
-                <a href="projects/nemo.html" id="project-nemo" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section block">
+                <a href="projects/nemo.html" id="project-nemo" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section block group">
                     <div class="h-48 overflow-hidden">
-                        <img src="assets/images/project1.jpg" alt="NEMO Project" class="w-full h-full object-cover">
+                        <img src="assets/images/project1.jpg" alt="NEMO Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-white">NEMO - Group Participation Service</h3>
                         <p class="text-gray-400 mb-4">
-                            Migrated from single VM to 3-tier Dockerized architecture on GCP, then to AWS EKS.
-                            Built CI/CD with GitHub Actions and ArgoCD. Integrated Redis, Kafka, and Gemma models via vLLM.
+                            Kakao Tech Bootcamp team project. Cloud infrastructure and CI/CD pipeline development.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-purple-900/30 text-purple-300 rounded text-sm">AWS EKS</span>
-                            <span class="px-2 py-1 bg-cyan-900/30 text-cyan-300 rounded text-sm">ArgoCD</span>
-                            <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-sm">Kafka</span>
-                            <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">vLLM</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <span onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/halfmoon01/nemo-cloud', '_blank')" class="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
-                                <i class="fab fa-github mr-1"></i>GitHub
-                            </span>
-                            <span onclick="event.preventDefault(); event.stopPropagation(); showDemoPopup(event)" class="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </span>
-                            <span onclick="event.preventDefault(); event.stopPropagation(); showVideoPopup(event)" class="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
-                                <i class="fas fa-play-circle mr-1"></i>Watch Demo
-                            </span>
-                        </div>
+                        <span class="text-purple-400 text-sm">View Details <i class="fas fa-arrow-right ml-1"></i></span>
                     </div>
                 </a>
 
@@ -327,31 +310,19 @@
                 </div>
 
                 <!-- Biz-News Project -->
-                <a href="projects/biz-news.html" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all fade-in-section block">
+                <a href="projects/biz-news.html" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all fade-in-section block group">
                     <div class="h-48 overflow-hidden">
-                        <img src="assets/images/project3.png" alt="Biz-News Project" class="w-full h-full object-cover">
+                        <img src="assets/images/project3.png" alt="Biz-News Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Biz-News - AI News Summary & Recommendation</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-xl font-semibold text-white">Biz-News - AI News Summary</h3>
+                            <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs font-semibold">2nd Place</span>
+                        </div>
                         <p class="text-gray-400 mb-4">
-                            Graph RAG based AI news summary and recommendation service.
-                            Kakao Tech Bootcamp Hackathon 2nd Place Winner.
+                            Kakao Tech Bootcamp Hackathon. Graph RAG based news recommendation service.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-sm">Next.js</span>
-                            <span class="px-2 py-1 bg-green-900/30 text-green-300 rounded text-sm">SpringBoot</span>
-                            <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">Neo4j</span>
-                            <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">Graph RAG</span>
-                            <span class="px-2 py-1 bg-orange-900/30 text-orange-300 rounded text-sm">AWS</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <span onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/Biz-News', '_blank')" class="text-orange-400 hover:text-orange-300 transition-colors cursor-pointer">
-                                <i class="fab fa-github mr-1"></i>GitHub
-                            </span>
-                            <span onclick="event.preventDefault(); event.stopPropagation(); showVideoPopup3(event)" class="text-orange-400 hover:text-orange-300 transition-colors cursor-pointer">
-                                <i class="fas fa-play-circle mr-1"></i>Watch Demo
-                            </span>
-                        </div>
+                        <span class="text-orange-400 text-sm">View Details <i class="fas fa-arrow-right ml-1"></i></span>
                     </div>
                 </a>
             </div>

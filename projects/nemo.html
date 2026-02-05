@@ -49,7 +49,17 @@
                     <a href="https://github.com/halfmoon01/nemo-cloud" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 px-4 py-2 bg-purple-900/50 text-purple-300 rounded-lg border border-purple-500/30 hover:border-purple-500 transition-colors">
                         <i class="fab fa-github"></i>
-                        <span>View on GitHub</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" onclick="showDemoPopup(event)"
+                       class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-900/50 text-cyan-300 rounded-lg border border-cyan-500/30 hover:border-cyan-500 transition-colors">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Live Demo</span>
+                    </a>
+                    <a href="#" onclick="showVideoPopup(event)"
+                       class="inline-flex items-center gap-2 px-4 py-2 bg-pink-900/50 text-pink-300 rounded-lg border border-pink-500/30 hover:border-pink-500 transition-colors">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Demo</span>
                     </a>
                 </div>
             </div>
@@ -339,15 +349,61 @@
         // Architecture tabs functionality
         document.querySelectorAll('.arch-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                // Remove active from all tabs and contents
                 document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
-
-                // Add active to clicked tab and corresponding content
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
         });
+
+        // Demo Popup
+        function showDemoPopup(event) {
+            event.preventDefault();
+            const overlay = document.createElement('div');
+            overlay.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center';
+            overlay.id = 'demo-popup-overlay';
+            overlay.innerHTML = `
+                <div class="bg-dark-secondary border border-gray-700 rounded-xl p-8 max-w-md mx-4 text-center shadow-2xl">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-yellow-900/30 rounded-full flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Service Temporarily Unavailable</h3>
+                    <p class="text-gray-400 mb-6">The live demo is currently suspended due to budget constraints.</p>
+                    <button onclick="closeDemoPopup()" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">Close</button>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDemoPopup(); });
+        }
+        function closeDemoPopup() {
+            const overlay = document.getElementById('demo-popup-overlay');
+            if (overlay) overlay.remove();
+        }
+
+        // Video Popup
+        function showVideoPopup(event) {
+            event.preventDefault();
+            const overlay = document.createElement('div');
+            overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
+            overlay.id = 'video-popup-overlay';
+            overlay.innerHTML = `
+                <div class="relative w-full max-w-4xl">
+                    <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-purple-400 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    <video controls autoplay class="w-full max-h-[80vh] rounded-xl shadow-2xl">
+                        <source src="../assets/videos/project1.MP4" type="video/mp4">
+                    </video>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVideoPopup(); });
+        }
+        function closeVideoPopup() {
+            const overlay = document.getElementById('video-popup-overlay');
+            if (overlay) { overlay.querySelector('video')?.pause(); overlay.remove(); }
+        }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeDemoPopup(); closeVideoPopup(); } });
     </script>
 </body>
 </html>

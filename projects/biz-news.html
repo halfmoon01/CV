@@ -37,7 +37,12 @@
                     <a href="https://github.com/Biz-News" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 px-4 py-2 bg-orange-900/50 text-orange-300 rounded-lg border border-orange-500/30 hover:border-orange-500 transition-colors">
                         <i class="fab fa-github"></i>
-                        <span>View on GitHub</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" onclick="showVideoPopup(event)"
+                       class="inline-flex items-center gap-2 px-4 py-2 bg-pink-900/50 text-pink-300 rounded-lg border border-pink-500/30 hover:border-pink-500 transition-colors">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Demo</span>
                     </a>
                 </div>
             </div>
@@ -240,5 +245,32 @@
             <p class="text-gray-500">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Video Popup
+        function showVideoPopup(event) {
+            event.preventDefault();
+            const overlay = document.createElement('div');
+            overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
+            overlay.id = 'video-popup-overlay';
+            overlay.innerHTML = `
+                <div class="relative w-full max-w-4xl">
+                    <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-orange-400 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    <video controls autoplay playsinline class="w-full max-h-[80vh] rounded-xl shadow-2xl">
+                        <source src="../assets/videos/project3.mp4" type="video/mp4">
+                    </video>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVideoPopup(); });
+        }
+        function closeVideoPopup() {
+            const overlay = document.getElementById('video-popup-overlay');
+            if (overlay) { overlay.querySelector('video')?.pause(); overlay.remove(); }
+        }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideoPopup(); });
+    </script>
 </body>
 </html>
