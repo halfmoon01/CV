@@ -267,7 +267,7 @@
             <p class="text-center text-purple-400 mb-12">Things I've built</p>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- NEMO Project -->
-                <div id="project-nemo" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section">
+                <a href="projects/nemo.html" id="project-nemo" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section block">
                     <div class="h-48 overflow-hidden">
                         <img src="assets/images/project1.jpg" alt="NEMO Project" class="w-full h-full object-cover">
                     </div>
@@ -284,18 +284,18 @@
                             <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">vLLM</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/halfmoon01/nemo-cloud" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">
+                            <span onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/halfmoon01/nemo-cloud', '_blank')" class="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
                                 <i class="fab fa-github mr-1"></i>GitHub
-                            </a>
-                            <a href="#" onclick="showDemoPopup(event)" class="text-purple-400 hover:text-purple-300 transition-colors">
+                            </span>
+                            <span onclick="event.preventDefault(); event.stopPropagation(); showDemoPopup(event)" class="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
                                 <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </a>
-                            <a href="#" onclick="showVideoPopup(event)" class="text-purple-400 hover:text-purple-300 transition-colors">
+                            </span>
+                            <span onclick="event.preventDefault(); event.stopPropagation(); showVideoPopup(event)" class="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
                                 <i class="fas fa-play-circle mr-1"></i>Watch Demo
-                            </a>
+                            </span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- CSE 316 Full-Stack Project -->
                 <div class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all fade-in-section">
@@ -303,7 +303,7 @@
                         <img src="assets/images/project2.png" alt="CSE 316 Project" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">CSE 316 Full-Stack Application</h3>
+                        <h3 class="text-xl font-semibold mb-2 text-white">[CSE316] Full-Stack Web Application</h3>
                         <p class="text-gray-400 mb-4">
                             Stony Brook University CSE 316 course project. A full-stack web application
                             built with React.js frontend and Node.js backend, using MySQL for database
@@ -327,7 +327,7 @@
                 </div>
 
                 <!-- Biz-News Project -->
-                <div class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all fade-in-section">
+                <a href="projects/biz-news.html" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all fade-in-section block">
                     <div class="h-48 overflow-hidden">
                         <img src="assets/images/project3.png" alt="Biz-News Project" class="w-full h-full object-cover">
                     </div>
@@ -338,22 +338,22 @@
                             Kakao Tech Bootcamp Hackathon 2nd Place Winner.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-green-900/30 text-green-300 rounded text-sm">Next.js</span>
+                            <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-sm">Next.js</span>
                             <span class="px-2 py-1 bg-green-900/30 text-green-300 rounded text-sm">SpringBoot</span>
-                            <span class="px-2 py-1 bg-yellow-900/30 text-yellow-300 rounded text-sm">FastAPI</span>
-                            <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-sm">Neo4j</span>
+                            <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">Neo4j</span>
+                            <span class="px-2 py-1 bg-pink-900/30 text-pink-300 rounded text-sm">Graph RAG</span>
                             <span class="px-2 py-1 bg-orange-900/30 text-orange-300 rounded text-sm">AWS</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/Biz-News" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:text-orange-300 transition-colors">
+                            <span onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/Biz-News', '_blank')" class="text-orange-400 hover:text-orange-300 transition-colors cursor-pointer">
                                 <i class="fab fa-github mr-1"></i>GitHub
-                            </a>
-                            <a href="#" onclick="showVideoPopup3(event)" class="text-orange-400 hover:text-orange-300 transition-colors">
+                            </span>
+                            <span onclick="event.preventDefault(); event.stopPropagation(); showVideoPopup3(event)" class="text-orange-400 hover:text-orange-300 transition-colors cursor-pointer">
                                 <i class="fas fa-play-circle mr-1"></i>Watch Demo
-                            </a>
+                            </span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>

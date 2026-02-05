@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEMO - Group Participation Service | Sanghyun Jun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .arch-tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .arch-tab.active {
+            background: linear-gradient(90deg, #a855f7, #22d3ee);
+            color: white;
+        }
+        .arch-content {
+            display: none;
+        }
+        .arch-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-dark-primary text-gray-100">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <a href="../index.html" class="text-xl font-bold text-purple-400">Sanghyun Jun</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 hero-gradient relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="fade-in">
+                <p class="text-cyan-400 text-sm mb-2">Kakao Tech Bootcamp | Jan 2025 - Jul 2025</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">NEMO</h1>
+                <p class="text-xl text-gray-300 mb-6">Group Participation Service</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://github.com/halfmoon01/nemo-cloud" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-4 py-2 bg-purple-900/50 text-purple-300 rounded-lg border border-purple-500/30 hover:border-purple-500 transition-colors">
+                        <i class="fab fa-github"></i>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-12 bg-dark-secondary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-2xl font-bold mb-6 text-white">
+                <span class="section-title-dark">Overview</span>
+            </h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                NEMO is a group participation service developed during the Kakao Tech Bootcamp.
+                The project evolved through multiple architecture phases, from a single VM deployment
+                to a fully orchestrated Kubernetes environment on AWS EKS.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                As a Cloud/DevOps Engineer, I was responsible for designing and implementing the entire
+                cloud infrastructure, CI/CD pipelines, and ensuring the system could scale to meet demand.
+            </p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-12 bg-dark-primary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-2xl font-bold mb-8 text-white">
+                <span class="section-title-dark">Team</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-green-900/50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-server text-green-400"></i>
+                    </div>
+                    <p class="text-white font-semibold">Backend</p>
+                    <p class="text-gray-400 text-sm">1 member</p>
+                </div>
+                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-blue-900/50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-palette text-blue-400"></i>
+                    </div>
+                    <p class="text-white font-semibold">Frontend</p>
+                    <p class="text-gray-400 text-sm">1 member</p>
+                </div>
+                <div class="bg-dark-secondary p-4 rounded-xl border border-purple-500/50 text-center relative">
+                    <div class="absolute -top-2 -right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full">Me</div>
+                    <div class="w-12 h-12 mx-auto mb-3 bg-purple-900/50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-cloud text-purple-400"></i>
+                    </div>
+                    <p class="text-white font-semibold">Cloud/DevOps</p>
+                    <p class="text-gray-400 text-sm">2 members</p>
+                </div>
+                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 bg-pink-900/50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-brain text-pink-400"></i>
+                    </div>
+                    <p class="text-white font-semibold">AI</p>
+                    <p class="text-gray-400 text-sm">2 members</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Contributions Section -->
+    <section class="py-12 bg-dark-secondary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-2xl font-bold mb-8 text-white">
+                <span class="section-title-dark">My Contributions</span>
+            </h2>
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
+                    <div class="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-exchange-alt text-purple-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Architecture Migration</h3>
+                        <p class="text-gray-400">GCP single VM → 3-tier Dockerized architecture migration</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
+                    <div class="w-10 h-10 bg-cyan-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-dharmachakra text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">AWS EKS Cluster</h3>
+                        <p class="text-gray-400">Built and operated AWS EKS cluster for container orchestration</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
+                    <div class="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-code-branch text-blue-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">CI/CD Pipeline</h3>
+                        <p class="text-gray-400">GitHub Actions + ArgoCD CI/CD pipeline implementation</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
+                    <div class="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-database text-orange-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Messaging Infrastructure</h3>
+                        <p class="text-gray-400">Redis and Kafka infrastructure setup and configuration</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
+                    <div class="w-10 h-10 bg-pink-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-robot text-pink-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">AI Model Serving</h3>
+                        <p class="text-gray-400">vLLM-based Gemma model serving environment setup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-12 bg-dark-primary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-2xl font-bold mb-8 text-white">
+                <span class="section-title-dark">Tech Stack</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-purple-400 mb-4">
+                        <i class="fas fa-cloud mr-2"></i>Cloud
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">AWS EKS</span>
+                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">GCP</span>
+                    </div>
+                </div>
+                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-cyan-400 mb-4">
+                        <i class="fas fa-cubes mr-2"></i>Container
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Kubernetes</span>
+                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Helm</span>
+                    </div>
+                </div>
+                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-blue-400 mb-4">
+                        <i class="fas fa-sync-alt mr-2"></i>CI/CD
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">GitHub Actions</span>
+                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">ArgoCD</span>
+                    </div>
+                </div>
+                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-orange-400 mb-4">
+                        <i class="fas fa-stream mr-2"></i>Messaging & AI
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">Kafka</span>
+                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">Redis</span>
+                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">vLLM</span>
+                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">Gemma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="py-12 bg-dark-secondary relative">
+        <div class="grid-pattern"></div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <h2 class="text-2xl font-bold mb-8 text-white">
+                <span class="section-title-dark">Architecture Evolution</span>
+            </h2>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button class="arch-tab active px-4 py-2 bg-dark-primary rounded-lg border border-gray-800 text-gray-300" data-tab="v1">
+                    v1: Single VM
+                </button>
+                <button class="arch-tab px-4 py-2 bg-dark-primary rounded-lg border border-gray-800 text-gray-300" data-tab="v2">
+                    v2: Docker
+                </button>
+                <button class="arch-tab px-4 py-2 bg-dark-primary rounded-lg border border-gray-800 text-gray-300" data-tab="v3">
+                    v3: Kubernetes (EKS)
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="arch-content active" id="v1">
+                <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-white mb-4">Phase 1: Single VM Architecture</h3>
+                    <p class="text-gray-400 mb-4">Initial MVP deployment on a single GCP VM with all services running directly on the host.</p>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <img src="../assets/images/project1_arc_v1.png" alt="NEMO Architecture v1" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+            <div class="arch-content" id="v2">
+                <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-white mb-4">Phase 2: Dockerized Architecture</h3>
+                    <p class="text-gray-400 mb-4">Containerized all services using Docker for better isolation and reproducibility.</p>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <img src="../assets/images/project1_arc_v2.png" alt="NEMO Architecture v2" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+            <div class="arch-content" id="v3">
+                <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-semibold text-white mb-4">Phase 3: Kubernetes on AWS EKS</h3>
+                    <p class="text-gray-400 mb-4">Full Kubernetes orchestration on AWS EKS with GitOps-based deployment using ArgoCD.</p>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <img src="../assets/images/project1_arc_v3.png" alt="NEMO Architecture v3" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-primary border-t border-gray-800 py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+            </a>
+            <p class="text-gray-500">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Architecture tabs functionality
+        document.querySelectorAll('.arch-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active from all tabs and contents
+                document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
+
+                // Add active to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
