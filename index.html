@@ -16,7 +16,6 @@
 
             <!-- Desktop Navigation -->
             <ul class="hidden md:flex space-x-8">
-                <li><a href="#about" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">About</a></li>
                 <li><a href="#skills" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Skills</a></li>
                 <li><a href="#experience" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Experience</a></li>
                 <li><a href="#projects" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Projects</a></li>
@@ -34,7 +33,6 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-dark-secondary border-t border-gray-800">
             <ul class="flex flex-col py-4">
-                <li><a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">About</a></li>
                 <li><a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Skills</a></li>
                 <li><a href="#experience" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Experience</a></li>
                 <li><a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Projects</a></li>
@@ -53,11 +51,26 @@
                     <p class="text-purple-400 text-lg mb-2">Hello, I'm</p>
                     <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white">Sanghyun</h1>
                     <p class="text-2xl md:text-3xl italic text-gray-300 mb-6">DevOps/Cloud Engineer</p>
-                    <p class="text-gray-400 mb-8 max-w-lg leading-relaxed">
-                        B.S. in Computer Science & Applied Mathematics from SUNY Korea,
-                        currently pursuing a combined B.S./M.S. in Computer Science at Stony Brook University.
-                        Passionate about cloud infrastructure, DevOps practices, and distributed systems.
-                    </p>
+                    <div class="text-gray-400 mb-6 max-w-lg leading-relaxed space-y-3">
+                        <p>B.S. in Computer Science & Applied Mathematics from SUNY Korea</p>
+                        <p>Combined B.S./M.S. in Computer Science at Stony Brook University</p>
+                    </div>
+                    <div class="mb-6 space-y-2">
+                        <p class="text-gray-500 text-sm">Interests</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm border border-purple-500/30">Cloud</span>
+                            <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm border border-cyan-500/30">DevOps</span>
+                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm border border-blue-500/30">Infrastructure</span>
+                        </div>
+                    </div>
+                    <div class="mb-8 space-y-2">
+                        <p class="text-gray-500 text-sm">Related Courses</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Operating Systems</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Cloud Computing</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Fundamentals of Networks</span>
+                        </div>
+                    </div>
                     <a href="#contact" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold rounded-full hover:shadow-glow transition-all duration-300">
                         Contact Me <i class="fas fa-arrow-right ml-2"></i>
                     </a>
@@ -67,32 +80,6 @@
                     <div class="w-[22rem] h-[22rem] md:w-[32rem] md:h-[32rem] rounded-2xl bg-gradient-to-br from-purple-600/30 to-cyan-500/30 border border-purple-500/30 flex items-center justify-center backdrop-blur-sm p-2">
                         <img src="assets/images/profilie.PNG" alt="Sanghyun Jun" class="w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] rounded-xl object-cover">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">
-                <span class="section-title-dark">About</span>
-            </h2>
-            <p class="text-center text-purple-400 mb-12">Get to know me</p>
-            <div class="text-center fade-in-section">
-                <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-                    Computer Science student pursuing a combined B.S./M.S. at Stony Brook University (M.S. expected 2027).
-                    Passionate about cloud infrastructure, DevOps practices, and building scalable systems.
-                </p>
-                <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-                    Experienced in containerization, Kubernetes orchestration, CI/CD pipelines, and infrastructure monitoring.
-                    Focused on automating workflows and optimizing system reliability.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4 mt-8">
-                    <span class="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full border border-purple-500/30">Cloud Infrastructure</span>
-                    <span class="px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full border border-cyan-500/30">DevOps</span>
-                    <span class="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full border border-blue-500/30">Automation</span>
                 </div>
             </div>
         </div>
