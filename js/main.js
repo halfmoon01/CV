@@ -1,3 +1,44 @@
+// Visitor Counter (localStorage based)
+(function initVisitorCounter() {
+    const STORAGE_KEY = 'portfolio_visitors';
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+
+    // Get or initialize visitor data
+    let visitorData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+        total: 0,
+        lastVisit: null,
+        dailyCount: 0,
+        currentDate: today
+    };
+
+    // Reset daily count if it's a new day
+    if (visitorData.currentDate !== today) {
+        visitorData.dailyCount = 0;
+        visitorData.currentDate = today;
+    }
+
+    // Check if this is a new session (use sessionStorage to track)
+    const sessionVisited = sessionStorage.getItem('portfolio_session_visited');
+
+    if (!sessionVisited) {
+        // New session - increment counters
+        visitorData.total++;
+        visitorData.dailyCount++;
+        visitorData.lastVisit = new Date().toISOString();
+
+        // Save updated data
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(visitorData));
+        sessionStorage.setItem('portfolio_session_visited', 'true');
+    }
+
+    // Update display
+    const todayEl = document.getElementById('today-visitors');
+    const totalEl = document.getElementById('total-visitors');
+
+    if (todayEl) todayEl.textContent = visitorData.dailyCount.toLocaleString();
+    if (totalEl) totalEl.textContent = visitorData.total.toLocaleString();
+})();
+
 // DOM Elements
 const header = document.getElementById('header');
 const menuBtn = document.getElementById('menu-btn');
