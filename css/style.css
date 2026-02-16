@@ -71,10 +71,17 @@ ul { list-style: none; }
 .visitor-counter {
     display: flex;
     align-items: center;
+    list-style: none;
 }
 
 .visitor-counter img {
-    height: 20px;
+    height: 18px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.visitor-counter:hover img {
+    opacity: 1;
 }
 
 .nav-links {
@@ -457,8 +464,61 @@ ul { list-style: none; }
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-header-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.project-period {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+
+.team-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+}
+
+.team-block i {
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.team-block strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 700;
+}
+
+.team-block.me {
+    background: rgba(34,197,94,0.1);
+    border-color: rgba(34,197,94,0.3);
+    color: var(--green);
+}
+
+.team-block.me strong {
+    color: var(--green);
 }
 
 .project-name {
@@ -749,7 +809,7 @@ ul { list-style: none; }
 .project-links {
     display: flex;
     gap: 0.75rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -1101,7 +1161,7 @@ ul { list-style: none; }
 }
 
 .detail-hero {
-    padding: 6rem 2.5rem 3rem;
+    padding: 6rem 2.5rem 1.5rem;
     background: var(--black);
     color: var(--white);
 }
