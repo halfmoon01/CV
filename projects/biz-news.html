@@ -3,274 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biz-News - AI News Summary & Recommendation | Sanghyun Jun</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Biz-News - AI News Recommendation | Sanghyun Jun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-dark-primary text-gray-100">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm">
-        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Portfolio</span>
+<body>
+    <!-- Navigation -->
+    <nav class="detail-nav">
+        <div class="detail-nav-inner">
+            <a href="../index.html" class="detail-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
             </a>
-            <a href="../index.html" class="text-xl font-bold text-purple-400">Sanghyun Jun</a>
-        </nav>
-    </header>
+            <a href="../index.html" class="detail-logo">&lt;SANGHYUN JUN&gt;</a>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-12 hero-gradient relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <div class="fade-in">
-                <div class="flex flex-wrap items-center gap-3 mb-2">
-                    <p class="text-orange-400 text-sm">Kakao Tech Bootcamp Hackathon | Feb 2025</p>
-                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm font-semibold border border-yellow-500/30">
-                        <i class="fas fa-trophy mr-1"></i>2nd Place
-                    </span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Biz-News</h1>
-                <p class="text-xl text-gray-300 mb-6">AI News Summary & Recommendation Service</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/Biz-News" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-orange-900/50 text-orange-300 rounded-lg border border-orange-500/30 hover:border-orange-500 transition-colors">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="#" onclick="showVideoPopup(event)"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-pink-900/50 text-pink-300 rounded-lg border border-pink-500/30 hover:border-pink-500 transition-colors">
-                        <i class="fas fa-play-circle"></i>
-                        <span>Watch Demo</span>
-                    </a>
-                </div>
+    <!-- Hero -->
+    <div class="detail-hero">
+        <div class="detail-hero-inner">
+            <div class="project-header">
+                <h3 class="project-name">Biz-News<br><span class="project-subtitle">AI News Summary & Recommendation</span></h3>
+                <span class="project-badge badge-award"><i class="fas fa-trophy"></i> 2nd Place</span>
+            </div>
+            <div class="project-links" style="margin-bottom: 0; margin-top: 1.5rem;">
+                <a href="https://github.com/Biz-News" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button onclick="showVideoPopup('../assets/videos/project3.mp4')" class="project-link">
+                    <i class="fas fa-play-circle"></i> Watch Demo
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Overview Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-6 text-white">
-                <span class="section-title-dark">Overview</span>
-            </h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                Biz-News is an AI-powered news summary and recommendation service developed during the
-                Kakao Tech Bootcamp Hackathon in February 2025. The project won 2nd place in the competition.
+    <!-- Content -->
+    <section class="dark-section" style="padding-top: 3rem;">
+        <div class="project" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+
+            <div class="project-meta-row" style="grid-template-columns: auto 1fr;">
+                <div class="project-meta-block">
+                    <p class="project-meta-label">Period</p>
+                    <p class="project-meta-value">Feb 2025 (Hackathon)</p>
+                </div>
+                <div class="project-meta-block">
+                    <p class="project-meta-label">Team</p>
+                    <div class="team-visual">
+                        <span class="team-chip me"><i class="fas fa-user"></i> Cloud</span>
+                        <span class="team-chip me"><i class="fas fa-user"></i> Cloud</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> Backend</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> Frontend</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> AI</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="project-desc">
+                Kakao Tech Bootcamp Hackathon project. Graph RAG based news recommendation service using Neo4j graph database for intelligent summarization and personalized recommendations. Won 2nd place in the competition.
             </p>
-            <p class="text-gray-300 leading-relaxed">
-                Using Graph RAG (Retrieval-Augmented Generation) technology with Neo4j graph database,
-                the service provides personalized news recommendations and intelligent summaries
-                based on complex relationships between news articles, topics, and user interests.
-            </p>
-        </div>
-    </section>
 
-    <!-- Team Section -->
-    <section class="py-12 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Team</span>
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-green-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-server text-green-400"></i>
-                    </div>
-                    <p class="text-white font-semibold">Backend</p>
-                    <p class="text-gray-400 text-sm">1 member</p>
+            <!-- Key Features - Tab Style -->
+            <div class="project-arch" style="margin-bottom: 2.5rem;">
+                <h4>Key Features</h4>
+                <div class="arch-tabs">
+                    <button class="arch-tab active" data-target="feat-summary">News Summary</button>
+                    <button class="arch-tab" data-target="feat-graph">Keyword Graph</button>
+                    <button class="arch-tab" data-target="feat-keyword">Keyword & Company</button>
+                    <button class="arch-tab" data-target="feat-stock">Stock Market</button>
                 </div>
-                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-blue-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-palette text-blue-400"></i>
+                <div class="arch-content active" id="feat-summary">
+                    <div class="arch-img">
+                        <img src="../assets/images/BIZN/news_summary.jpg" alt="News Summary">
                     </div>
-                    <p class="text-white font-semibold">Frontend</p>
-                    <p class="text-gray-400 text-sm">1 member</p>
+                    <p class="arch-label">AI-powered news article summarization</p>
                 </div>
-                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-pink-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-brain text-pink-400"></i>
+                <div class="arch-content" id="feat-graph">
+                    <div class="arch-img">
+                        <img src="../assets/images/BIZN/Graph based on keyword.jpg" alt="Graph Based on Keyword">
                     </div>
-                    <p class="text-white font-semibold">AI</p>
-                    <p class="text-gray-400 text-sm">2 members</p>
+                    <p class="arch-label">Neo4j graph visualization of keyword relationships</p>
                 </div>
-                <div class="bg-dark-secondary p-4 rounded-xl border border-orange-500/50 text-center relative">
-                    <div class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full">Me</div>
-                    <div class="w-12 h-12 mx-auto mb-3 bg-orange-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-cloud text-orange-400"></i>
+                <div class="arch-content" id="feat-keyword">
+                    <div class="arch-img">
+                        <img src="../assets/images/BIZN/news_keyword and company information.jpg" alt="News Keyword & Company Info">
                     </div>
-                    <p class="text-white font-semibold">Cloud</p>
-                    <p class="text-gray-400 text-sm">2 members</p>
+                    <p class="arch-label">Extracted keywords and related company information</p>
+                </div>
+                <div class="arch-content" id="feat-stock">
+                    <div class="arch-img">
+                        <img src="../assets/images/BIZN/stockmarket_information.jpg" alt="Stock Market Information">
+                    </div>
+                    <p class="arch-label">Real-time stock market data integration</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- My Contributions Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">My Contributions</span>
-            </h2>
-            <div class="space-y-4">
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-cloud text-orange-400"></i>
+            <p class="project-tech-label">Tech Stack (My Part)</p>
+            <div class="project-techs">
+                <span class="mine">AWS EC2</span>
+                <span class="mine">AWS RDS</span>
+                <span class="mine">Docker</span>
+                <span class="mine">Nginx</span>
+                <span class="mine">GitHub Actions</span>
+                <span>Next.js</span>
+                <span>Spring Boot</span>
+                <span>Neo4j</span>
+                <span>Graph RAG</span>
+            </div>
+
+            <div class="project-contributions">
+                <h4>My Contributions</h4>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Cloud Infrastructure</strong>
+                            <p>AWS EC2 and RDS management with Docker containerization and Nginx reverse proxy</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">AWS Infrastructure Management</h3>
-                        <p class="text-gray-400">Managed AWS EC2 and RDS for stable service operation with Docker and Nginx reverse proxy</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>CI/CD Automation</strong>
+                            <p>GitHub Actions pipeline for automated build, test, and deployment</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-code-branch text-blue-400"></i>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Data Pipeline</strong>
+                            <p>Public data API integration and MySQL database storage logic</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">GitHub Actions Deployment</h3>
-                        <p class="text-gray-400">Configured CI/CD automation pipeline for rapid deployment</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-database text-green-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">News Data MySQL Storage</h3>
-                        <p class="text-gray-400">Implemented public data API calls and database storage logic</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-cyan-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-plug text-cyan-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">API Management</h3>
-                        <p class="text-gray-400">Connected frontend and backend through REST API communication</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(236,72,153,0.1); color: #ec4899;">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>API Integration</strong>
+                            <p>Frontend-backend REST API connection and data flow design</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Tech Stack Section -->
-    <section class="py-12 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Tech Stack</span>
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-blue-400 mb-4">
-                        <i class="fas fa-palette mr-2"></i>Frontend
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Next.js 15</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">TypeScript</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Material-UI</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Tailwind CSS</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Framer Motion</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Chart.js</span>
+            <div class="project-challenges">
+                <h4>Challenges & Solutions</h4>
+                <div class="challenge-item">
+                    <div class="problem">
+                        <span class="tag">Problem</span>
+                        <span class="text">48-hour hackathon required rapid infrastructure setup with zero room for deployment errors.</span>
+                    </div>
+                    <div class="solution">
+                        <span class="tag">Solution</span>
+                        <span class="text">Pre-configured Docker Compose templates and GitHub Actions workflows for instant CI/CD, enabling the team to focus on feature development.</span>
                     </div>
                 </div>
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-green-400 mb-4">
-                        <i class="fas fa-server mr-2"></i>Backend
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">SpringBoot</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">MySQL</span>
+                <div class="challenge-item">
+                    <div class="problem">
+                        <span class="tag">Problem</span>
+                        <span class="text">Connecting Neo4j graph database with traditional MySQL for hybrid data storage was complex.</span>
                     </div>
-                </div>
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-pink-400 mb-4">
-                        <i class="fas fa-brain mr-2"></i>AI
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">Python</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">FastAPI</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">LangChain</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">ChatGPT 4o</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">Neo4j</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">Graph RAG</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">BeautifulSoup4</span>
-                    </div>
-                </div>
-                <div class="bg-dark-secondary p-6 rounded-xl border border-orange-500/50">
-                    <h3 class="text-lg font-semibold text-orange-400 mb-4">
-                        <i class="fas fa-cloud mr-2"></i>Cloud <span class="text-xs text-orange-300 ml-2">(My Part)</span>
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">AWS EC2</span>
-                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">AWS RDS</span>
-                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">GitHub Actions</span>
-                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">Docker</span>
-                        <span class="px-3 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm">Nginx</span>
+                    <div class="solution">
+                        <span class="tag">Solution</span>
+                        <span class="text">Designed a dual-database architecture with clear API boundaries — MySQL for structured data and Neo4j for graph-based news relationships.</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Architecture Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">System Architecture</span>
-            </h2>
-            <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                <p class="text-gray-400 mb-4">
-                    The architecture leverages Graph RAG technology with Neo4j to understand complex relationships
-                    between news articles, enabling intelligent summarization and personalized recommendations.
-                </p>
-                <div class="bg-gray-900 rounded-lg overflow-hidden">
-                    <img src="../assets/images/project3_arc.png" alt="Biz-News Architecture" class="w-full h-auto">
+            <div class="project-arch">
+                <h4>System Architecture</h4>
+                <div class="arch-img">
+                    <img src="../assets/images/BIZN/project3_arc.png" alt="Biz-News Architecture">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-primary border-t border-gray-800 py-8">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
-                <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
-            </a>
-            <p class="text-gray-500">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
-        </div>
+    <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
+        <a href="../index.html" class="detail-back" style="margin-bottom: 1rem; display: inline-flex;">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        // Video Popup
-        function showVideoPopup(event) {
-            event.preventDefault();
-            const overlay = document.createElement('div');
-            overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
-            overlay.id = 'video-popup-overlay';
-            overlay.innerHTML = `
-                <div class="relative w-full max-w-4xl">
-                    <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-orange-400 transition-colors">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                    <video controls autoplay playsinline class="w-full max-h-[80vh] rounded-xl shadow-2xl">
-                        <source src="../assets/videos/project3.mp4" type="video/mp4">
-                    </video>
-                </div>
-            `;
-            document.body.appendChild(overlay);
-            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVideoPopup(); });
-        }
-        function closeVideoPopup() {
-            const overlay = document.getElementById('video-popup-overlay');
-            if (overlay) { overlay.querySelector('video')?.pause(); overlay.remove(); }
-        }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideoPopup(); });
+        // Tab switching for all tab groups
+        document.querySelectorAll('.arch-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.dataset.target;
+                const parent = tab.closest('.project-arch');
+                parent.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
+                parent.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>

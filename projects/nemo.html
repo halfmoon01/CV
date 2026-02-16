@@ -4,406 +4,295 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEMO - Group Participation Service | Sanghyun Jun</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .arch-tab {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .arch-tab.active {
-            background: linear-gradient(90deg, #a855f7, #22d3ee);
-            color: white;
-        }
-        .arch-content {
-            display: none;
-        }
-        .arch-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-out;
-        }
-    </style>
 </head>
-<body class="bg-dark-primary text-gray-100">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm">
-        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Portfolio</span>
+<body>
+    <!-- Navigation -->
+    <nav class="detail-nav">
+        <div class="detail-nav-inner">
+            <a href="../index.html" class="detail-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
             </a>
-            <a href="../index.html" class="text-xl font-bold text-purple-400">Sanghyun Jun</a>
-        </nav>
-    </header>
+            <a href="../index.html" class="detail-logo">&lt;SANGHYUN JUN&gt;</a>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-12 hero-gradient relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <div class="fade-in">
-                <p class="text-cyan-400 text-sm mb-2">Kakao Tech Bootcamp | Apr 2025 - Jul 2025</p>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">NEMO</h1>
-                <p class="text-xl text-gray-300 mb-6">Group Participation Service</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/halfmoon01/nemo-cloud" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-purple-900/50 text-purple-300 rounded-lg border border-purple-500/30 hover:border-purple-500 transition-colors">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="#" onclick="showDemoPopup(event)"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-900/50 text-cyan-300 rounded-lg border border-cyan-500/30 hover:border-cyan-500 transition-colors">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>Live Demo</span>
-                    </a>
-                    <a href="#" onclick="showVideoPopup(event)"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-pink-900/50 text-pink-300 rounded-lg border border-pink-500/30 hover:border-pink-500 transition-colors">
-                        <i class="fas fa-play-circle"></i>
-                        <span>Watch Demo</span>
-                    </a>
-                </div>
+    <!-- Hero -->
+    <div class="detail-hero">
+        <div class="detail-hero-inner">
+            <div class="project-header">
+                <h3 class="project-name">NEMO<br><span class="project-subtitle">Group Participation Service</span></h3>
+                <span class="project-badge badge-team">Team Project</span>
+            </div>
+            <!-- Links at the top -->
+            <div class="project-links" style="margin-bottom: 0; margin-top: 1.5rem;">
+                <a href="https://github.com/halfmoon01/nemo-cloud" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button onclick="showVideoPopup('../assets/videos/project1.MP4')" class="project-link">
+                    <i class="fas fa-play-circle"></i> Watch Demo
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Overview Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-6 text-white">
-                <span class="section-title-dark">Overview</span>
-            </h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                NEMO is a group participation service developed during the Kakao Tech Bootcamp.
-                The project evolved through multiple architecture phases, from a single VM deployment
-                to a fully orchestrated Kubernetes environment on AWS EKS.
+    <!-- Content -->
+    <section class="dark-section" style="padding-top: 3rem;">
+        <div class="project" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+
+            <div class="project-meta-row" style="grid-template-columns: auto 1fr;">
+                <div class="project-meta-block">
+                    <p class="project-meta-label">Period</p>
+                    <p class="project-meta-value">Apr 2025 - Jul 2025</p>
+                </div>
+                <div class="project-meta-block">
+                    <p class="project-meta-label">Team</p>
+                    <div class="team-visual">
+                        <span class="team-chip me"><i class="fas fa-user"></i> Cloud/DevOps</span>
+                        <span class="team-chip me"><i class="fas fa-user"></i> Cloud/DevOps</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> Backend</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> Frontend</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> AI</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="project-desc">
+                Kakao Tech Bootcamp team project. Built and evolved the entire cloud infrastructure from a single VM to a fully orchestrated Kubernetes environment on AWS EKS with GitOps-based CI/CD pipeline.
             </p>
-            <p class="text-gray-300 leading-relaxed">
-                As a Cloud/DevOps Engineer, I was responsible for designing and implementing the entire
-                cloud infrastructure, CI/CD pipelines, and ensuring the system could scale to meet demand.
-            </p>
-        </div>
-    </section>
 
-    <!-- Team Section -->
-    <section class="py-12 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Team</span>
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-green-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-server text-green-400"></i>
-                    </div>
-                    <p class="text-white font-semibold">Backend</p>
-                    <p class="text-gray-400 text-sm">1 member</p>
+            <!-- Key Features - Tab Style -->
+            <div class="project-arch" style="margin-bottom: 2.5rem;">
+                <h4>Key Features</h4>
+                <div class="arch-tabs">
+                    <button class="arch-tab active" data-target="feat-browse">Browse & Search</button>
+                    <button class="arch-tab" data-target="feat-create">AI Group Creation</button>
+                    <button class="arch-tab" data-target="feat-recommend">AI Recommendation</button>
                 </div>
-                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-blue-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-palette text-blue-400"></i>
+                <div class="arch-content active" id="feat-browse">
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/Feature1.jpg" alt="Category Filtering & Search">
                     </div>
-                    <p class="text-white font-semibold">Frontend</p>
-                    <p class="text-gray-400 text-sm">1 member</p>
+                    <p class="arch-label">Category-based group filtering and keyword search</p>
                 </div>
-                <div class="bg-dark-secondary p-4 rounded-xl border border-purple-500/50 text-center relative">
-                    <div class="absolute -top-2 -right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full">Me</div>
-                    <div class="w-12 h-12 mx-auto mb-3 bg-purple-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-cloud text-purple-400"></i>
+                <div class="arch-content" id="feat-create">
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/Feature2.jpg" alt="AI-Powered Group Creation">
                     </div>
-                    <p class="text-white font-semibold">Cloud/DevOps</p>
-                    <p class="text-gray-400 text-sm">2 members</p>
+                    <p class="arch-label">AI auto-generates group descriptions, tags, and curriculum from user inputs</p>
                 </div>
-                <div class="bg-dark-secondary p-4 rounded-xl border border-gray-800 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-pink-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-brain text-pink-400"></i>
+                <div class="arch-content" id="feat-recommend">
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/Feature3.jpg" alt="AI Chatbot Recommendation">
                     </div>
-                    <p class="text-white font-semibold">AI</p>
-                    <p class="text-gray-400 text-sm">2 members</p>
+                    <p class="arch-label">Conversational AI chatbot recommends groups based on user interests</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- My Contributions Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">My Contributions</span>
-            </h2>
-            <div class="space-y-4">
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-exchange-alt text-purple-400"></i>
+            <p class="project-tech-label">Tech Stack (My Part)</p>
+            <div class="project-techs">
+                <span class="mine">AWS EKS</span>
+                <span class="mine">Terraform</span>
+                <span class="mine">Docker</span>
+                <span class="mine">Kubernetes</span>
+                <span class="mine">Helm</span>
+                <span class="mine">ArgoCD</span>
+                <span class="mine">GitHub Actions</span>
+                <span class="mine">SigNoz</span>
+                <span class="mine">K6</span>
+                <span class="mine">Wireguard</span>
+                <span>Next.js</span>
+                <span>Spring Boot</span>
+                <span>Redis</span>
+                <span>Kafka</span>
+                <span>WebSocket</span>
+                <span>SSE</span>
+            </div>
+
+            <div class="project-contributions">
+                <h4>My Contributions</h4>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Architecture Evolution (3 Phases)</strong>
+                            <p>PM2 manual deploy → Docker + CI/CD → EKS + ArgoCD GitOps</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Architecture Evolution</h3>
-                        <p class="text-gray-400">PM2 manual → Docker + GitHub Actions → EKS + ArgoCD GitOps deployment</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>AWS EKS & Container Orchestration</strong>
+                            <p>Cluster setup with Helm-based deployment for all microservices</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-cyan-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-dharmachakra text-cyan-400"></i>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>GitOps CI/CD Pipeline</strong>
+                            <p>GitHub Actions + ArgoCD for fully automated deployment</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">AWS EKS Cluster</h3>
-                        <p class="text-gray-400">Built and operated AWS EKS cluster with Helm charts for container orchestration</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(236,72,153,0.1); color: #ec4899;">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Messaging & AI Infrastructure</strong>
+                            <p>Redis, Kafka setup and vLLM-based Vertex AI model serving</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-code-branch text-blue-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">CI/CD Pipeline</h3>
-                        <p class="text-gray-400">GitHub Actions + ArgoCD GitOps pipeline for automated deployment</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-database text-orange-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Messaging Infrastructure</h3>
-                        <p class="text-gray-400">Redis and Kafka infrastructure setup and configuration</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-pink-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-robot text-pink-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">AI Model Serving</h3>
-                        <p class="text-gray-400">vLLM-based Vertex AI model serving environment setup</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-tachometer-alt text-green-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Load Testing</h3>
-                        <p class="text-gray-400">K6 and SigNoz based load testing and performance monitoring</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-red-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-shield-alt text-red-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Security & Monitoring</h3>
-                        <p class="text-gray-400">Wireguard VPN and Netdata for secure access and real-time monitoring</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Monitoring & Security</strong>
+                            <p>K6 + SigNoz load testing, Wireguard VPN, Netdata monitoring</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Tech Stack Section -->
-    <section class="py-12 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Tech Stack</span>
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Frontend -->
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-blue-400 mb-4">
-                        <i class="fas fa-palette mr-2"></i>Frontend
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Next.js 15</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">React 19</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">TypeScript</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">TailwindCSS</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Zustand</span>
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">Shadcn</span>
+            <!-- ===== INCIDENT CASE STUDY ===== -->
+            <div class="incident-case">
+                <h4><i class="fas fa-shield-alt" style="color: #f87171; margin-right: 0.5rem;"></i>Security Incident Response</h4>
+
+                <div class="incident-banner">
+                    <div class="incident-badge">
+                        <i class="fas fa-exclamation-triangle"></i> Real Production Incident
                     </div>
+                    <div class="incident-title">Scanning Attack Detected on Production Server</div>
+                    <div class="incident-date"><i class="far fa-clock"></i> 2025.05.15 19:40 KST &mdash; Netdata Real-time Monitoring Alert</div>
+                    <p class="incident-desc">
+                        During the V1 deployment phase, the production server was running on a <strong style="color: #f87171;">Public Subnet</strong> with all services directly exposed to the internet. A malicious scanning attack was detected through Netdata's Nginx web log monitoring, triggering critical alerts with <strong style="color: #f87171;">100% bad requests</strong> and <strong style="color: #f87171;">0% successful requests</strong>.
+                    </p>
                 </div>
-                <!-- Backend -->
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-green-400 mb-4">
-                        <i class="fas fa-server mr-2"></i>Backend
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Java 21</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Spring Boot</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">MySQL</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Redis</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Kafka</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">WebSocket</span>
+
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="incident-step-content">
+                            <h5>1. Detection &mdash; Netdata Discord Alert</h5>
+                            <p>Netdata monitoring agent on the GCP VM detected an anomaly in Nginx web log metrics. Discord webhook fired a <strong style="color: #f87171;">CRITICAL</strong> alert: <em>"Web log successful = 0%"</em> and <em>"Web log bad requests = 100%"</em>.</p>
+                            <div class="incident-evidence" style="grid-template-columns: 1fr;">
+                                <div>
+                                    <img src="../assets/images/NEMO/Discord Netdata.png" alt="Discord Netdata Alert" style="height: auto; object-fit: contain;">
+                                    <p class="evidence-caption">Discord alert from Netdata - Critical notification</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- AI -->
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-pink-400 mb-4">
-                        <i class="fas fa-brain mr-2"></i>AI
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">Python</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">FastAPI</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">Vertex AI</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">vLLM</span>
-                        <span class="px-3 py-1 bg-pink-900/30 text-pink-300 rounded-full text-sm">ChromaDB</span>
+
+                    <div class="incident-step">
+                        <div class="incident-step-num analyze">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="incident-step-content">
+                            <h5>2. Analysis &mdash; Nginx Access Logs & Netdata Dashboard</h5>
+                            <p>Investigated the Nginx access logs and confirmed a targeted scanning attack. The attacker was systematically probing for sensitive files &mdash; particularly <strong style="color: #f87171;">.env files</strong> containing database credentials, API keys, and secret tokens. Requests like <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">GET /.env</code>, <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">GET /api/.env</code> were flooding the server, attempting to <strong style="color: #f87171;">exfiltrate environment variables and secrets</strong>.</p>
+                            <div class="incident-evidence">
+                                <div>
+                                    <img src="../assets/images/NEMO/NGINX Log.png" alt="Nginx Access Logs">
+                                    <p class="evidence-caption">Nginx access logs &mdash; .env exfiltration attempts detected</p>
+                                </div>
+                                <div>
+                                    <img src="../assets/images/NEMO/Netdata.png" alt="Netdata Dashboard">
+                                    <p class="evidence-caption">Netdata dashboard - request spike and error rates</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Cloud/DevOps (My Part) -->
-                <div class="bg-dark-secondary p-6 rounded-xl border border-purple-500/50">
-                    <h3 class="text-lg font-semibold text-purple-400 mb-4">
-                        <i class="fas fa-cloud mr-2"></i>Cloud/DevOps <span class="text-xs text-purple-300 ml-2">(My Part)</span>
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">AWS EKS</span>
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">Docker</span>
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">Kubernetes</span>
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">Helm</span>
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">ArgoCD</span>
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">GitHub Actions</span>
+
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="incident-step-content">
+                            <h5>3. Resolution &mdash; Private Subnet + WireGuard VPN</h5>
+                            <p>Redesigned the network architecture from V1 to V2. Moved all backend services (Next.js, Spring Boot, Redis, MySQL) from the <strong style="color: #f87171;">Public Subnet</strong> to a <strong style="color: var(--green);">Private Subnet</strong>. Only Nginx reverse proxy remained in the public subnet. Introduced <strong style="color: var(--green);">WireGuard VPN</strong> for secure developer access to internal services.</p>
+                            <div class="solution-arch">
+                                <img src="../assets/images/NEMO/Solution.png" alt="Architecture V1 to V2 - Private Subnet Migration">
+                            </div>
+                            <p style="margin-top: 0.75rem;">V1 (Public Subnet, all exposed) → V2 (Private Subnet + WireGuard VPN)</p>
+                        </div>
                     </div>
-                </div>
-                <!-- Monitoring -->
-                <div class="bg-dark-secondary p-6 rounded-xl border border-purple-500/50 md:col-span-2">
-                    <h3 class="text-lg font-semibold text-cyan-400 mb-4">
-                        <i class="fas fa-chart-line mr-2"></i>Monitoring & Security <span class="text-xs text-cyan-300 ml-2">(My Part)</span>
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">SigNoz</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">K6</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Prometheus</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Grafana</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Netdata</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Wireguard</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Sentry</span>
+
+                    <div class="incident-step">
+                        <div class="incident-step-num result">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="incident-step-content">
+                            <h5>4. Result</h5>
+                            <p>After migrating to Private Subnet with WireGuard VPN, the attack surface was <strong style="color: var(--green);">completely eliminated</strong>. Internal services are no longer accessible from the public internet. Only the Nginx reverse proxy handles external traffic, and all developer/admin access goes through the encrypted WireGuard tunnel. No further scanning incidents were detected.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Architecture Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Architecture Evolution</span>
-            </h2>
-
-            <!-- Tabs -->
-            <div class="flex flex-wrap gap-2 mb-8">
-                <button class="arch-tab active px-4 py-2 bg-dark-primary rounded-lg border border-gray-800 text-gray-300" data-tab="v1">
-                    v1: PM2 Manual
-                </button>
-                <button class="arch-tab px-4 py-2 bg-dark-primary rounded-lg border border-gray-800 text-gray-300" data-tab="v2">
-                    v2: Docker + CI/CD
-                </button>
-                <button class="arch-tab px-4 py-2 bg-dark-primary rounded-lg border border-gray-800 text-gray-300" data-tab="v3">
-                    v3: EKS + GitOps
-                </button>
-            </div>
-
-            <!-- Tab Contents -->
-            <div class="arch-content active" id="v1">
-                <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-white mb-4">Phase 1: PM2 Manual Deployment</h3>
-                    <p class="text-gray-400 mb-4">Initial MVP deployment on a single GCP VM using PM2 for process management with manual deployment workflow.</p>
-                    <div class="bg-gray-900 rounded-lg overflow-hidden">
-                        <img src="../assets/images/project1_arc_v1.png" alt="NEMO Architecture v1" class="w-full h-auto">
-                    </div>
+            <div class="project-arch">
+                <h4>Architecture Evolution</h4>
+                <div class="arch-tabs">
+                    <button class="arch-tab active" data-target="nemo-v1">v1: PM2</button>
+                    <button class="arch-tab" data-target="nemo-v2">v2: Docker</button>
+                    <button class="arch-tab" data-target="nemo-v3">v3: EKS</button>
                 </div>
-            </div>
-            <div class="arch-content" id="v2">
-                <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-white mb-4">Phase 2: Docker + GitHub Actions</h3>
-                    <p class="text-gray-400 mb-4">Containerized all services using Docker with automated CI/CD pipeline through GitHub Actions.</p>
-                    <div class="bg-gray-900 rounded-lg overflow-hidden">
-                        <img src="../assets/images/project1_arc_v2.png" alt="NEMO Architecture v2" class="w-full h-auto">
+                <div class="arch-content active" id="nemo-v1">
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/project1_arc_v1.png" alt="Architecture v1">
                     </div>
+                    <p class="arch-label">Phase 1: PM2 Manual Deployment on GCP VM</p>
                 </div>
-            </div>
-            <div class="arch-content" id="v3">
-                <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-white mb-4">Phase 3: AWS EKS + ArgoCD GitOps</h3>
-                    <p class="text-gray-400 mb-4">Full Kubernetes orchestration on AWS EKS with GitOps-based deployment using ArgoCD for declarative infrastructure management.</p>
-                    <div class="bg-gray-900 rounded-lg overflow-hidden">
-                        <img src="../assets/images/project1_arc_v3.png" alt="NEMO Architecture v3" class="w-full h-auto">
+                <div class="arch-content" id="nemo-v2">
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/project1_arc_v2.png" alt="Architecture v2">
                     </div>
+                    <p class="arch-label">Phase 2: Docker + GitHub Actions CI/CD</p>
+                </div>
+                <div class="arch-content" id="nemo-v3">
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/project1_arc_v3.png" alt="Architecture v3">
+                    </div>
+                    <p class="arch-label">Phase 3: AWS EKS + ArgoCD GitOps</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-primary border-t border-gray-800 py-8">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
-                <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
-            </a>
-            <p class="text-gray-500">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
-        </div>
+    <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
+        <a href="../index.html" class="detail-back" style="margin-bottom: 1rem; display: inline-flex;">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        // Architecture tabs functionality
+        // Tab switching for all tab groups
         document.querySelectorAll('.arch-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
+                const targetId = tab.dataset.target;
+                const parent = tab.closest('.project-arch');
+                parent.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
+                parent.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
                 tab.classList.add('active');
-                document.getElementById(tab.dataset.tab).classList.add('active');
+                document.getElementById(targetId).classList.add('active');
             });
         });
-
-        // Demo Popup
-        function showDemoPopup(event) {
-            event.preventDefault();
-            const overlay = document.createElement('div');
-            overlay.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center';
-            overlay.id = 'demo-popup-overlay';
-            overlay.innerHTML = `
-                <div class="bg-dark-secondary border border-gray-700 rounded-xl p-8 max-w-md mx-4 text-center shadow-2xl">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-yellow-900/30 rounded-full flex items-center justify-center">
-                        <i class="fas fa-exclamation-triangle text-yellow-400 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-3">Service Temporarily Unavailable</h3>
-                    <p class="text-gray-400 mb-6">The live demo is currently suspended due to budget constraints.</p>
-                    <button onclick="closeDemoPopup()" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">Close</button>
-                </div>
-            `;
-            document.body.appendChild(overlay);
-            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDemoPopup(); });
-        }
-        function closeDemoPopup() {
-            const overlay = document.getElementById('demo-popup-overlay');
-            if (overlay) overlay.remove();
-        }
-
-        // Video Popup
-        function showVideoPopup(event) {
-            event.preventDefault();
-            const overlay = document.createElement('div');
-            overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
-            overlay.id = 'video-popup-overlay';
-            overlay.innerHTML = `
-                <div class="relative w-full max-w-4xl">
-                    <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-purple-400 transition-colors">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                    <video controls autoplay class="w-full max-h-[80vh] rounded-xl shadow-2xl">
-                        <source src="../assets/videos/project1.MP4" type="video/mp4">
-                    </video>
-                </div>
-            `;
-            document.body.appendChild(overlay);
-            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVideoPopup(); });
-        }
-        function closeVideoPopup() {
-            const overlay = document.getElementById('video-popup-overlay');
-            if (overlay) { overlay.querySelector('video')?.pause(); overlay.remove(); }
-        }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeDemoPopup(); closeVideoPopup(); } });
     </script>
 </body>
 </html>

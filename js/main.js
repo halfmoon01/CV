@@ -1,98 +1,36 @@
-// Visitor Counter (localStorage based)
-(function initVisitorCounter() {
-    const STORAGE_KEY = 'portfolio_visitors';
-    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-
-    // Get or initialize visitor data
-    let visitorData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
-        total: 0,
-        lastVisit: null,
-        dailyCount: 0,
-        currentDate: today
-    };
-
-    // Reset daily count if it's a new day
-    if (visitorData.currentDate !== today) {
-        visitorData.dailyCount = 0;
-        visitorData.currentDate = today;
-    }
-
-    // Check if this is a new session (use sessionStorage to track)
-    const sessionVisited = sessionStorage.getItem('portfolio_session_visited');
-
-    if (!sessionVisited) {
-        // New session - increment counters
-        visitorData.total++;
-        visitorData.dailyCount++;
-        visitorData.lastVisit = new Date().toISOString();
-
-        // Save updated data
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(visitorData));
-        sessionStorage.setItem('portfolio_session_visited', 'true');
-    }
-
-    // Update display
-    const todayEl = document.getElementById('today-visitors');
-    const totalEl = document.getElementById('total-visitors');
-
-    if (todayEl) todayEl.textContent = visitorData.dailyCount.toLocaleString();
-    if (totalEl) totalEl.textContent = visitorData.total.toLocaleString();
-})();
-
 // DOM Elements
 const header = document.getElementById('header');
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelectorAll('a[href^="#"]');
 
-// Mobile Menu Toggle
+// Mobile Menu
 menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('menu-open');
-    mobileMenu.classList.toggle('hidden');
+    menuBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('show');
 });
 
-// Close mobile menu when clicking a link
 mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-        menuBtn.classList.remove('menu-open');
-        mobileMenu.classList.add('hidden');
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('show');
     });
 });
 
-// Header Style Change on Scroll
-let lastScroll = 0;
-
+// Nav scroll effect
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Add shadow and background when scrolled
-    if (currentScroll > 50) {
-        header.classList.add('header-scrolled');
-    } else {
-        header.classList.remove('header-scrolled');
-    }
-
-    lastScroll = currentScroll;
+    header.classList.toggle('scrolled', window.pageYOffset > 50);
 });
 
-// Smooth Scroll for Navigation Links
-navLinks.forEach(link => {
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
-
-        // Only handle internal links
-        if (href.startsWith('#')) {
+        if (href.startsWith('#') && href.length > 1) {
             e.preventDefault();
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+            const target = document.getElementById(href.substring(1));
+            if (target) {
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: target.offsetTop - 70,
                     behavior: 'smooth'
                 });
             }
@@ -100,279 +38,83 @@ navLinks.forEach(link => {
     });
 });
 
-// Intersection Observer for Fade-in Animations
-const fadeInSections = document.querySelectorAll('.fade-in-section');
-
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const fadeInObserver = new IntersectionObserver((entries, observer) => {
+// Intersection Observer for fade-in
+const fadeObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Optional: stop observing once visible
-            observer.unobserve(entry.target);
+            obs.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.1 });
 
-// Observe all fade-in sections
-fadeInSections.forEach(section => {
-    fadeInObserver.observe(section);
-});
+document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
 
-// Active Navigation Link Highlight - Dark Theme
+// Active nav highlight
 const sections = document.querySelectorAll('section[id]');
-
-const highlightNavLink = () => {
-    const scrollPosition = window.pageYOffset + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            // Remove active class from all links
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('text-purple-400');
-                link.classList.add('text-gray-300');
-            });
-
-            // Add active class to current section link
-            const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-            if (activeLink) {
-                activeLink.classList.remove('text-gray-300');
-                activeLink.classList.add('text-purple-400');
-            }
-        }
-    });
-};
-
-window.addEventListener('scroll', highlightNavLink);
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Trigger initial scroll check
-    highlightNavLink();
-
-    // Add stagger delay to skill cards
-    const skillCards = document.querySelectorAll('#skills .fade-in-section');
-    skillCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-
-    // Add stagger delay to project cards
-    const projectCards = document.querySelectorAll('#projects .fade-in-section');
-    projectCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.15}s`;
-    });
-
-    // Add stagger delay to contact cards
-    const contactCards = document.querySelectorAll('#contact .fade-in-section');
-    contactCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-});
-
-// Typing Effect for Hero Section (Optional Enhancement)
-const typeWriter = (element, text, speed = 100) => {
-    let i = 0;
-    element.textContent = '';
-
-    const type = () => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    };
-
-    type();
-};
-
-// Parallax Effect for Hero Section (Subtle)
 window.addEventListener('scroll', () => {
-    const hero = document.getElementById('hero');
-    if (hero) {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.3;
-        // Apply subtle parallax to grid pattern
-        const gridPattern = hero.querySelector('.grid-pattern');
-        if (gridPattern) {
-            gridPattern.style.transform = `translateY(${rate * 0.5}px)`;
+    const scrollPos = window.pageYOffset + 100;
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        const link = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (link) {
+            link.classList.toggle('active', scrollPos >= top && scrollPos < top + height);
         }
-    }
+    });
 });
 
-// Mouse Move Effect for Hero Section (Subtle glow following cursor)
-const heroSection = document.getElementById('hero');
-if (heroSection) {
-    heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        heroSection.style.setProperty('--mouse-x', `${x}px`);
-        heroSection.style.setProperty('--mouse-y', `${y}px`);
+// Stagger delays
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.contact-grid .fade-in-section').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.1}s`;
     });
-}
+    document.querySelectorAll('.exp-timeline .fade-in-section').forEach((item, i) => {
+        item.style.transitionDelay = `${i * 0.15}s`;
+    });
+});
 
-// Demo Popup for NEMO project
-function showDemoPopup(event) {
-    event.preventDefault();
+// Architecture tabs
+document.querySelectorAll('.arch-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const targetId = tab.dataset.target;
+        const parent = tab.closest('.project-images');
 
-    // Create overlay
+        parent.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
+        parent.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+    });
+});
+
+// Video Popup
+function showVideoPopup(src) {
     const overlay = document.createElement('div');
-    overlay.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center';
-    overlay.id = 'demo-popup-overlay';
-
-    // Create popup
+    overlay.className = 'video-overlay';
+    overlay.id = 'video-overlay';
     overlay.innerHTML = `
-        <div class="bg-dark-secondary border border-gray-700 rounded-xl p-8 max-w-md mx-4 text-center shadow-2xl">
-            <div class="w-16 h-16 mx-auto mb-4 bg-yellow-900/30 rounded-full flex items-center justify-center">
-                <i class="fas fa-exclamation-triangle text-yellow-400 text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Service Temporarily Unavailable</h3>
-            <p class="text-gray-400 mb-6">
-                The live demo is currently suspended due to budget constraints.
-                Please check the GitHub repository for more details.
-            </p>
-            <button onclick="closeDemoPopup()" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">
-                Close
-            </button>
-        </div>
+        <button class="close-btn" onclick="closeVideoPopup()"><i class="fas fa-times"></i></button>
+        <video controls autoplay playsinline>
+            <source src="${src}" type="video/mp4">
+        </video>
     `;
-
     document.body.appendChild(overlay);
-
-    // Close on overlay click
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            closeDemoPopup();
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', handleEscKey);
-}
-
-function closeDemoPopup() {
-    const overlay = document.getElementById('demo-popup-overlay');
-    if (overlay) {
-        overlay.remove();
-    }
-    document.removeEventListener('keydown', handleEscKey);
-}
-
-function handleEscKey(e) {
-    if (e.key === 'Escape') {
-        closeDemoPopup();
-        closeVideoPopup();
-    }
-}
-
-// Video Popup for NEMO project demo
-function showVideoPopup(event) {
-    event.preventDefault();
-
-    const overlay = document.createElement('div');
-    overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
-    overlay.id = 'video-popup-overlay';
-
-    overlay.innerHTML = `
-        <div class="relative w-full max-w-4xl">
-            <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-purple-400 transition-colors">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <video controls autoplay class="w-full max-h-[80vh] rounded-xl shadow-2xl">
-                <source src="assets/videos/project1.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    `;
-
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            closeVideoPopup();
-        }
-    });
-
-    document.addEventListener('keydown', handleEscKey);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVideoPopup(); });
+    document.addEventListener('keydown', handleEsc);
 }
 
 function closeVideoPopup() {
-    const overlay = document.getElementById('video-popup-overlay');
+    const overlay = document.getElementById('video-overlay');
     if (overlay) {
         const video = overlay.querySelector('video');
         if (video) video.pause();
         overlay.remove();
     }
+    document.removeEventListener('keydown', handleEsc);
 }
 
-// Video Popup for CSE 316 project demo
-function showVideoPopup2(event) {
-    event.preventDefault();
-
-    const overlay = document.createElement('div');
-    overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
-    overlay.id = 'video-popup-overlay';
-
-    overlay.innerHTML = `
-        <div class="relative w-full max-w-4xl">
-            <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-purple-400 transition-colors">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <video controls autoplay playsinline class="w-full max-h-[80vh] rounded-xl shadow-2xl">
-                <source src="assets/videos/project2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    `;
-
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            closeVideoPopup();
-        }
-    });
-
-    document.addEventListener('keydown', handleEscKey);
-}
-
-// Video Popup for Biz-News project demo
-function showVideoPopup3(event) {
-    event.preventDefault();
-
-    const overlay = document.createElement('div');
-    overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
-    overlay.id = 'video-popup-overlay';
-
-    overlay.innerHTML = `
-        <div class="relative w-full max-w-4xl">
-            <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-orange-400 transition-colors">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <video controls autoplay playsinline class="w-full max-h-[80vh] rounded-xl shadow-2xl">
-                <source src="assets/videos/project3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    `;
-
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            closeVideoPopup();
-        }
-    });
-
-    document.addEventListener('keydown', handleEscKey);
+function handleEsc(e) {
+    if (e.key === 'Escape') closeVideoPopup();
 }

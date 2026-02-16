@@ -3,402 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanghyun Jun | DevOps/Cloud Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sanghyun Jun | Cloud/DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-dark-primary text-gray-100">
-    <!-- Visitor Counter Banner -->
-    <div id="visitor-banner" class="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-purple-900/80 to-cyan-900/80 backdrop-blur-sm py-1.5 text-center text-sm">
-        <span class="text-gray-300">
-            <i class="fas fa-eye text-purple-400 mr-1"></i> Today: <span id="today-visitors" class="text-purple-300 font-semibold">0</span>
-            <span class="mx-3 text-gray-600">|</span>
-            <i class="fas fa-users text-cyan-400 mr-1"></i> Total: <span id="total-visitors" class="text-cyan-300 font-semibold">0</span>
-        </span>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="header">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">&lt;SANGHYUN JUN&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="https://github.com/halfmoon01" target="_blank">GitHub</a></li>
+                <li><a href="#contact" class="nav-cta">Contact me</a></li>
+            </ul>
+            <button class="hamburger" id="menu-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="https://github.com/halfmoon01" target="_blank">GitHub</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <!-- Navigation -->
-    <header id="header" class="fixed top-8 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm transition-all duration-300">
-        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-purple-400">Sanghyun Jun</a>
-
-            <!-- Desktop Navigation -->
-            <ul class="hidden md:flex space-x-8">
-                <li><a href="#skills" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Skills</a></li>
-                <li><a href="#experience" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Experience</a></li>
-                <li><a href="#projects" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Projects</a></li>
-                <li><a href="#contact" class="nav-link text-gray-300 hover:text-purple-400 transition-colors">Contact</a></li>
-            </ul>
-
-            <!-- Mobile Hamburger Button -->
-            <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 p-2">
-                <span class="hamburger-line w-6 h-0.5 bg-gray-300 transition-all duration-300"></span>
-                <span class="hamburger-line w-6 h-0.5 bg-gray-300 transition-all duration-300"></span>
-                <span class="hamburger-line w-6 h-0.5 bg-gray-300 transition-all duration-300"></span>
-            </button>
-        </nav>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-dark-secondary border-t border-gray-800">
-            <ul class="flex flex-col py-4">
-                <li><a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Skills</a></li>
-                <li><a href="#experience" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Experience</a></li>
-                <li><a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Projects</a></li>
-                <li><a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-purple-900/30 hover:text-purple-400 transition-colors">Contact</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center hero-gradient pt-24 relative overflow-hidden">
-        <div class="grid-pattern"></div>
-        <div class="max-w-6xl mx-auto px-4 w-full relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Left: Text Content -->
-                <div class="fade-in">
-                    <p class="text-purple-400 text-lg mb-2">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white">Sanghyun Jun</h1>
-                    <p class="text-2xl md:text-3xl italic text-gray-300 mb-6">DevOps/Cloud Engineer</p>
-                    <div class="text-gray-400 mb-6 max-w-lg leading-relaxed space-y-3">
-                        <p>B.S. in Computer Science & Applied Mathematics from SUNY Korea</p>
-                        <p>Combined B.S./M.S. in Computer Science at Stony Brook University</p>
-                    </div>
-                    <div class="mb-6 space-y-2">
-                        <p class="text-gray-500 text-sm">Interests</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm border border-purple-500/30">Cloud</span>
-                            <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm border border-cyan-500/30">DevOps</span>
-                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm border border-blue-500/30">Infrastructure</span>
-                        </div>
-                    </div>
-                    <div class="mb-8 space-y-2">
-                        <p class="text-gray-500 text-sm">Related Courses</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Operating Systems</span>
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Cloud Computing</span>
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Fundamentals of Networks</span>
-                        </div>
-                    </div>
-                    <a href="#projects" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold rounded-full hover:shadow-glow transition-all duration-300">
-                        View Projects <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                <!-- Right: Profile Image -->
-                <div class="flex justify-center md:justify-end fade-in">
-                    <img src="assets/images/Profile.JPG" alt="Sanghyun Jun" class="w-[20rem] h-[20rem] md:w-[26rem] md:h-[26rem] rounded-2xl border-2 border-purple-500/30 object-cover object-[35%_center]">
-                </div>
+    <!-- ==================== HERO (Light) ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="fade-in">
+                <h1 class="hero-title">
+                    <span class="green">CLOUD/DEVOPS</span><br>
+                    ENGINEER<br>
+                    SANGHYUN JUN
+                </h1>
+                <p class="hero-techs">
+                    &lt;<strong>AWS</strong>, <strong>Kubernetes</strong>, <strong>Terraform</strong>, <strong>ArgoCD</strong>, <strong>Docker</strong>&gt;
+                </p>
+                <p class="hero-desc">
+                    A Cloud/DevOps engineer with experience in both team projects and infrastructure operations. I focus on building scalable, automated cloud environments. With a background in Computer Science, I bring a structured, problem-solving mindset to development.
+                </p>
+                <a href="#projects" class="hero-btn">
+                    View Projects <i class="fas fa-arrow-down"></i>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">
-                <span class="section-title-dark">Skills</span>
-            </h2>
-            <p class="text-center text-purple-400 mb-12">Technologies I work with</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Cloud Platforms -->
-                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section">
-                    <div class="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-cloud text-purple-400 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Cloud</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>AWS</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>GCP</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>Terraform</li>
-                    </ul>
+            <div class="hero-right fade-in">
+                <div class="hero-image">
+                    <img src="assets/images/Profile.JPG" alt="Sanghyun Jun">
                 </div>
-
-                <!-- Container & Orchestration -->
-                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-cyan-500/50 transition-all fade-in-section">
-                    <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-cubes text-cyan-400 text-xl"></i>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="num">4<span>+</span></div>
+                        <div class="label">Projects</div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Containers</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>Docker</li>
-                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>Kubernetes</li>
-                        <li class="flex items-center"><i class="fas fa-check text-cyan-400 mr-2"></i>Helm</li>
-                    </ul>
-                </div>
-
-                <!-- CI/CD & Automation -->
-                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all fade-in-section">
-                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-sync-alt text-blue-400 text-xl"></i>
+                    <div class="hero-stat">
+                        <div class="num">2<span>x</span></div>
+                        <div class="label">Awards</div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">CI/CD</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>GitHub Actions</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>ArgoCD (GitOps)</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>Ansible</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>PM2</li>
-                    </ul>
-                </div>
-
-                <!-- Monitoring & Tools -->
-                <div class="skill-card bg-dark-secondary p-6 rounded-xl border border-gray-800 hover:border-pink-500/50 transition-all fade-in-section">
-                    <div class="w-12 h-12 bg-pink-900/50 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-chart-line text-pink-400 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Monitoring</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Signoz</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Netdata</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Prometheus</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Grafana</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">
-                <span class="section-title-dark">Experience</span>
-            </h2>
-            <p class="text-center text-purple-400 mb-12">My journey so far</p>
-            <div class="space-y-8">
-                <!-- Stony Brook University COMPAS Lab -->
-                <div class="relative pl-8 border-l-2 border-purple-500/30 fade-in-section">
-                    <div class="absolute -left-3 top-0 w-6 h-6 bg-purple-600 rounded-full glow-purple"></div>
-                    <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                        <div class="flex flex-wrap justify-between items-start mb-2">
-                            <div>
-                                <h3 class="text-xl font-semibold text-purple-400">Stony Brook University COMPAS Lab</h3>
-                                <p class="text-gray-500 text-sm">Stony Brook, NY</p>
-                            </div>
-                            <span class="text-sm text-gray-400 bg-purple-900/30 px-3 py-1 rounded-full">Aug 2025 - Dec 2025</span>
-                        </div>
-                        <p class="text-gray-300 font-medium mb-3">Undergraduate Research Assistant (Advisor: Prof. Mike Ferdman)</p>
-                        <ul class="text-gray-400 space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-chevron-right text-purple-400 mt-1 mr-2 text-sm"></i>
-                                Diagnosed and resolved a critical failure in OpenStack Ironic baremetal provisioning, involving PXE boot, IPA agent communication, and deployment-image validation across a Kayobe-managed environment.
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-chevron-right text-purple-400 mt-1 mr-2 text-sm"></i>
-                                Recovered a failed deployment by reinitializing hardware RAID configurations, correcting root disk hints, and synchronizing deployment image checksums between Bifrost and Ironic.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Kakao Tech Bootcamp -->
-                <div class="relative pl-8 border-l-2 border-cyan-500/30 fade-in-section">
-                    <div class="absolute -left-3 top-0 w-6 h-6 bg-cyan-600 rounded-full glow-cyan"></div>
-                    <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                        <div class="flex flex-wrap justify-between items-start mb-2">
-                            <div>
-                                <h3 class="text-xl font-semibold text-cyan-400">Kakao Tech Bootcamp</h3>
-                                <p class="text-gray-500 text-sm">Pangyo, Korea</p>
-                            </div>
-                            <span class="text-sm text-gray-400 bg-cyan-900/30 px-3 py-1 rounded-full">Jan 2025 - Jul 2025</span>
-                        </div>
-                        <p class="text-gray-300 font-medium mb-3">Cloud Native Track Trainee</p>
-                        <ul class="text-gray-400 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-trophy text-yellow-400 mr-2 text-sm"></i>
-                                <span>2nd Place - Kakao Tech Bootcamp Hackathon (Feb 2025)</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-trophy text-yellow-400 mr-2 text-sm"></i>
-                                <span>3rd Place - Server Load Testing Tournament (Jul 2025)</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-users text-cyan-400 mr-2 text-sm"></i>
-                                <a href="#project-nemo" class="text-cyan-400 hover:text-cyan-300 transition-colors">
-                                    Team Project 'NEMO' - Group Participation Service <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- CO;Ders US -->
-                <div class="relative pl-8 border-l-2 border-blue-500/30 fade-in-section">
-                    <div class="absolute -left-3 top-0 w-6 h-6 bg-blue-600 rounded-full glow-blue"></div>
-                    <div class="bg-dark-primary p-6 rounded-xl border border-gray-800">
-                        <div class="flex flex-wrap justify-between items-start mb-2">
-                            <div>
-                                <h3 class="text-xl font-semibold text-blue-400">CO;Ders US (Non-Profit Organization)</h3>
-                                <p class="text-gray-500 text-sm">Incheon, Korea</p>
-                            </div>
-                            <span class="text-sm text-gray-400 bg-blue-900/30 px-3 py-1 rounded-full">Mar 2021 - Dec 2024</span>
-                        </div>
-                        <p class="text-gray-300 font-medium mb-3">Vice President (2021) | Member</p>
-                        <ul class="text-gray-400 space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-chevron-right text-blue-400 mt-1 mr-2 text-sm"></i>
-                                Delivered programming education to promote technical skills and problem-solving abilities.
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-chevron-right text-blue-400 mt-1 mr-2 text-sm"></i>
-                                Taught elementary students scratch block coding; middle school students in Java programming.
-                            </li>
-                        </ul>
+                    <div class="hero-stat">
+                        <div class="num">3<span>+</span></div>
+                        <div class="label">Yrs Exp</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">
-                <span class="section-title-dark">Projects</span>
-            </h2>
-            <p class="text-center text-purple-400 mb-12">Things I've built</p>
+    <!-- ==================== PROJECTS (Dark) ==================== -->
+    <section class="dark-section" id="projects">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">SELECTED PROJECTS</h2>
 
-            <!-- Team Projects -->
-            <div class="mb-16">
-                <h3 class="text-xl font-semibold text-cyan-400 mb-6 flex items-center">
-                    <i class="fas fa-users mr-3"></i> Personal Team Project
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- NEMO Project -->
-                    <a href="projects/nemo.html" id="project-nemo" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all fade-in-section block group">
-                        <div class="h-48 overflow-hidden">
-                            <img src="assets/images/project1.jpg" alt="NEMO Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-white">NEMO - Group Participation Service</h3>
-                            <p class="text-gray-400 mb-3">
-                                Kakao Tech Bootcamp team project. Cloud infrastructure and CI/CD pipeline development.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="px-2 py-1 bg-purple-500/15 text-purple-300 rounded text-xs font-medium">AWS EKS</span>
-                                <span class="px-2 py-1 bg-purple-500/15 text-purple-300 rounded text-xs font-medium">GitOps</span>
-                                <span class="px-2 py-1 bg-purple-500/15 text-purple-300 rounded text-xs font-medium">Terraform</span>
-                            </div>
-                            <span class="text-purple-400 text-sm">View Details <i class="fas fa-arrow-right ml-1"></i></span>
-                        </div>
-                    </a>
+        <div class="project-cards">
+            <a href="projects/nemo.html" class="project-card fade-in-section">
+                <div class="project-card-img">
+                    <img src="assets/images/NEMO/project1.jpg" alt="NEMO Project">
+                    <span class="project-badge badge-team">Team Project</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>NEMO<br><span>Group Participation Service</span></h3>
+                    <div class="project-card-techs">
+                        <span>AWS EKS</span>
+                        <span>Kubernetes</span>
+                        <span>ArgoCD</span>
+                    </div>
+                </div>
+            </a>
 
-                    <!-- Biz-News Project -->
-                    <a href="projects/biz-news.html" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500/50 transition-all fade-in-section block group">
-                        <div class="h-48 overflow-hidden">
-                            <img src="assets/images/project3.png" alt="Biz-News Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <a href="projects/biz-news.html" class="project-card fade-in-section">
+                <div class="project-card-img">
+                    <img src="assets/images/BIZN/project3.png" alt="Biz-News Project">
+                    <span class="project-badge badge-award"><i class="fas fa-trophy"></i> 2nd Place</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>Biz-News<br><span>AI News Summary & Recommendation</span></h3>
+                    <div class="project-card-techs">
+                        <span>AWS EC2</span>
+                        <span>Docker</span>
+                        <span>GitHub Actions</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="projects/cse316.html" class="project-card fade-in-section">
+                <div class="project-card-img">
+                    <img src="assets/images/CSE316/project2.png" alt="CSE316 Project">
+                    <span class="project-badge badge-course">Coursework</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>[CSE316] Fundamentals of<br><span>Software Development</span></h3>
+                    <div class="project-card-techs">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE (Dark) ==================== -->
+    <section class="dark-section" id="experience" style="background: #0f0f0f;">
+        <p class="section-label">Career</p>
+        <h2 class="section-title">EXPERIENCE</h2>
+
+        <div class="exp-timeline">
+            <div class="exp-item fade-in-section">
+                <div class="exp-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Stony Brook University COMPAS Lab</h3>
+                            <span class="location">Stony Brook, NY</span>
                         </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <h3 class="text-xl font-semibold text-white">Biz-News - AI News Summary</h3>
-                                <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs font-semibold">2nd Place</span>
-                            </div>
-                            <p class="text-gray-400 mb-3">
-                                Kakao Tech Bootcamp Hackathon. Graph RAG based news recommendation service.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="px-2 py-1 bg-orange-500/15 text-orange-300 rounded text-xs font-medium">Docker</span>
-                                <span class="px-2 py-1 bg-orange-500/15 text-orange-300 rounded text-xs font-medium">Spring Boot</span>
-                                <span class="px-2 py-1 bg-orange-500/15 text-orange-300 rounded text-xs font-medium">Github Actions</span>
-                            </div>
-                            <span class="text-orange-400 text-sm">View Details <i class="fas fa-arrow-right ml-1"></i></span>
-                        </div>
-                    </a>
+                        <span class="exp-date">Aug 2025 - Dec 2025</span>
+                    </div>
+                    <p class="exp-role">Undergraduate Research Assistant (Advisor: Prof. Mike Ferdman)</p>
+                    <ul class="exp-list">
+                        <li>Diagnosed and resolved a critical failure in OpenStack Ironic baremetal provisioning, involving PXE boot, IPA agent communication, and deployment-image validation across a Kayobe-managed environment.</li>
+                        <li>Recovered a failed deployment by reinitializing hardware RAID configurations, correcting root disk hints, and synchronizing deployment image checksums between Bifrost and Ironic.</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Course Work Projects -->
-            <div>
-                <h3 class="text-xl font-semibold text-purple-400 mb-6 flex items-center">
-                    <i class="fas fa-graduation-cap mr-3"></i> Coursework Project
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- CSE 316 Full-Stack Project -->
-                    <a href="projects/cse316.html" class="bg-dark-secondary rounded-xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all fade-in-section block group">
-                        <div class="h-48 overflow-hidden">
-                            <img src="assets/images/project2.png" alt="CSE 316 Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="exp-item fade-in-section">
+                <div class="exp-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Kakao Tech Bootcamp</h3>
+                            <span class="location">Pangyo, Korea</span>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-white">[CSE316] Fundamentals of Software Development</h3>
-                            <p class="text-gray-400 mb-3">
-                                Stony Brook University course project. React.js + Node.js full-stack web application.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="px-2 py-1 bg-cyan-500/15 text-cyan-300 rounded text-xs font-medium">React</span>
-                                <span class="px-2 py-1 bg-cyan-500/15 text-cyan-300 rounded text-xs font-medium">Node.js</span>
-                            </div>
-                            <span class="text-cyan-400 text-sm">View Details <i class="fas fa-arrow-right ml-1"></i></span>
+                        <span class="exp-date">Jan 2025 - Jul 2025</span>
+                    </div>
+                    <p class="exp-role">Cloud Native Track Trainee</p>
+                    <ul class="exp-list">
+                        <li class="award"><i class="fas fa-trophy"></i> 2nd Place - Kakao Tech Bootcamp Hackathon (Feb 2025)</li>
+                        <li class="award"><i class="fas fa-trophy"></i> 3rd Place - Server Load Testing Tournament (Jul 2025)</li>
+                        <li>Team Project <a href="#projects">'NEMO' - Group Participation Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item fade-in-section">
+                <div class="exp-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>CO;Ders US (Non-Profit)</h3>
+                            <span class="location">Incheon, Korea</span>
                         </div>
-                    </a>
+                        <span class="exp-date">Mar 2021 - Dec 2024</span>
+                    </div>
+                    <p class="exp-role">Vice President (2021) | Member</p>
+                    <ul class="exp-list">
+                        <li>Delivered programming education to promote technical skills and problem-solving abilities.</li>
+                        <li>Taught elementary students scratch block coding; middle school students in Java programming.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-4 text-white">
-                <span class="section-title-dark">Contact</span>
-            </h2>
-            <p class="text-center text-purple-400 mb-12">Get in touch</p>
-            <div class="grid md:grid-cols-4 gap-6 text-center fade-in-section">
-                <a href="mailto:sean.jun2001@gmail.com" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all group">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-900/30 rounded-full flex items-center justify-center group-hover:bg-purple-900/50 transition-colors">
-                        <i class="fas fa-envelope text-purple-400 text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2 text-white">Email</h3>
-                    <p class="text-gray-400 text-sm">sean.jun2001@gmail.com</p>
-                </a>
-
-                <a href="https://github.com/halfmoon01" target="_blank" rel="noopener noreferrer" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-cyan-500/50 transition-all group">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-cyan-900/30 rounded-full flex items-center justify-center group-hover:bg-cyan-900/50 transition-colors">
-                        <i class="fab fa-github text-cyan-400 text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2 text-white">GitHub</h3>
-                    <p class="text-gray-400 text-sm">github.com/halfmoon01</p>
-                </a>
-
-                <a href="https://www.linkedin.com/in/sean-jun" target="_blank" rel="noopener noreferrer" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all group">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-900/30 rounded-full flex items-center justify-center group-hover:bg-blue-900/50 transition-colors">
-                        <i class="fab fa-linkedin-in text-blue-400 text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2 text-white">LinkedIn</h3>
-                    <p class="text-gray-400 text-sm">linkedin.com/in/sean-jun</p>
-                </a>
-
-                <a href="https://www.instagram.com/im__halfmoon/" target="_blank" rel="noopener noreferrer" class="p-6 bg-dark-primary rounded-xl border border-gray-800 hover:border-pink-500/50 transition-all group">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-pink-900/30 rounded-full flex items-center justify-center group-hover:bg-pink-900/50 transition-colors">
-                        <i class="fab fa-instagram text-pink-400 text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2 text-white">Instagram</h3>
-                    <p class="text-gray-400 text-sm">@im__halfmoon</p>
-                </a>
-            </div>
+    <!-- ==================== CONTACT (Light) ==================== -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="contact-grid">
+            <a href="mailto:sean.jun2001@gmail.com" class="contact-card fade-in-section">
+                <div class="contact-icon" style="background: #fef2f2; color: #ef4444;">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>sean.jun2001@gmail.com</p>
+            </a>
+            <a href="https://github.com/halfmoon01" target="_blank" class="contact-card fade-in-section">
+                <div class="contact-icon" style="background: #f5f5f5; color: #333;">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <p>halfmoon01</p>
+            </a>
+            <a href="https://www.linkedin.com/in/sean-jun" target="_blank" class="contact-card fade-in-section">
+                <div class="contact-icon" style="background: #eff6ff; color: #3b82f6;">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <p>sean-jun</p>
+            </a>
+            <a href="https://www.instagram.com/im__halfmoon/" target="_blank" class="contact-card fade-in-section">
+                <div class="contact-icon" style="background: #fdf2f8; color: #ec4899;">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <p>@im__halfmoon</p>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-primary border-t border-gray-800 py-8">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <p class="text-gray-500 mb-4">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
-            <div class="flex justify-center gap-4">
-                <a href="mailto:sean.jun2001@gmail.com" class="text-gray-500 hover:text-red-400 transition-colors">
-                    <i class="fas fa-envelope text-xl"></i>
-                </a>
-                <a href="https://github.com/halfmoon01" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-purple-400 transition-colors">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sean-jun" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400 transition-colors">
-                    <i class="fab fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="https://www.instagram.com/im__halfmoon/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-pink-400 transition-colors">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
-            </div>
+    <footer class="footer">
+        <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="mailto:sean.jun2001@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/halfmoon01" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sean-jun" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/im__halfmoon/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
 

@@ -3,214 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[CSE316] Fundamentals of Software Development | Sanghyun Jun</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>[CSE316] Software Development | Sanghyun Jun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-dark-primary text-gray-100">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-primary/90 backdrop-blur-sm">
-        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Portfolio</span>
+<body>
+    <!-- Navigation -->
+    <nav class="detail-nav">
+        <div class="detail-nav-inner">
+            <a href="../index.html" class="detail-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
             </a>
-            <a href="../index.html" class="text-xl font-bold text-purple-400">Sanghyun Jun</a>
-        </nav>
-    </header>
+            <a href="../index.html" class="detail-logo">&lt;SANGHYUN JUN&gt;</a>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-12 hero-gradient relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <div class="fade-in">
-                <p class="text-cyan-400 text-sm mb-2">Stony Brook University | Fall 2024</p>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">[CSE316] Fundamentals of Software Development</h1>
-                <p class="text-xl text-gray-300 mb-6">Full-Stack Web Application Project</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/halfmoon01/CSE316_TEAM4_FinalProject" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-900/50 text-cyan-300 rounded-lg border border-cyan-500/30 hover:border-cyan-500 transition-colors">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="#" onclick="showVideoPopup(event)"
-                       class="inline-flex items-center gap-2 px-4 py-2 bg-pink-900/50 text-pink-300 rounded-lg border border-pink-500/30 hover:border-pink-500 transition-colors">
-                        <i class="fas fa-play-circle"></i>
-                        <span>Watch Demo</span>
-                    </a>
-                </div>
+    <!-- Hero -->
+    <div class="detail-hero">
+        <div class="detail-hero-inner">
+            <div class="project-header">
+                <h3 class="project-name">[CSE316]<br><span class="project-subtitle">Fundamentals of Software Development</span></h3>
+                <span class="project-badge badge-course">Coursework</span>
+            </div>
+            <div class="project-links" style="margin-bottom: 0; margin-top: 1.5rem;">
+                <a href="https://github.com/halfmoon01/CSE316_TEAM4_FinalProject" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button onclick="showVideoPopup('../assets/videos/project2.mp4')" class="project-link">
+                    <i class="fas fa-play-circle"></i> Watch Demo
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Overview Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-6 text-white">
-                <span class="section-title-dark">Overview</span>
-            </h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                A full-stack web application developed as the final project for CSE 316 (Software Engineering)
-                at Stony Brook University. Built with React.js frontend and Node.js backend,
-                using MySQL for data persistence and Cloudinary for image storage.
+    <!-- Content -->
+    <section class="dark-section" style="padding-top: 3rem;">
+        <div class="project" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+
+            <div class="project-meta-row" style="grid-template-columns: auto 1fr;">
+                <div class="project-meta-block">
+                    <p class="project-meta-label">Period</p>
+                    <p class="project-meta-value">Fall 2024</p>
+                </div>
+                <div class="project-meta-block">
+                    <p class="project-meta-label">Team</p>
+                    <div class="team-visual">
+                        <span class="team-chip me"><i class="fas fa-user"></i> Full Stack</span>
+                        <span class="team-chip"><i class="fas fa-user"></i> Full Stack</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="project-desc">
+                Stony Brook University course project. Full-stack web application built with React.js frontend and Node.js backend, using MySQL for data persistence and Cloudinary for image storage. Demonstrates end-to-end web development skills.
             </p>
-            <p class="text-gray-300 leading-relaxed">
-                This project demonstrates end-to-end web development skills including RESTful API design,
-                database modeling, user authentication, and cloud-based media management.
-            </p>
-        </div>
-    </section>
 
-    <!-- Team Section -->
-    <section class="py-12 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Team</span>
-            </h2>
-            <div class="flex justify-center">
-                <div class="bg-dark-secondary p-6 rounded-xl border border-cyan-500/50 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 bg-cyan-900/50 rounded-full flex items-center justify-center">
-                        <i class="fas fa-code text-cyan-400"></i>
-                    </div>
-                    <p class="text-white font-semibold">FullStack x 2</p>
-                </div>
+            <p class="project-tech-label">Tech Stack</p>
+            <div class="project-techs">
+                <span class="mine">React.js</span>
+                <span class="mine">Node.js</span>
+                <span class="mine">Express.js</span>
+                <span class="mine">MySQL</span>
+                <span class="mine">Cloudinary</span>
             </div>
-        </div>
-    </section>
 
-    <!-- My Contributions Section -->
-    <section class="py-12 bg-dark-secondary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">My Contributions</span>
-            </h2>
-            <div class="space-y-4">
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-cyan-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-palette text-cyan-400"></i>
+            <div class="project-contributions">
+                <h4>My Contributions</h4>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Frontend Development</strong>
+                            <p>React.js UI components and state management</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Frontend Development</h3>
-                        <p class="text-gray-400">React.js UI components and state management</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Backend API Design</strong>
+                            <p>Node.js RESTful API design and implementation</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-server text-green-400"></i>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Database Design</strong>
+                            <p>MySQL schema design and query optimization</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Backend Development</h3>
-                        <p class="text-gray-400">Node.js RESTful API design and implementation</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-database text-blue-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Database Design</h3>
-                        <p class="text-gray-400">MySQL schema design and query optimization</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-dark-primary p-4 rounded-xl border border-gray-800">
-                    <div class="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-cloud text-purple-400"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Cloud Integration</h3>
-                        <p class="text-gray-400">Cloudinary setup for image upload and management</p>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Cloud Integration</strong>
+                            <p>Cloudinary setup for image upload and management</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Tech Stack Section -->
-    <section class="py-12 bg-dark-primary relative">
-        <div class="grid-pattern"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-2xl font-bold mb-8 text-white">
-                <span class="section-title-dark">Tech Stack</span>
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-cyan-400 mb-4">
-                        <i class="fas fa-palette mr-2"></i>Frontend
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">React.js</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">CSS</span>
+            <div class="project-challenges">
+                <h4>Challenges & Solutions</h4>
+                <div class="challenge-item">
+                    <div class="problem">
+                        <span class="tag">Problem</span>
+                        <span class="text">Managing image uploads directly in the backend caused slow response times and storage bloat.</span>
+                    </div>
+                    <div class="solution">
+                        <span class="tag">Solution</span>
+                        <span class="text">Integrated Cloudinary for CDN-based image hosting with automatic optimization, reducing server load and improving page load speed.</span>
                     </div>
                 </div>
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-green-400 mb-4">
-                        <i class="fas fa-server mr-2"></i>Backend
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Express.js</span>
+                <div class="challenge-item">
+                    <div class="problem">
+                        <span class="tag">Problem</span>
+                        <span class="text">Complex state management across multiple React components caused data inconsistency bugs.</span>
                     </div>
-                </div>
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-blue-400 mb-4">
-                        <i class="fas fa-database mr-2"></i>Database
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">MySQL</span>
-                    </div>
-                </div>
-                <div class="bg-dark-secondary p-6 rounded-xl border border-gray-800">
-                    <h3 class="text-lg font-semibold text-purple-400 mb-4">
-                        <i class="fas fa-cloud mr-2"></i>Cloud Services
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">Cloudinary</span>
+                    <div class="solution">
+                        <span class="tag">Solution</span>
+                        <span class="text">Implemented centralized state management with React Context API and structured RESTful endpoints for clean data flow.</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-primary border-t border-gray-800 py-8">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <a href="../index.html" class="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
-                <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
-            </a>
-            <p class="text-gray-500">&copy; 2024 Sanghyun Jun. All rights reserved.</p>
-        </div>
+    <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
+        <a href="../index.html" class="detail-back" style="margin-bottom: 1rem; display: inline-flex;">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Video Popup
-        function showVideoPopup(event) {
-            event.preventDefault();
-            const overlay = document.createElement('div');
-            overlay.className = 'fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4';
-            overlay.id = 'video-popup-overlay';
-            overlay.innerHTML = `
-                <div class="relative w-full max-w-4xl">
-                    <button onclick="closeVideoPopup()" class="absolute -top-10 right-0 text-white hover:text-cyan-400 transition-colors">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                    <video controls autoplay playsinline class="w-full max-h-[80vh] rounded-xl shadow-2xl">
-                        <source src="../assets/videos/project2.mp4" type="video/mp4">
-                    </video>
-                </div>
-            `;
-            document.body.appendChild(overlay);
-            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVideoPopup(); });
-        }
-        function closeVideoPopup() {
-            const overlay = document.getElementById('video-popup-overlay');
-            if (overlay) { overlay.querySelector('video')?.pause(); overlay.remove(); }
-        }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideoPopup(); });
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
