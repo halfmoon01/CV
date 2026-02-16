@@ -68,6 +68,15 @@ ul { list-style: none; }
     letter-spacing: 1px;
 }
 
+.visitor-counter {
+    display: flex;
+    align-items: center;
+}
+
+.visitor-counter img {
+    height: 20px;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
