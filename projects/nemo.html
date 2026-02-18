@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -86,25 +86,6 @@
                 </div>
             </div>
 
-            <p class="project-tech-label">Tech Stack (My Part)</p>
-            <div class="project-techs">
-                <span class="mine">AWS EKS</span>
-                <span class="mine">Terraform</span>
-                <span class="mine">Docker</span>
-                <span class="mine">Kubernetes</span>
-                <span class="mine">Helm</span>
-                <span class="mine">ArgoCD</span>
-                <span class="mine">GitHub Actions</span>
-                <span class="mine">SigNoz</span>
-                <span class="mine">K6</span>
-                <span class="mine">Wireguard</span>
-                <span>Next.js</span>
-                <span>Spring Boot</span>
-                <span>Redis</span>
-                <span>Kafka</span>
-                <span>WebSocket</span>
-                <span>SSE</span>
-            </div>
 
             <div class="project-contributions">
                 <h4>My Contributions</h4>
@@ -157,6 +138,54 @@
                 </div>
             </div>
 
+            <div class="project-arch">
+                <h4>Architecture Evolution</h4>
+                <div class="arch-tabs">
+                    <button class="arch-tab active" data-target="nemo-v1">v1: PM2</button>
+                    <i class="fas fa-chevron-right arch-tab-arrow"></i>
+                    <button class="arch-tab" data-target="nemo-v2">v2: Docker</button>
+                    <i class="fas fa-chevron-right arch-tab-arrow"></i>
+                    <button class="arch-tab" data-target="nemo-v3">v3: EKS</button>
+                </div>
+                <div class="arch-content active" id="nemo-v1">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-gcp">GCP</span>
+                        <span class="platform-gcp">Compute Engine</span>
+                        <span class="mine">PM2</span>
+                        <span class="mine">Netdata</span>
+                    </div>
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/project1_arc_v1.png" alt="Architecture v1">
+                    </div>
+                </div>
+                <div class="arch-content" id="nemo-v2">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-gcp">GCP</span>
+                        <span class="platform-gcp">Compute Engine</span>
+                        <span class="mine">Docker</span>
+                        <span class="mine">GitHub Actions</span>
+                        <span class="mine">SigNoz</span>
+                        <span class="mine">WireGuard</span>
+                    </div>
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/project1_arc_v2.png" alt="Architecture v2">
+                    </div>
+                </div>
+                <div class="arch-content" id="nemo-v3">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-aws">AWS</span>
+                        <span class="platform-aws">EKS</span>
+                        <span class="mine">Kubernetes</span>
+                        <span class="mine">Helm</span>
+                        <span class="mine">ArgoCD</span>
+                        <span class="mine">Terraform</span>
+                    </div>
+                    <div class="arch-img">
+                        <img src="../assets/images/NEMO/project1_arc_v3.png" alt="Architecture v3">
+                    </div>
+                </div>
+            </div>
+
             <!-- ===== INCIDENT CASE STUDY ===== -->
             <div class="incident-case">
                 <h4><i class="fas fa-shield-alt" style="color: #f87171; margin-right: 0.5rem;"></i>Security Incident Response</h4>
@@ -165,11 +194,8 @@
                     <div class="incident-badge">
                         <i class="fas fa-exclamation-triangle"></i> Real Production Incident
                     </div>
-                    <div class="incident-title">Scanning Attack Detected on Production Server</div>
-                    <div class="incident-date"><i class="far fa-clock"></i> 2025.05.15 19:40 KST &mdash; Netdata Real-time Monitoring Alert</div>
-                    <p class="incident-desc">
-                        During the V1 deployment phase, the production server was running on a <strong style="color: #f87171;">Public Subnet</strong> with all services directly exposed to the internet. A malicious scanning attack was detected through Netdata's Nginx web log monitoring, triggering critical alerts with <strong style="color: #f87171;">100% bad requests</strong> and <strong style="color: #f87171;">0% successful requests</strong>.
-                    </p>
+                    <div class="incident-title">Scanning Attack on Production Server</div>
+                    <div class="incident-date"><i class="far fa-clock"></i> 2025.05.15 &mdash; V1 Phase (Public Subnet)</div>
                 </div>
 
                 <div class="incident-timeline">
@@ -178,32 +204,16 @@
                             <i class="fas fa-bell"></i>
                         </div>
                         <div class="incident-step-content">
-                            <h5>1. Detection &mdash; Netdata Discord Alert</h5>
-                            <p>Netdata monitoring agent on the GCP VM detected an anomaly in Nginx web log metrics. Discord webhook fired a <strong style="color: #f87171;">CRITICAL</strong> alert: <em>"Web log successful = 0%"</em> and <em>"Web log bad requests = 100%"</em>.</p>
-                            <div class="incident-evidence" style="grid-template-columns: 1fr;">
+                            <h5>Detection</h5>
+                            <p>Netdata alert via Discord &mdash; <strong style="color: #f87171;">100% bad requests</strong>, attacker probing for <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">.env</code> files to exfiltrate secrets.</p>
+                            <div class="incident-evidence" style="grid-template-columns: 1fr 1fr;">
                                 <div>
-                                    <img src="../assets/images/NEMO/Discord Netdata.png" alt="Discord Netdata Alert" style="height: auto; object-fit: contain;">
-                                    <p class="evidence-caption">Discord alert from Netdata - Critical notification</p>
+                                    <img src="../assets/images/NEMO/Discord Netdata.png" alt="Discord Netdata Alert">
+                                    <p class="evidence-caption">Discord alert from Netdata</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="incident-step">
-                        <div class="incident-step-num analyze">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="incident-step-content">
-                            <h5>2. Analysis &mdash; Nginx Access Logs & Netdata Dashboard</h5>
-                            <p>Investigated the Nginx access logs and confirmed a targeted scanning attack. The attacker was systematically probing for sensitive files &mdash; particularly <strong style="color: #f87171;">.env files</strong> containing database credentials, API keys, and secret tokens. Requests like <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">GET /.env</code>, <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">GET /api/.env</code> were flooding the server, attempting to <strong style="color: #f87171;">exfiltrate environment variables and secrets</strong>.</p>
-                            <div class="incident-evidence">
                                 <div>
                                     <img src="../assets/images/NEMO/NGINX Log.png" alt="Nginx Access Logs">
-                                    <p class="evidence-caption">Nginx access logs &mdash; .env exfiltration attempts detected</p>
-                                </div>
-                                <div>
-                                    <img src="../assets/images/NEMO/Netdata.png" alt="Netdata Dashboard">
-                                    <p class="evidence-caption">Netdata dashboard - request spike and error rates</p>
+                                    <p class="evidence-caption">Nginx logs &mdash; .env probe attempts</p>
                                 </div>
                             </div>
                         </div>
@@ -214,12 +224,11 @@
                             <i class="fas fa-wrench"></i>
                         </div>
                         <div class="incident-step-content">
-                            <h5>3. Resolution &mdash; Private Subnet + WireGuard VPN</h5>
-                            <p>Redesigned the network architecture from V1 to V2. Moved all backend services (Next.js, Spring Boot, Redis, MySQL) from the <strong style="color: #f87171;">Public Subnet</strong> to a <strong style="color: var(--green);">Private Subnet</strong>. Only Nginx reverse proxy remained in the public subnet. Introduced <strong style="color: var(--green);">WireGuard VPN</strong> for secure developer access to internal services.</p>
+                            <h5>Resolution</h5>
+                            <p>Migrated all services to <strong style="color: var(--green);">Private Subnet</strong> + <strong style="color: var(--green);">WireGuard VPN</strong>. Only Nginx remained public-facing.</p>
                             <div class="solution-arch">
                                 <img src="../assets/images/NEMO/Solution.png" alt="Architecture V1 to V2 - Private Subnet Migration">
                             </div>
-                            <p style="margin-top: 0.75rem;">V1 (Public Subnet, all exposed) → V2 (Private Subnet + WireGuard VPN)</p>
                         </div>
                     </div>
 
@@ -228,37 +237,10 @@
                             <i class="fas fa-check"></i>
                         </div>
                         <div class="incident-step-content">
-                            <h5>4. Result</h5>
-                            <p>After migrating to Private Subnet with WireGuard VPN, the attack surface was <strong style="color: var(--green);">completely eliminated</strong>. Internal services are no longer accessible from the public internet. Only the Nginx reverse proxy handles external traffic, and all developer/admin access goes through the encrypted WireGuard tunnel. No further scanning incidents were detected.</p>
+                            <h5>Result</h5>
+                            <p>Attack surface <strong style="color: var(--green);">eliminated</strong> &mdash; zero scanning incidents after migration.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="project-arch">
-                <h4>Architecture Evolution</h4>
-                <div class="arch-tabs">
-                    <button class="arch-tab active" data-target="nemo-v1">v1: PM2</button>
-                    <button class="arch-tab" data-target="nemo-v2">v2: Docker</button>
-                    <button class="arch-tab" data-target="nemo-v3">v3: EKS</button>
-                </div>
-                <div class="arch-content active" id="nemo-v1">
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/project1_arc_v1.png" alt="Architecture v1">
-                    </div>
-                    <p class="arch-label">Phase 1: PM2 Manual Deployment on GCP VM</p>
-                </div>
-                <div class="arch-content" id="nemo-v2">
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/project1_arc_v2.png" alt="Architecture v2">
-                    </div>
-                    <p class="arch-label">Phase 2: Docker + GitHub Actions CI/CD</p>
-                </div>
-                <div class="arch-content" id="nemo-v3">
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/project1_arc_v3.png" alt="Architecture v3">
-                    </div>
-                    <p class="arch-label">Phase 3: AWS EKS + ArgoCD GitOps</p>
                 </div>
             </div>
         </div>
