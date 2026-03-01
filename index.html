@@ -16,8 +16,7 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">&lt;SANGHYUN JUN&gt;</a>
             <ul class="nav-links">
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
                 <li><a href="https://github.com/halfmoon01" target="_blank">GitHub</a></li>
                 <li><a href="#contact" class="nav-cta">Contact me</a></li>
                 <li class="visitor-counter">
@@ -30,8 +29,7 @@
         </div>
     </nav>
     <div class="mobile-menu" id="mobile-menu">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#timeline">Timeline</a>
         <a href="https://github.com/halfmoon01" target="_blank">GitHub</a>
         <a href="#contact">Contact</a>
     </div>
@@ -62,8 +60,8 @@
                 <p class="hero-desc">
                     Cloud/DevOps engineer focused on building scalable, automated cloud environments with hands-on experience in team projects and infrastructure operations.
                 </p>
-                <a href="#projects" class="hero-btn">
-                    View Projects <i class="fas fa-arrow-down"></i>
+                <a href="#timeline" class="hero-btn">
+                    View Timeline <i class="fas fa-arrow-down"></i>
                 </a>
             </div>
             <div class="hero-right fade-in">
@@ -74,118 +72,169 @@
         </div>
     </section>
 
-    <!-- ==================== PROJECTS (Dark) ==================== -->
-    <section class="dark-section" id="projects">
-        <p class="section-label">Portfolio</p>
-        <h2 class="section-title">SELECTED PROJECTS</h2>
+    <!-- ==================== UNIFIED TIMELINE (Dark) ==================== -->
+    <section class="dark-section" id="timeline">
+        <p class="section-label">Portfolio & Career</p>
+        <h2 class="section-title">TIMELINE</h2>
 
-        <div class="project-cards">
-            <a href="projects/nemo.html" class="project-card fade-in-section">
-                <div class="project-card-img">
-                    <img src="assets/images/NEMO/project1.jpg" alt="NEMO Project">
-                    <span class="project-badge badge-team">Team Project</span>
-                </div>
-                <div class="project-card-body">
-                    <h3>NEMO<br><span>Group Participation Service</span></h3>
-                    <div class="project-card-techs">
-                        <span>AWS EKS</span>
-                        <span>Kubernetes</span>
-                        <span>ArgoCD</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="projects/biz-news.html" class="project-card fade-in-section">
-                <div class="project-card-img">
-                    <img src="assets/images/BIZN/project3.png" alt="Biz-News Project">
-                    <span class="project-badge badge-award"><i class="fas fa-trophy"></i> 2nd Place</span>
-                </div>
-                <div class="project-card-body">
-                    <h3>Biz-News<br><span>AI News Summary & Recommendation</span></h3>
-                    <div class="project-card-techs">
-                        <span>AWS EC2</span>
-                        <span>Docker</span>
-                        <span>GitHub Actions</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="projects/cse316.html" class="project-card fade-in-section">
-                <div class="project-card-img">
-                    <img src="assets/images/CSE316/project2.png" alt="CSE316 Project">
-                    <span class="project-badge badge-course">Coursework</span>
-                </div>
-                <div class="project-card-body">
-                    <h3>[CSE316] Fundamentals of<br><span>Software Development</span></h3>
-                    <div class="project-card-techs">
-                        <span>React.js</span>
-                        <span>Node.js</span>
-                        <span>MySQL</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- ==================== EXPERIENCE (Dark) ==================== -->
-    <section class="dark-section" id="experience" style="background: #0f0f0f;">
-        <p class="section-label">Career</p>
-        <h2 class="section-title">EXPERIENCE</h2>
-
-        <div class="exp-timeline">
-            <div class="exp-item fade-in-section">
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3>Stony Brook University COMPAS Lab</h3>
-                            <span class="location">Stony Brook, NY</span>
+        <div class="unified-timeline">
+            <!-- 1. PPA-Dun (LEFT) + DayOne (RIGHT) — Feb 2026 ~ Present -->
+            <div class="tl-pair fade-in-section">
+                <div class="tl-pair-left">
+                    <div class="tl-date">Feb 2026 - Present</div>
+                    <div class="tl-card tl-card-course tl-card-wip">
+                        <div class="tl-card-type tl-card-type-course">Coursework <span class="tl-wip-badge">In Progress</span></div>
+                        <div class="tl-card-img">
+                            <img src="assets/images/PPA-Dun/303dcd1b0eb5979a4e380d1422b934495c30bdd10aa2ab50b2cb8c975d96c0d1.PNG" alt="PPA-Dun Project">
                         </div>
-                        <span class="exp-date">Aug 2025 - Dec 2025</span>
+                        <div class="tl-card-body">
+                            <h3>PPA-Dun<br><span>[CSE416] Software Engineering</span></h3>
+                            <div class="project-card-techs">
+                                <span>Kubernetes</span>
+                                <span>GCP GKE</span>
+                                <span>Redis</span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="exp-role">Undergraduate Research Assistant (Advisor: Prof. Mike Ferdman)</p>
-                    <ul class="exp-list">
-                        <li>Diagnosed and resolved a critical failure in OpenStack Ironic baremetal provisioning, involving PXE boot, IPA agent communication, and deployment-image validation across a Kayobe-managed environment.</li>
-                        <li>Recovered a failed deployment by reinitializing hardware RAID configurations, correcting root disk hints, and synchronizing deployment image checksums between Bifrost and Ironic.</li>
-                    </ul>
+                </div>
+                <div class="tl-dot tl-dot-active"></div>
+                <div class="tl-pair-right">
+                    <div class="tl-date">Feb 2026 - Present</div>
+                    <div class="tl-card tl-card-proj tl-card-wip">
+                        <div class="tl-card-type">Project <span class="tl-wip-badge">In Progress</span></div>
+                        <div class="tl-card-img">
+                            <img src="assets/images/Day-One/ed5e471281a2ffc16fd63fb3f392683075b8f6e0e6f96b5de84044c9a96acd09.PNG" alt="DayOne Project">
+                        </div>
+                        <div class="tl-card-body">
+                            <h3>DayOne<br><span>AI Syllabus-to-Google Calendar</span></h3>
+                            <div class="project-card-techs">
+                                <span>Azure</span>
+                                <span>Redis Queue</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="exp-item fade-in-section">
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3>Kakao Tech Bootcamp</h3>
-                            <span class="location">Pangyo, Korea</span>
-                        </div>
-                        <span class="exp-date">Jan 2025 - Jul 2025</span>
+            <!-- 3. COMPAS Lab — LEFT (Experience) -->
+            <div class="tl-item tl-left fade-in-section">
+                <div class="tl-content">
+                    <div class="tl-date">Aug 2025 - Dec 2025</div>
+                    <div class="tl-card tl-card-exp">
+                        <div class="tl-card-type">Experience</div>
+                        <h3>Stony Brook University COMPAS Lab</h3>
+                        <span class="tl-location">Stony Brook, NY</span>
+                        <p class="exp-role">Undergraduate Research Assistant (Advisor: Prof. Mike Ferdman)</p>
+                        <ul class="exp-list">
+                            <li>Resolved a critical OpenStack Ironic baremetal provisioning failure (PXE boot, IPA agent, deployment-image validation).</li>
+                            <li>Recovered failed deployment via RAID reinitialization, root disk hint correction, and image checksum sync.</li>
+                        </ul>
                     </div>
-                    <p class="exp-role">Cloud Native Track Trainee</p>
-                    <ul class="exp-list">
-                        <li class="award"><i class="fas fa-trophy"></i> 2nd Place - Kakao Tech Bootcamp Hackathon (Feb 2025)</li>
-                        <li class="award"><i class="fas fa-trophy"></i> 3rd Place - Server Load Testing Tournament (Jul 2025)</li>
-                        <li>Team Project <a href="#projects">'NEMO' - Group Participation Service</a></li>
-                    </ul>
+                </div>
+                <div class="tl-dot"></div>
+                <div class="tl-spacer"></div>
+            </div>
+
+            <!-- 3. Kakao Tech Bootcamp GROUP: LEFT Experience + RIGHT Projects -->
+            <div class="tl-group fade-in-section">
+                <div class="tl-group-left">
+                    <div class="tl-date">Jan 2025 - Jul 2025</div>
+                    <div class="tl-card tl-card-exp">
+                        <div class="tl-card-type">Experience</div>
+                        <h3>Kakao Tech Bootcamp</h3>
+                        <span class="tl-location">Pangyo, Korea</span>
+                        <p class="exp-role">Cloud Native Track Trainee</p>
+                        <ul class="exp-list">
+                            <li class="award"><i class="fas fa-trophy"></i> 2nd Place - Hackathon (Feb 2025)</li>
+                            <li class="award"><i class="fas fa-trophy"></i> 3rd Place - Load Testing Tournament (Jul 2025)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tl-group-center">
+                    <div class="tl-dot"></div>
+                    <div class="tl-group-bracket"></div>
+                </div>
+                <div class="tl-group-right">
+                    <div class="tl-group-proj">
+                        <div class="tl-date">Apr 2025 - Jul 2025</div>
+                        <a href="projects/nemo.html" class="tl-card tl-card-proj">
+                            <div class="tl-card-type">Project</div>
+                            <div class="tl-card-img">
+                                <img src="assets/images/NEMO/project1.jpg" alt="NEMO Project">
+                                <span class="project-badge badge-team">Team Project</span>
+                            </div>
+                            <div class="tl-card-body">
+                                <h3>NEMO<br><span>Group Participation Service</span></h3>
+                                <div class="project-card-techs">
+                                    <span>AWS EKS</span>
+                                    <span>Kubernetes</span>
+                                    <span>ArgoCD</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tl-group-proj">
+                        <div class="tl-date">Feb 26 - 28, 2025</div>
+                        <a href="projects/biz-news.html" class="tl-card tl-card-proj">
+                            <div class="tl-card-type">Project</div>
+                            <div class="tl-card-img">
+                                <img src="assets/images/BIZN/project3.png" alt="Biz-News Project">
+                                <span class="project-badge badge-award"><i class="fas fa-trophy"></i> 2nd Place</span>
+                            </div>
+                            <div class="tl-card-body">
+                                <h3>Biz-News<br><span>AI News Summary & Recommendation</span></h3>
+                                <div class="project-card-techs">
+                                    <span>AWS EC2</span>
+                                    <span>Docker</span>
+                                    <span>GitHub Actions</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="exp-item fade-in-section">
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3>CO;Ders US (Non-Profit)</h3>
-                            <span class="location">Incheon, Korea</span>
+            <!-- 4. CSE316 — LEFT (Coursework) -->
+            <div class="tl-item tl-left fade-in-section">
+                <div class="tl-content">
+                    <div class="tl-date">Sep 2024 - Dec 2024</div>
+                    <a href="projects/cse316.html" class="tl-card tl-card-course">
+                        <div class="tl-card-type tl-card-type-course">Coursework</div>
+                        <div class="tl-card-img">
+                            <img src="assets/images/CSE316/project2.png" alt="CSE316 Project">
+                            <span class="project-badge badge-course">Coursework</span>
                         </div>
-                        <span class="exp-date">Mar 2021 - Dec 2024</span>
-                    </div>
-                    <p class="exp-role">Vice President (2021) | Member</p>
-                    <ul class="exp-list">
-                        <li>Delivered programming education to promote technical skills and problem-solving abilities.</li>
-                        <li>Taught elementary students scratch block coding; middle school students in Java programming.</li>
-                    </ul>
+                        <div class="tl-card-body">
+                            <h3>CO;Ders Us Website<br><span>[CSE316] Fundamentals of Software Development</span></h3>
+                            <div class="project-card-techs">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                <div class="tl-dot"></div>
+                <div class="tl-spacer"></div>
+            </div>
+
+            <!-- 5. CO;Ders US — LEFT (Experience) -->
+            <div class="tl-item tl-left fade-in-section">
+                <div class="tl-content">
+                    <div class="tl-date">Mar 2021 - Dec 2024</div>
+                    <div class="tl-card tl-card-exp">
+                        <div class="tl-card-type">Experience</div>
+                        <h3>CO;Ders US (Non-Profit)</h3>
+                        <span class="tl-location">Incheon, Korea</span>
+                        <p class="exp-role">Vice President (2021) | Member</p>
+                        <ul class="exp-list">
+                            <li>Delivered programming education to promote technical skills and problem-solving abilities.</li>
+                            <li>Taught elementary students scratch block coding; middle school students in Java programming.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tl-dot"></div>
+                <div class="tl-spacer"></div>
             </div>
         </div>
     </section>

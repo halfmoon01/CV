@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.contact-grid .fade-in-section').forEach((card, i) => {
         card.style.transitionDelay = `${i * 0.1}s`;
     });
-    document.querySelectorAll('.exp-timeline .fade-in-section').forEach((item, i) => {
+    document.querySelectorAll('.unified-timeline .fade-in-section').forEach((item, i) => {
         item.style.transitionDelay = `${i * 0.15}s`;
     });
 });
