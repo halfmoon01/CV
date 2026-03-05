@@ -75,6 +75,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Visitor Counter
+(function() {
+    const API_URL = 'https://nwhv1ryhzd.execute-api.us-east-1.amazonaws.com/count';
+    const el = document.getElementById('visitor-number');
+    if (!el) return;
+    fetch(API_URL, { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+            const formatted = data.count.toLocaleString();
+            el.textContent = formatted;
+            const mobile = document.getElementById('visitor-number-mobile');
+            if (mobile) mobile.textContent = formatted;
+        })
+        .catch(() => {
+            el.textContent = '-';
+            const mobile = document.getElementById('visitor-number-mobile');
+            if (mobile) mobile.textContent = '-';
+        });
+})();
+
 // Architecture tabs
 document.querySelectorAll('.arch-tab').forEach(tab => {
     tab.addEventListener('click', () => {

@@ -74,14 +74,27 @@ ul { list-style: none; }
     list-style: none;
 }
 
-.visitor-counter img {
-    height: 18px;
-    opacity: 0.7;
+#visitor-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #22c55e;
+    background: rgba(34,197,94,0.08);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
     transition: opacity 0.2s;
 }
 
-.visitor-counter:hover img {
+#visitor-count:hover {
     opacity: 1;
+}
+
+#visitor-count i {
+    font-size: 0.75rem;
 }
 
 .nav-links {
@@ -161,6 +174,14 @@ ul { list-style: none; }
 }
 
 .mobile-menu a:hover { color: var(--black); }
+
+.mobile-visitor {
+    display: block;
+    padding: 0.75rem 2.5rem;
+    color: #22c55e;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -416,6 +437,7 @@ ul { list-style: none; }
 /* ===== Card Split Layout (Image + Infra side by side) ===== */
 .tl-card-split {
     display: flex;
+    min-height: 180px;
     height: 180px;
     overflow: hidden;
 }
@@ -527,6 +549,11 @@ ul { list-style: none; }
     background: rgba(74, 222, 128, 0.12);
     color: var(--green);
     border: 1px solid rgba(74, 222, 128, 0.2);
+}
+.infra-tags .tech-iac {
+    background: rgba(45, 212, 191, 0.12);
+    color: #2dd4bf;
+    border: 1px solid rgba(45, 212, 191, 0.2);
 }
 .infra-tags .tech-extra {
     background: rgba(251, 113, 133, 0.12);
@@ -1180,6 +1207,7 @@ ul { list-style: none; }
 /* ===== Unified Timeline ===== */
 .unified-timeline {
     max-width: 1100px;
+    min-width: 800px;
     margin: 0 auto;
     position: relative;
 }
@@ -1306,7 +1334,6 @@ ul { list-style: none; }
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s;
-    cursor: pointer;
 }
 
 .tl-card-proj:hover {
@@ -1317,6 +1344,7 @@ ul { list-style: none; }
 
 .tl-card-img {
     position: relative;
+    min-height: 160px;
     height: 160px;
     overflow: hidden;
 }
@@ -1326,6 +1354,39 @@ ul { list-style: none; }
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s;
+}
+
+/* Zoom button on card bottom-right */
+.tl-card-proj,
+.tl-card-course {
+    position: relative;
+}
+
+.card-zoom {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+
+.card-zoom:hover {
+    background: rgba(74, 222, 128, 0.8);
+    color: #fff;
+    border-color: rgba(74, 222, 128, 0.6);
+    transform: scale(1.15);
 }
 
 .tl-card-proj:hover .tl-card-img img {
@@ -1357,7 +1418,6 @@ ul { list-style: none; }
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s;
-    cursor: pointer;
 }
 
 .tl-card-course:hover {
@@ -1677,6 +1737,10 @@ ul { list-style: none; }
         max-width: none;
         padding-left: 30px;
         margin-top: 1rem;
+    }
+
+    .unified-timeline {
+        min-width: 0;
     }
 }
 

@@ -1,0 +1,193 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Visitor Counter with Discord Notification for sanghyun-jun.cloud
+
+Parameters:
+  DiscordWebhookUrl:
+    Type: String
+    Description: Discord Webhook URL for visitor notifications
+    NoEcho: true
+
+Resources:
+  # DynamoDB Table
+  VisitorCountTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: VisitorCount
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: page_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: page_id
+          KeyType: HASH
+
+  # IAM Role for Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: DynamoDBAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:UpdateItem
+                  - dynamodb:GetItem
+                Resource: !GetAtt VisitorCountTable.Arn
+
+  # Lambda Function
+  VisitorCounterFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: visitor-counter
+      Runtime: python3.12
+      Handler: index.handler
+      Timeout: 10
+      MemorySize: 128
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Environment:
+        Variables:
+          DISCORD_WEBHOOK_URL: !Ref DiscordWebhookUrl
+          TABLE_NAME: !Ref VisitorCountTable
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import urllib.request
+          from datetime import datetime, timezone, timedelta
+
+          import boto3
+
+          dynamodb = boto3.resource('dynamodb')
+          table = dynamodb.Table(os.environ['TABLE_NAME'])
+
+          ALLOWED_ORIGINS = [
+              'https://sanghyun-jun.cloud',
+              'http://localhost:8000',
+              'http://127.0.0.1:8000',
+          ]
+
+          def get_cors_origin(event):
+              origin = (event.get('headers') or {}).get('origin', '')
+              if origin in ALLOWED_ORIGINS:
+                  return origin
+              return ALLOWED_ORIGINS[0]
+
+          def handler(event, context):
+              origin = get_cors_origin(event)
+              cors_headers = {
+                  'Access-Control-Allow-Origin': origin,
+                  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                  'Access-Control-Allow-Headers': 'Content-Type',
+              }
+
+              # Handle preflight
+              if event.get('requestContext', {}).get('http', {}).get('method') == 'OPTIONS':
+                  return {'statusCode': 200, 'headers': cors_headers, 'body': ''}
+
+              # Atomic counter increment
+              resp = table.update_item(
+                  Key={'page_id': 'sanghyun-jun.cloud'},
+                  UpdateExpression='ADD visit_count :inc',
+                  ExpressionAttributeValues={':inc': 1},
+                  ReturnValues='UPDATED_NEW',
+              )
+              count = int(resp['Attributes']['visit_count'])
+
+              # Discord notification (fire-and-forget)
+              kst = datetime.now(timezone(timedelta(hours=9)))
+              message = {
+                  'content': (
+                      f"\U0001f514 **New Visitor!**\n"
+                      f"\U0001f464 Total: **{count:,}**\n"
+                      f"\U0001f550 {kst.strftime('%Y-%m-%d %H:%M')} KST"
+                  )
+              }
+              webhook_url = os.environ.get('DISCORD_WEBHOOK_URL', '')
+              if webhook_url:
+                  try:
+                      req = urllib.request.Request(
+                          webhook_url,
+                          data=json.dumps(message).encode('utf-8'),
+                          headers={
+                              'Content-Type': 'application/json',
+                              'User-Agent': 'DiscordBot (https://sanghyun-jun.cloud, 1.0)',
+                          },
+                          method='POST',
+                      )
+                      r = urllib.request.urlopen(req, timeout=5)
+                      print(f"Discord webhook sent, status: {r.status}")
+                  except Exception as e:
+                      print(f"Discord webhook failed: {e}")
+
+              return {
+                  'statusCode': 200,
+                  'headers': cors_headers,
+                  'body': json.dumps({'count': count}),
+              }
+
+  # API Gateway HTTP API
+  HttpApi:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: visitor-counter-api
+      ProtocolType: HTTP
+      CorsConfiguration:
+        AllowOrigins:
+          - https://sanghyun-jun.cloud
+          - http://localhost:8000
+          - http://127.0.0.1:8000
+        AllowMethods:
+          - POST
+          - OPTIONS
+        AllowHeaders:
+          - Content-Type
+
+  # API Gateway Integration
+  HttpApiIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref HttpApi
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !GetAtt VisitorCounterFunction.Arn
+      PayloadFormatVersion: '2.0'
+
+  # API Gateway Route
+  HttpApiRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref HttpApi
+      RouteKey: POST /count
+      Target: !Sub integrations/${HttpApiIntegration}
+
+  # API Gateway Stage
+  HttpApiStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref HttpApi
+      StageName: $default
+      AutoDeploy: true
+
+  # Lambda Permission for API Gateway
+  LambdaApiPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref VisitorCounterFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${HttpApi}/*
+
+Outputs:
+  ApiEndpoint:
+    Description: API Gateway endpoint URL for visitor counter
+    Value: !Sub https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/count

@@ -20,7 +20,7 @@
                 <li><a href="https://github.com/halfmoon01" target="_blank">GitHub</a></li>
                 <li><a href="#contact" class="nav-cta">Contact me</a></li>
                 <li class="visitor-counter">
-                    <img src="https://visitor-badge.laobi.icu/badge?page_id=sanghyun-jun.cloud&left_color=%23555555&right_color=%2322C55E&left_text=visitors" alt="Visitors">
+                    <span id="visitor-count" title="Total visitors"><i class="fas fa-eye"></i> <span id="visitor-number">---</span></span>
                 </li>
             </ul>
             <button class="hamburger" id="menu-btn">
@@ -32,6 +32,7 @@
         <a href="#timeline">Timeline</a>
         <a href="https://github.com/halfmoon01" target="_blank">GitHub</a>
         <a href="#contact">Contact</a>
+        <span class="mobile-visitor"><i class="fas fa-eye"></i> <span id="visitor-number-mobile">---</span></span>
     </div>
 
     <!-- ==================== HERO (Light) ==================== -->
@@ -86,7 +87,7 @@
                         <div class="tl-card-type tl-card-type-course">Coursework <span class="tl-wip-badge">In Progress</span></div>
                         <div class="tl-card-split">
                             <div class="tl-card-img">
-                                <img src="assets/images/PPA-Dun/303dcd1b0eb5979a4e380d1422b934495c30bdd10aa2ab50b2cb8c975d96c0d1.PNG" alt="PPA-Dun Project">
+                                <img src="assets/images/PPA-Dun/final.png" alt="PPA-Dun Project">
                             </div>
                             <div class="tl-card-infra">
                                 <div class="infra-row">
@@ -106,6 +107,10 @@
                                     <div class="infra-tags"><span class="tech-deploy">Jenkins</span></div>
                                 </div>
                                 <div class="infra-row">
+                                    <span class="infra-label">IaC</span>
+                                    <span class="infra-tags-empty">—</span>
+                                </div>
+                                <div class="infra-row">
                                     <span class="infra-label">Extra</span>
                                     <div class="infra-tags"><span class="tech-extra">Redis</span></div>
                                 </div>
@@ -123,7 +128,7 @@
                         <div class="tl-card-type">Project <span class="tl-wip-badge">In Progress</span></div>
                         <div class="tl-card-split">
                             <div class="tl-card-img">
-                                <img src="assets/images/Day-One/ed5e471281a2ffc16fd63fb3f392683075b8f6e0e6f96b5de84044c9a96acd09.PNG" alt="DayOne Project">
+                                <img src="assets/images/Day-One/final.png" alt="DayOne Project">
                             </div>
                             <div class="tl-card-infra">
                                 <div class="infra-row">
@@ -132,15 +137,19 @@
                                 </div>
                                 <div class="infra-row">
                                     <span class="infra-label">Container</span>
-                                    <div class="infra-tags"><span class="tech-container">Docker</span></div>
+                                    <div class="infra-tags"><span class="tech-container">K8s</span></div>
                                 </div>
                                 <div class="infra-row">
                                     <span class="infra-label">Runtime</span>
-                                    <div class="infra-tags"><span class="tech-runtime">Azure VM</span></div>
+                                    <div class="infra-tags"><span class="tech-runtime">kubeadm</span></div>
                                 </div>
                                 <div class="infra-row">
                                     <span class="infra-label">Deploy</span>
-                                    <div class="infra-tags"><span class="tech-deploy">GitHub Actions</span></div>
+                                    <div class="infra-tags"><span class="tech-deploy">Jenkins</span></div>
+                                </div>
+                                <div class="infra-row">
+                                    <span class="infra-label">IaC</span>
+                                    <div class="infra-tags"><span class="tech-iac">CloudFormation</span></div>
                                 </div>
                                 <div class="infra-row">
                                     <span class="infra-label">Extra</span>
@@ -163,7 +172,7 @@
                         <div class="tl-card-type">Experience</div>
                         <h3>Stony Brook University COMPAS Lab</h3>
                         <span class="tl-location">Stony Brook, NY</span>
-                        <p class="exp-role">Undergraduate Research Assistant (Advisor: Prof. Mike Ferdman)</p>
+                        <p class="exp-role">Undergraduate Research Assistant (CSE 487, Advisor: Prof. Mike Ferdman)</p>
                         <ul class="exp-list">
                             <li>Resolved a critical OpenStack Ironic baremetal provisioning failure (PXE boot, IPA agent, deployment-image validation).</li>
                             <li>Recovered failed deployment via RAID reinitialization, root disk hint correction, and image checksum sync.</li>
@@ -196,7 +205,7 @@
                 <div class="tl-group-right">
                     <div class="tl-group-proj">
                         <div class="tl-date">Apr 2025 - Jul 2025</div>
-                        <a href="projects/nemo.html" class="tl-card tl-card-proj">
+                        <div class="tl-card tl-card-proj">
                             <div class="tl-card-type">Project</div>
                             <div class="tl-card-split">
                                 <div class="tl-card-img">
@@ -221,6 +230,10 @@
                                         <div class="infra-tags"><span class="tech-deploy">Helm</span><span class="tech-deploy">ArgoCD</span></div>
                                     </div>
                                     <div class="infra-row">
+                                        <span class="infra-label">IaC</span>
+                                        <div class="infra-tags"><span class="tech-iac">Terraform</span></div>
+                                    </div>
+                                    <div class="infra-row">
                                         <span class="infra-label">Extra</span>
                                         <span class="infra-tags-empty">—</span>
                                     </div>
@@ -229,11 +242,12 @@
                             <div class="tl-card-body">
                                 <h3>NEMO<br><span>Group Participation Service</span></h3>
                             </div>
-                        </a>
+                            <a href="projects/nemo.html" class="card-zoom"><i class="fas fa-search"></i></a>
+                        </div>
                     </div>
                     <div class="tl-group-proj">
                         <div class="tl-date">Feb 26 - 28, 2025</div>
-                        <a href="projects/biz-news.html" class="tl-card tl-card-proj">
+                        <div class="tl-card tl-card-proj">
                             <div class="tl-card-type">Project</div>
                             <div class="tl-card-split">
                                 <div class="tl-card-img">
@@ -258,6 +272,10 @@
                                         <div class="infra-tags"><span class="tech-deploy">GitHub Actions</span></div>
                                     </div>
                                     <div class="infra-row">
+                                        <span class="infra-label">IaC</span>
+                                        <span class="infra-tags-empty">—</span>
+                                    </div>
+                                    <div class="infra-row">
                                         <span class="infra-label">Extra</span>
                                         <span class="infra-tags-empty">—</span>
                                     </div>
@@ -267,7 +285,8 @@
                                 <h3>Biz-News<br><span>AI News Summary & Recommendation</span></h3>
                                 <p class="tl-card-award"><i class="fas fa-trophy"></i> 2nd Place — Kakao Tech Bootcamp Hackathon</p>
                             </div>
-                        </a>
+                            <a href="projects/biz-news.html" class="card-zoom"><i class="fas fa-search"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,7 +295,7 @@
             <div class="tl-item tl-left fade-in-section">
                 <div class="tl-content">
                     <div class="tl-date">Sep 2024 - Dec 2024</div>
-                    <a href="projects/cse316.html" class="tl-card tl-card-course">
+                    <div class="tl-card tl-card-course">
                         <div class="tl-card-type tl-card-type-course">Coursework</div>
                         <div class="tl-card-split">
                             <div class="tl-card-img">
@@ -301,6 +320,10 @@
                                     <span class="infra-tags-empty">—</span>
                                 </div>
                                 <div class="infra-row">
+                                    <span class="infra-label">IaC</span>
+                                    <span class="infra-tags-empty">—</span>
+                                </div>
+                                <div class="infra-row">
                                     <span class="infra-label">Extra</span>
                                     <div class="infra-tags"><span class="tech-stack">React.js</span><span class="tech-stack">Node.js</span><span class="tech-stack">MySQL</span></div>
                                 </div>
@@ -309,7 +332,8 @@
                         <div class="tl-card-body">
                             <h3>CO;Ders Us Website<br><span>[CSE316] Fundamentals of Software Development</span></h3>
                         </div>
-                    </a>
+                        <a href="projects/cse316.html" class="card-zoom"><i class="fas fa-search"></i></a>
+                    </div>
                 </div>
                 <div class="tl-dot"></div>
                 <div class="tl-spacer"></div>
