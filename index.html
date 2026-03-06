@@ -395,6 +395,82 @@
         </div>
     </section>
 
+    <!-- ==================== ABOUT THIS SITE ==================== -->
+    <section class="about-site-section" id="about-site">
+        <h2 class="section-title">ABOUT THIS SITE</h2>
+        <p class="about-site-desc">This portfolio is a fully serverless application — every resource from DNS to backend is provisioned and managed through AWS CloudFormation.</p>
+        <div class="about-site-arch">
+            <div class="arch-flow">
+                <!-- Source & CI/CD -->
+                <div class="arch-node-group">
+                    <span class="arch-group-label">CI / CD</span>
+                    <div class="arch-node">
+                        <div class="arch-icon"><i class="fab fa-github"></i></div>
+                        <span>GitHub</span>
+                        <span class="arch-sub">Source Code</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="arch-icon"><i class="fas fa-play-circle"></i></div>
+                        <span>GitHub Actions</span>
+                        <span class="arch-sub">Auto Deploy</span>
+                    </div>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <!-- IaC -->
+                <div class="arch-node">
+                    <div class="arch-icon"><img src="assets/images/aws-icons/cloudformation.svg" alt="CloudFormation"></div>
+                    <span>CloudFormation</span>
+                    <span class="arch-sub">IaC</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <!-- Hosting -->
+                <div class="arch-node-group">
+                    <span class="arch-group-label">Hosting</span>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/route53.svg" alt="Route 53"></div>
+                        <span>Route 53</span>
+                        <span class="arch-sub">DNS</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/acm.svg" alt="ACM"></div>
+                        <span>ACM</span>
+                        <span class="arch-sub">SSL/TLS</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/cloudfront.svg" alt="CloudFront"></div>
+                        <span>CloudFront</span>
+                        <span class="arch-sub">CDN</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/s3.svg" alt="S3"></div>
+                        <span>S3</span>
+                        <span class="arch-sub">Static Hosting</span>
+                    </div>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <!-- Backend -->
+                <div class="arch-node-group">
+                    <span class="arch-group-label">Backend</span>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/apigateway.svg" alt="API Gateway"></div>
+                        <span>API Gateway</span>
+                        <span class="arch-sub">HTTP API</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/lambda.svg" alt="Lambda"></div>
+                        <span>Lambda</span>
+                        <span class="arch-sub">Visitor Counter</span>
+                    </div>
+                    <div class="arch-node">
+                        <div class="arch-icon"><img src="assets/images/aws-icons/dynamodb.svg" alt="DynamoDB"></div>
+                        <span>DynamoDB</span>
+                        <span class="arch-sub">Count Storage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
