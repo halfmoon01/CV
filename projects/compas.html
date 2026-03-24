@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPAS Lab - OpenStack Ironic Troubleshooting | Sanghyun Jun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="background: #0a0a0a; color: #fff;">
+    <!-- Navigation -->
+    <nav class="detail-nav">
+        <div class="detail-nav-inner">
+            <a href="../index.html" class="detail-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="../index.html" class="detail-logo">&lt;SANGHYUN JUN&gt;</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="detail-hero">
+        <div class="detail-hero-inner">
+            <div class="project-header">
+                <h3 class="project-name">COMPAS Lab<br><span class="project-subtitle">OpenStack Ironic Baremetal Troubleshooting</span></h3>
+                <div class="project-header-tags">
+                    <span class="project-badge badge-team"><i class="fas fa-flask"></i> Research</span>
+                    <span class="project-period">Aug - Dec 2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <section class="dark-section" style="padding-top: 3rem;">
+        <div class="project" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+
+            <div class="team-blocks">
+                <span class="team-block me"><i class="fas fa-user"></i> Research Assistant <strong>1</strong></span>
+            </div>
+
+            <p class="project-desc">
+                Undergraduate Research Assistant at Stony Brook University COMPAS Lab (CSE 487, Advisor: Prof. Mike Ferdman).
+                Diagnosed and resolved critical OpenStack Ironic baremetal provisioning failures across 8 compute nodes in a production HPC cluster.
+            </p>
+
+            <!-- ===== TROUBLESHOOTING ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-bug" style="color: #f87171; margin-right: 0.5rem;"></i>Troubleshooting
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-ironic')">
+                    <div class="troubleshoot-card-icon error">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Ironic API Down (Unix Socket)</strong>
+                        <span>bifrost_deploy crash → 502 Bad Gateway</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-checksum')">
+                    <div class="troubleshoot-card-icon error">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Image Checksum Mismatch</strong>
+                        <span>Deploy failed on compute-206-113</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-tinycore')">
+                    <div class="troubleshoot-card-icon security">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>TinyCore Boot (No OS)</strong>
+                        <span>compute-206-114 unprovisioned state</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-sdk')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>openstacksdk Version Conflict</strong>
+                        <span>Version 0.62 < required 1.0</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+            </div>
+
+            <!-- ===== SERVER STATUS TABLE ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-th-list" style="color: #60a5fa; margin-right: 0.5rem;"></i>Node Status Summary
+            </h4>
+            <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #333;">
+                            <th style="padding: 0.75rem 1rem; text-align: left; color: var(--gray-400); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Node</th>
+                            <th style="padding: 0.75rem 1rem; text-align: left; color: var(--gray-400); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Core Issue</th>
+                            <th style="padding: 0.75rem 1rem; text-align: center; color: var(--gray-400); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #1a1a1a;">
+                            <td style="padding: 0.6rem 1rem; color: var(--white); font-weight: 600; font-family: monospace;">compute-206-113</td>
+                            <td style="padding: 0.6rem 1rem; color: var(--gray-400);">RAID controller / Image checksum / Disk UUID change</td>
+                            <td style="padding: 0.6rem 1rem; text-align: center; color: var(--green); font-weight: 700;">✅ Resolved</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1a1a1a;">
+                            <td style="padding: 0.6rem 1rem; color: var(--white); font-weight: 600; font-family: monospace;">compute-206-114</td>
+                            <td style="padding: 0.6rem 1rem; color: var(--gray-400);">TinyCore mode (unprovisioned)</td>
+                            <td style="padding: 0.6rem 1rem; text-align: center; color: var(--green); font-weight: 700;">✅ Resolved</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1a1a1a;">
+                            <td style="padding: 0.6rem 1rem; color: var(--white); font-weight: 600; font-family: monospace;">compute-211-108</td>
+                            <td style="padding: 0.6rem 1rem; color: var(--gray-400);">Ironic API down + openstacksdk version conflict</td>
+                            <td style="padding: 0.6rem 1rem; text-align: center; color: var(--green); font-weight: 700;">✅ Resolved</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1a1a1a;">
+                            <td style="padding: 0.6rem 1rem; color: var(--white); font-weight: 600; font-family: monospace;">compute-211-110</td>
+                            <td style="padding: 0.6rem 1rem; color: var(--gray-400);">Ironic API down</td>
+                            <td style="padding: 0.6rem 1rem; text-align: center; color: var(--green); font-weight: 700;">✅ Resolved</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1a1a1a;">
+                            <td style="padding: 0.6rem 1rem; color: var(--white); font-weight: 600; font-family: monospace;">compute-211-114</td>
+                            <td style="padding: 0.6rem 1rem; color: var(--gray-400);">Physical power down</td>
+                            <td style="padding: 0.6rem 1rem; text-align: center; color: var(--gray-400); font-weight: 700;">🗑️ Removed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1a1a1a;">
+                            <td style="padding: 0.6rem 1rem; color: var(--white); font-weight: 600; font-family: monospace;">compute-210-110</td>
+                            <td style="padding: 0.6rem 1rem; color: var(--gray-400);">fake-hardware driver / invalid boot device</td>
+                            <td style="padding: 0.6rem 1rem; text-align: center; color: #fbbf24; font-weight: 700;">🔍 Root cause identified</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ===== Modal: Ironic API Down ===== -->
+    <div class="ts-modal-overlay" id="modal-ironic">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">Ironic API Down (Unix Socket)</h3>
+                <p style="font-size: 0.85rem; color: var(--gray-400); margin-bottom: 1.5rem;">Common issue across multiple nodes (211-108, 211-110, 206-114)</p>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-bell"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Problem</h5>
+                            <p>Bifrost's Ironic API (port 6385) architecture:</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: var(--gray-400); font-size: 0.78rem; line-height: 1.7;">Client → nginx (TLS/HTTPS, port 6385) → unix socket → ironic process</pre>
+                            <p style="margin-top: 0.75rem;">The ironic process died, so <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">/run/ironic/ironic.socket</code> did not exist. Nginx returned <strong style="color: #f87171;">502 Bad Gateway</strong>.</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: #f87171; font-size: 0.78rem;">connect() to unix:/run/ironic/ironic.socket failed (2: No such file or directory)</pre>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Resolution</h5>
+                            <p>Restarting the <code style="background: rgba(74,222,128,0.1); color: var(--green); padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">bifrost_deploy</code> container re-spawned the ironic process and recreated the socket:</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: var(--green); font-size: 0.82rem;">sudo docker restart bifrost_deploy</pre>
+                            <p style="margin-top: 0.75rem;">Verified with <code style="background: rgba(74,222,128,0.1); color: var(--green); padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">curl -vk https://10.72.1.11:6385/</code> → 200 OK.</p>
+                            <div class="incident-evidence" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
+                                <div>
+                                    <img src="../assets/images/research/206-113/스크린샷 2025-10-13 오전 2.41.01.png" alt="iLO Status Summary" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; border: 1px solid #222;">
+                                    <p class="evidence-caption">iLO Status Summary — server health check</p>
+                                </div>
+                                <div>
+                                    <img src="../assets/images/research/211-108/211-108.png" alt="Server console ironic errors" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; border: 1px solid #222;">
+                                    <p class="evidence-caption">compute-211-108 — ironic-python-agent crash on physical console</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 0.75rem; color: #fbbf24; font-size: 0.85rem;"><strong>⚠️ Root cause:</strong> <code style="background: rgba(251,191,36,0.1); color: #fbbf24; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">oslo_config.cfg.NoSuchOptError: no such option unix_socket</code> — suspected ironic.conf / ironic version compatibility issue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: Image Checksum ===== -->
+    <div class="ts-modal-overlay" id="modal-checksum">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">Image Checksum Mismatch (compute-206-113)</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-bell"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Problem</h5>
+                            <p>Reprovision failed because the downloaded image checksum didn't match what Ironic expected:</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: #f87171; font-size: 0.78rem; line-height: 1.7;">Deploy step deploy.write_image failed.
+Image failed to verify against checksum.
+image checksum:        ea3eb0a7273eda10864d531a79390ef9
+verification checksum: c131c2d6ae256de7d4a42a91046c5aa2</pre>
+                            <p style="margin-top: 0.75rem;">Even when deploy passed, SSH timed out waiting for port 22 (10 min timeout).</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Resolution</h5>
+                            <p>1. Restarted ironic-inspector → undeploy → reprovision<br>
+                            2. During redeploy, <strong style="color: #fbbf24;">Disk UUID changed</strong> → Ceph OSD lost track of the disk<br>
+                            3. Removed old OSD and re-added the disk with new UUID</p>
+                            <div class="incident-evidence" style="grid-template-columns: 1fr 1fr 1fr; margin-top: 1rem;">
+                                <div>
+                                    <img src="../assets/images/research/206-113/스크린샷 2025-10-27 오후 11.56.33.png" alt="RAID Configuration" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; border: 1px solid #222;">
+                                    <p class="evidence-caption">RAID controller config</p>
+                                </div>
+                                <div>
+                                    <img src="../assets/images/research/206-113/스크린샷 2025-10-28 오전 12.31.52.png" alt="BIOS Boot Order" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; border: 1px solid #222;">
+                                    <p class="evidence-caption">BIOS boot order</p>
+                                </div>
+                                <div>
+                                    <img src="../assets/images/research/206-113/스크린샷 2025-11-13 오전 1.47.09.png" alt="PXE Boot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; border: 1px solid #222;">
+                                    <p class="evidence-caption">PXE boot during reprovision</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 0.5rem; color: var(--green);"><strong>Final: ping/SSH ✅, OpenStack ✅</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: TinyCore ===== -->
+    <div class="ts-modal-overlay" id="modal-tinycore">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">TinyCore Boot — No OS (compute-206-114)</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-bell"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Problem</h5>
+                            <p>Node booted into <strong style="color: #fbbf24;">TinyCore mode</strong> instead of the actual OS — meaning provisioning never completed. IPMI showed power on, but no real OS was installed.</p>
+                            <div class="incident-evidence" style="grid-template-columns: 1fr; margin-top: 0.75rem;">
+                                <div>
+                                    <img src="../assets/images/research/206-114/스크린샷 2025-10-13 오후 3.14.33.png" alt="TinyCore ip route" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; border: 1px solid #222;">
+                                    <p class="evidence-caption">TinyCore mode — <code>ip route</code> showing no real OS, only minimal network config</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 0.75rem;">Reprovision attempt failed because Ironic API was down (bifrost_deploy container issue). After API recovery, SSH showed <strong style="color: #f87171;">host key mismatch</strong>:</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: #f87171; font-size: 0.78rem;">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</pre>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Resolution</h5>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: var(--green); font-size: 0.82rem; line-height: 1.7;">ssh-keygen -f "/home/cloud/.ssh/known_hosts" -R "10.71.206.114"
+sudo docker restart bifrost_deploy
+kayobe overcloud provision --limit compute-206-114</pre>
+                            <p style="margin-top: 0.5rem; color: var(--green);"><strong>Final: ping/SSH ✅, OpenStack ✅</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: openstacksdk ===== -->
+    <div class="ts-modal-overlay" id="modal-sdk">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">openstacksdk Version Conflict (compute-211-108)</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-bell"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Problem</h5>
+                            <p>Kayobe provisioning failed with SDK version incompatibility:</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: #f87171; font-size: 0.78rem; line-height: 1.7;">Incompatible openstacksdk library found:
+Version MUST be >= 1.0 ... but 0.62.0 is smaller than minimum version 1.0.</pre>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Resolution</h5>
+                            <p>Upgraded openstacksdk in the Kayobe virtual environment:</p>
+                            <pre style="background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.5rem; padding: 1rem; margin-top: 0.5rem; color: var(--green); font-size: 0.82rem; line-height: 1.7;">sudo /opt/kayobe/venvs/openstacksdk/bin/pip install -U 'openstacksdk>=1.0,<2.0'
+sudo /opt/kayobe/venvs/openstacksdk/bin/pip check</pre>
+                            <p style="margin-top: 0.5rem;">Also resolved recurring ironic.service timeout (Permission denied on socket → service restart fixed it).</p>
+                            <p style="margin-top: 0.5rem; color: var(--green);"><strong>Final: ping/SSH ✅, OpenStack ✅</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
+        <a href="../index.html" class="detail-back" style="margin-bottom: 1rem; display: inline-flex;">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function closeAllModals() {
+            document.querySelectorAll('.ts-modal-overlay.show').forEach(function(m) { m.classList.remove('show'); });
+            document.body.style.overflow = '';
+        }
+        function openModal(id) {
+            document.getElementById(id).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        document.querySelectorAll('.ts-modal-close').forEach(function(btn) { btn.addEventListener('click', closeAllModals); });
+        document.querySelectorAll('.ts-modal-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) { if (e.target === overlay) closeAllModals(); });
+        });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeAllModals(); });
+    </script>
+</body>
+</html>

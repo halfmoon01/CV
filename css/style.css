@@ -1366,16 +1366,16 @@ ul { list-style: none; }
     position: absolute;
     bottom: 10px;
     right: 10px;
-    width: 34px;
-    height: 34px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
     text-decoration: none;
     transition: all 0.3s;
     z-index: 2;
@@ -1383,7 +1383,7 @@ ul { list-style: none; }
 }
 
 .card-zoom:hover {
-    background: rgba(74, 222, 128, 0.8);
+    background: rgba(74, 222, 128, 0.85);
     color: #fff;
     border-color: rgba(74, 222, 128, 0.6);
     transform: scale(1.15);

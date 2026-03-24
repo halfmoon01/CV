@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=2">
+    <link rel="stylesheet" href="../css/style.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body style="background: #0a0a0a; color: #fff;">
     <!-- Navigation -->
     <nav class="detail-nav">
         <div class="detail-nav-inner">
@@ -58,154 +58,251 @@
                 Kakao Tech Bootcamp team project. Built and evolved the entire cloud infrastructure from a single VM to a fully orchestrated Kubernetes environment on AWS EKS with GitOps-based CI/CD pipeline.
             </p>
 
-            <!-- Key Features - Tab Style -->
+            <!-- ===== KEY HIGHLIGHTS ===== -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
+                <div style="background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: var(--green); line-height: 1;">3 Phases</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">Architecture Evolution</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">PM2 → Docker → EKS</div>
+                </div>
+                <div style="background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #60a5fa; line-height: 1;">GitOps</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">CI/CD Pipeline</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">GitHub Actions + ArgoCD</div>
+                </div>
+                <div style="background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #a855f7; line-height: 1;">vLLM</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">AI Model Serving</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">Gemma 3B/4B on GPU</div>
+                </div>
+            </div>
+
+            <!-- ===== WHAT I DID ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-tools" style="color: var(--green); margin-right: 0.5rem;"></i>What I Did
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-arch')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2);">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Architecture: v1 → v2 → v3</strong>
+                        <span>PM2 → Docker + CI/CD → EKS + ArgoCD</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-cicd')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>GitOps CI/CD & IaC</strong>
+                        <span>GitHub Actions + ArgoCD + Helm + Terraform</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-ai')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(236,72,153,0.1); color: #ec4899; border: 1px solid rgba(236,72,153,0.2);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>AI & Messaging Infra</strong>
+                        <span>vLLM + Redis + Kafka on EKS</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-monitor')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(168,85,247,0.1); color: #a855f7; border: 1px solid rgba(168,85,247,0.2);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Monitoring & Load Testing</strong>
+                        <span>K6 + SigNoz + Netdata</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+            </div>
+
+            <!-- ===== TROUBLESHOOTING ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-bug" style="color: #f87171; margin-right: 0.5rem;"></i>Troubleshooting
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-scan')">
+                    <div class="troubleshoot-card-icon security">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Scanning Attack → Private Subnet + WireGuard</strong>
+                        <span>.env probe detected via Netdata → migrated to private subnet, zero incidents after</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+            </div>
+
+            <!-- ===== KEY FEATURES ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-star" style="color: #60a5fa; margin-right: 0.5rem;"></i>Key Features
+            </h4>
             <div class="project-arch" style="margin-bottom: 2.5rem;">
-                <h4>Key Features</h4>
                 <div class="arch-tabs">
                     <button class="arch-tab active" data-target="feat-browse">Browse & Search</button>
                     <button class="arch-tab" data-target="feat-create">AI Group Creation</button>
                     <button class="arch-tab" data-target="feat-recommend">AI Recommendation</button>
                 </div>
                 <div class="arch-content active" id="feat-browse">
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/Feature1.jpg" alt="Category Filtering & Search">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/NEMO/Feature1.jpg" alt="Category Filtering & Search"></div>
                     <p class="arch-label">Category-based group filtering and keyword search</p>
                 </div>
                 <div class="arch-content" id="feat-create">
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/Feature2.jpg" alt="AI-Powered Group Creation">
-                    </div>
-                    <p class="arch-label">AI auto-generates group descriptions, tags, and curriculum from user inputs</p>
+                    <div class="arch-img"><img src="../assets/images/NEMO/Feature2.jpg" alt="AI-Powered Group Creation"></div>
+                    <p class="arch-label">AI auto-generates group descriptions, tags, and curriculum</p>
                 </div>
                 <div class="arch-content" id="feat-recommend">
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/Feature3.jpg" alt="AI Chatbot Recommendation">
-                    </div>
-                    <p class="arch-label">Conversational AI chatbot recommends groups based on user interests</p>
+                    <div class="arch-img"><img src="../assets/images/NEMO/Feature3.jpg" alt="AI Chatbot Recommendation"></div>
+                    <p class="arch-label">Conversational AI chatbot recommends groups based on interests</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-
-            <div class="project-contributions">
-                <h4>My Contributions</h4>
-                <div class="contribution-list">
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>Architecture Evolution (3 Phases)</strong>
-                            <p>PM2 manual deploy → Docker + CI/CD → EKS + ArgoCD GitOps</p>
-                        </div>
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
-                            <i class="fas fa-dharmachakra"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>AWS EKS & Container Orchestration</strong>
-                            <p>Cluster setup with Helm-based deployment for all microservices</p>
-                        </div>
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>GitOps CI/CD Pipeline</strong>
-                            <p>GitHub Actions + ArgoCD for fully automated deployment</p>
-                        </div>
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(236,72,153,0.1); color: #ec4899;">
-                            <i class="fas fa-stream"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>Messaging & AI Infrastructure</strong>
-                            <p>Redis, Kafka setup and vLLM-based Vertex AI model serving</p>
-                        </div>
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>Monitoring & Security</strong>
-                            <p>K6 + SigNoz load testing, Wireguard VPN, Netdata monitoring</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-arch">
-                <h4>Architecture Evolution</h4>
-                <div class="arch-tabs">
-                    <button class="arch-tab active" data-target="nemo-v1">v1: PM2</button>
+    <!-- ===== Modal: Architecture Evolution ===== -->
+    <div class="ts-modal-overlay" id="modal-arch">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Architecture Evolution (3 Phases)</h3>
+                <div class="arch-tabs" style="margin-bottom: 1rem;">
+                    <button class="arch-tab active" data-target="m-nemo-v1">v1: PM2</button>
                     <i class="fas fa-chevron-right arch-tab-arrow"></i>
-                    <button class="arch-tab" data-target="nemo-v2">v2: Docker</button>
+                    <button class="arch-tab" data-target="m-nemo-v2">v2: Docker</button>
                     <i class="fas fa-chevron-right arch-tab-arrow"></i>
-                    <button class="arch-tab" data-target="nemo-v3">v3: EKS</button>
+                    <button class="arch-tab" data-target="m-nemo-v3">v3: EKS</button>
                 </div>
-                <div class="arch-content active" id="nemo-v1">
+                <div class="arch-content active" id="m-nemo-v1">
                     <div class="project-techs arch-techs">
-                        <span class="platform-gcp">GCP</span>
-                        <span class="platform-gcp">Compute Engine</span>
-                        <span class="mine">PM2</span>
-                        <span class="mine">Netdata</span>
+                        <span class="platform-gcp">GCP</span><span class="platform-gcp">Compute Engine</span><span class="mine">PM2</span><span class="mine">Netdata</span>
                     </div>
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/project1_arc_v1.png" alt="Architecture v1">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/NEMO/project1_arc_v1.png" alt="Architecture v1"></div>
                 </div>
-                <div class="arch-content" id="nemo-v2">
+                <div class="arch-content" id="m-nemo-v2">
                     <div class="project-techs arch-techs">
-                        <span class="platform-gcp">GCP</span>
-                        <span class="platform-gcp">Compute Engine</span>
-                        <span class="mine">Docker</span>
-                        <span class="mine">GitHub Actions</span>
-                        <span class="mine">SigNoz</span>
-                        <span class="mine">WireGuard</span>
+                        <span class="platform-gcp">GCP</span><span class="platform-gcp">Compute Engine</span><span class="mine">Docker</span><span class="mine">GitHub Actions</span><span class="mine">SigNoz</span><span class="mine">WireGuard</span>
                     </div>
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/project1_arc_v2.png" alt="Architecture v2">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/NEMO/project1_arc_v2.png" alt="Architecture v2"></div>
                 </div>
-                <div class="arch-content" id="nemo-v3">
+                <div class="arch-content" id="m-nemo-v3">
                     <div class="project-techs arch-techs">
-                        <span class="platform-aws">AWS</span>
-                        <span class="platform-aws">EKS</span>
-                        <span class="mine">Kubernetes</span>
-                        <span class="mine">Helm</span>
-                        <span class="mine">ArgoCD</span>
-                        <span class="mine">Terraform</span>
+                        <span class="platform-aws">AWS</span><span class="platform-aws">EKS</span><span class="mine">Kubernetes</span><span class="mine">Helm</span><span class="mine">ArgoCD</span><span class="mine">Terraform</span>
                     </div>
-                    <div class="arch-img">
-                        <img src="../assets/images/NEMO/project1_arc_v3.png" alt="Architecture v3">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/NEMO/project1_arc_v3.png" alt="Architecture v3"></div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- ===== INCIDENT CASE STUDY ===== -->
-            <div class="incident-case">
-                <h4><i class="fas fa-shield-alt" style="color: #f87171; margin-right: 0.5rem;"></i>Security Incident Response</h4>
-
-                <div class="incident-banner">
-                    <div class="incident-badge">
-                        <i class="fas fa-exclamation-triangle"></i> Real Production Incident
-                    </div>
-                    <div class="incident-title">Scanning Attack on Production Server</div>
-                    <div class="incident-date"><i class="far fa-clock"></i> 2025.05.15 19:40 KST &mdash; V1 Phase (Public Subnet)</div>
-                </div>
-
+    <!-- ===== Modal: CI/CD & IaC ===== -->
+    <div class="ts-modal-overlay" id="modal-cicd">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">GitOps CI/CD & Infrastructure as Code</h3>
                 <div class="incident-timeline">
                     <div class="incident-step">
-                        <div class="incident-step-num detect">
-                            <i class="fas fa-bell"></i>
+                        <div class="incident-step-num resolve"><i class="fas fa-code-branch"></i></div>
+                        <div class="incident-step-content">
+                            <h5>GitHub Actions → ArgoCD</h5>
+                            <p>Push to main triggers GitHub Actions build → Docker image pushed to ECR → ArgoCD detects Helm chart changes → auto-deploys to EKS cluster.</p>
                         </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num result"><i class="fas fa-dharmachakra"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Helm + Kubernetes</h5>
+                            <p>All microservices (backend, frontend, AI, Redis, Kafka) managed via Helm charts with configurable values per environment.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num analyze"><i class="fas fa-layer-group"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Terraform IaC</h5>
+                            <p>AWS EKS cluster, VPC, node groups, and IAM roles provisioned via Terraform for reproducible infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: AI & Messaging ===== -->
+    <div class="ts-modal-overlay" id="modal-ai">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">AI & Messaging Infrastructure</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-brain"></i></div>
+                        <div class="incident-step-content">
+                            <h5>vLLM Model Serving</h5>
+                            <p>Deployed Gemma 3B/4B models via vLLM on GPU nodes, enabling high-throughput containerized inference for AI group creation and chatbot recommendation features.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num result"><i class="fas fa-stream"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Redis + Kafka</h5>
+                            <p>Redis for caching and session management. Kafka for async event streaming between microservices (AI processing queue, notification pipeline).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: Monitoring ===== -->
+    <div class="ts-modal-overlay" id="modal-monitor">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Monitoring & Load Testing</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num analyze"><i class="fas fa-chart-line"></i></div>
+                        <div class="incident-step-content">
+                            <h5>K6 Load Testing</h5>
+                            <p>Ran load tests with K6 to validate performance under concurrent users. Identified bottlenecks in AI inference pipeline.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-eye"></i></div>
+                        <div class="incident-step-content">
+                            <h5>SigNoz + Netdata</h5>
+                            <p>SigNoz for distributed tracing across microservices. Netdata for real-time server metrics and Discord alerting (which caught the scanning attack).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: Scanning Attack ===== -->
+    <div class="ts-modal-overlay" id="modal-scan">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <div class="incident-banner">
+                    <div class="incident-badge"><i class="fas fa-exclamation-triangle"></i> Real Production Incident</div>
+                    <div class="incident-title">Scanning Attack on Production Server</div>
+                    <div class="incident-date"><i class="far fa-clock"></i> 2025.05.15 19:40 KST — V1 Phase (Public Subnet)</div>
+                </div>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-bell"></i></div>
                         <div class="incident-step-content">
                             <h5>Detection</h5>
-                            <p>Netdata alert via Discord &mdash; <strong style="color: #f87171;">100% bad requests</strong>, attacker probing for <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">.env</code> files to exfiltrate secrets.</p>
+                            <p>Netdata alert via Discord — <strong style="color: #f87171;">100% bad requests</strong>, attacker probing for <code style="background: rgba(239,68,68,0.1); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.82rem;">.env</code> files.</p>
                             <div class="incident-evidence" style="grid-template-columns: 1fr 1fr;">
                                 <div>
                                     <img src="../assets/images/NEMO/Discord Netdata.png" alt="Discord Netdata Alert">
@@ -213,38 +310,30 @@
                                 </div>
                                 <div>
                                     <img src="../assets/images/NEMO/NGINX Log.png" alt="Nginx Access Logs">
-                                    <p class="evidence-caption">Nginx logs &mdash; .env probe attempts</p>
+                                    <p class="evidence-caption">Nginx logs — .env probe attempts</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="incident-step">
-                        <div class="incident-step-num resolve">
-                            <i class="fas fa-wrench"></i>
-                        </div>
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
                         <div class="incident-step-content">
                             <h5>Resolution</h5>
                             <p>Migrated all services to <strong style="color: var(--green);">Private Subnet</strong> + <strong style="color: var(--green);">WireGuard VPN</strong>. Only Nginx remained public-facing.</p>
-                            <div class="solution-arch">
-                                <img src="../assets/images/NEMO/Solution.png" alt="Architecture V1 to V2 - Private Subnet Migration">
-                            </div>
+                            <div class="solution-arch"><img src="../assets/images/NEMO/Solution.png" alt="Private Subnet Migration"></div>
                         </div>
                     </div>
-
                     <div class="incident-step">
-                        <div class="incident-step-num result">
-                            <i class="fas fa-check"></i>
-                        </div>
+                        <div class="incident-step-num result"><i class="fas fa-check"></i></div>
                         <div class="incident-step-content">
                             <h5>Result</h5>
-                            <p>Attack surface <strong style="color: var(--green);">eliminated</strong> &mdash; zero scanning incidents after migration.</p>
+                            <p>Attack surface <strong style="color: var(--green);">eliminated</strong> — zero scanning incidents after migration.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
@@ -256,13 +345,27 @@
 
     <script src="../js/main.js"></script>
     <script>
-        // Tab switching for all tab groups
-        document.querySelectorAll('.arch-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetId = tab.dataset.target;
-                const parent = tab.closest('.project-arch');
-                parent.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
-                parent.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
+        function closeAllModals() {
+            document.querySelectorAll('.ts-modal-overlay.show').forEach(function(m) { m.classList.remove('show'); });
+            document.body.style.overflow = '';
+        }
+        function openModal(id) {
+            document.getElementById(id).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        document.querySelectorAll('.ts-modal-close').forEach(function(btn) { btn.addEventListener('click', closeAllModals); });
+        document.querySelectorAll('.ts-modal-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) { if (e.target === overlay) closeAllModals(); });
+        });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeAllModals(); });
+        // Tab switching
+        document.querySelectorAll('.arch-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var targetId = tab.dataset.target;
+                var parent = tab.closest('.project-arch') || tab.closest('.ts-modal-body');
+                if (!parent) return;
+                parent.querySelectorAll('.arch-tab').forEach(function(t) { t.classList.remove('active'); });
+                parent.querySelectorAll('.arch-content').forEach(function(c) { c.classList.remove('active'); });
                 tab.classList.add('active');
                 document.getElementById(targetId).classList.add('active');
             });

@@ -54,122 +54,105 @@
             <p class="project-desc">
                 Day-One is a web service that summarizes course syllabi using the Google Gemini API
                 and automatically saves key dates and assignments to Google Calendar.
-                Upload your syllabus, and the AI extracts important deadlines, exams, and events,
-                then syncs them directly to your Google Calendar — helping students stay organized from day one.
             </p>
 
-            <div class="project-arch">
-                <h4>Architecture Evolution</h4>
-                <div class="arch-tabs">
-                    <button class="arch-tab active" data-target="dayone-v1">v1: EC2 + Docker</button>
-                    <i class="fas fa-chevron-right arch-tab-arrow"></i>
-                    <button class="arch-tab" data-target="dayone-v2">v2: ECS + CloudFront + WAF</button>
+            <!-- ===== KEY HIGHLIGHTS — Big keyword cards ===== -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
+                <div style="background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: var(--green); line-height: 1;">70%</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">Cost Savings</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">$88 → $27/mo</div>
                 </div>
-                <div class="arch-content active" id="dayone-v1">
-                    <div class="project-techs arch-techs">
-                        <span class="platform-aws">EC2</span>
-                        <span class="platform-aws">ECR</span>
-                        <span class="mine">Docker</span>
-                        <span class="mine">GitHub Actions</span>
-                        <span class="mine">Nginx</span>
-                    </div>
-                    <div class="arch-img">
-                        <img src="../assets/images/Day-One/page/v1_FINAL.drawio.png" alt="Day-One v1 Architecture">
-                    </div>
-                    <p class="arch-label">v1: GitHub Actions → ECR → EC2 with Docker containers</p>
+                <div style="background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #60a5fa; line-height: 1;">1000x</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">Login p95 Improved</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">58s → 54ms</div>
                 </div>
-                <div class="arch-content" id="dayone-v2">
-                    <div class="project-techs arch-techs">
-                        <span class="platform-aws">ECS</span>
-                        <span class="platform-aws">CloudFront</span>
-                        <span class="platform-aws">WAF</span>
-                        <span class="platform-aws">Route 53</span>
-                    </div>
-                    <div class="arch-img">
-                        <img src="../assets/images/Day-One/page/v2_FINAL.drawio.png" alt="Day-One v2 Architecture">
-                    </div>
-                    <p class="arch-label">v2: GitHub Actions → ECR → ECS + CloudFront + WAF</p>
+                <div style="background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #a855f7; line-height: 1;">-52.8%</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">API Latency</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">12.8s → 6.1s</div>
                 </div>
             </div>
 
-            <div class="project-contributions">
-                <h4>My Contributions</h4>
-                <div class="contribution-list">
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>AWS Infrastructure with CloudFormation</strong>
-                            <p>Provisioned and managed AWS infrastructure (EC2, CloudFront, WAF, Route 53) using CloudFormation for consistent and reproducible environments</p>
-                        </div>
+            <!-- ===== WHAT I DID ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-tools" style="color: var(--green); margin-right: 0.5rem;"></i>What I Did
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-arch')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2);">
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
-                            <i class="fab fa-docker"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>Docker Containerization</strong>
-                            <p>Containerized application services with Docker for consistent deployment across environments</p>
-                        </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Architecture: v1 → v2</strong>
+                        <span>EC2+Docker → ECS+CloudFront+WAF</span>
                     </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>GitHub Actions CI/CD</strong>
-                            <p>Built automated CI/CD pipeline with GitHub Actions for seamless deployment workflow</p>
-                        </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-cicd')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2);">
+                        <i class="fas fa-code-branch"></i>
                     </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>CI/CD & IaC</strong>
+                        <span>GitHub Actions + CloudFormation + Docker</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
                 </div>
             </div>
 
-            <!-- ===== PERFORMANCE & TROUBLESHOOTING — Card Grid ===== -->
-            <div class="incident-case">
-                <h4><i class="fas fa-chart-line" style="color: var(--green); margin-right: 0.5rem;"></i>Performance & Troubleshooting</h4>
+            <!-- ===== TROUBLESHOOTING ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-bug" style="color: #f87171; margin-right: 0.5rem;"></i>Troubleshooting
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-waf')">
+                    <div class="troubleshoot-card-icon security">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Scanning Attack → WAF Defense</strong>
+                        <span>Cost trade-off: $88 → $27/mo (70% saved)</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-403')">
+                    <div class="troubleshoot-card-icon error">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>403 Error on File Upload</strong>
+                        <span>CloudFront + WAF misconfiguration fix</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+            </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div class="troubleshoot-card" onclick="openModal('modal-ocr')">
-                        <div class="troubleshoot-card-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2);">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <div class="troubleshoot-card-text">
-                            <strong>OCR Pipeline Optimization</strong>
-                            <span>Latency reduced by 52.8%, throughput +66.7%</span>
-                        </div>
-                        <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+            <!-- ===== IMPROVEMENT ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-chart-line" style="color: #60a5fa; margin-right: 0.5rem;"></i>Improvement
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-redis')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(168,85,247,0.1); color: #a855f7; border: 1px solid rgba(168,85,247,0.2);">
+                        <i class="fas fa-database"></i>
                     </div>
-                    <div class="troubleshoot-card" onclick="openModal('modal-redis')">
-                        <div class="troubleshoot-card-icon" style="background: rgba(168,85,247,0.1); color: #a855f7; border: 1px solid rgba(168,85,247,0.2);">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="troubleshoot-card-text">
-                            <strong>Redis Queue — Async Pipeline</strong>
-                            <span>Login p95: 58s → 54ms (1000x improvement)</span>
-                        </div>
-                        <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                    <div class="troubleshoot-card-text">
+                        <strong>Redis Queue — Async Pipeline</strong>
+                        <span>Login p95: 58s → 54ms (1000x)</span>
                     </div>
-                    <div class="troubleshoot-card" onclick="openModal('modal-403')">
-                        <div class="troubleshoot-card-icon error">
-                            <i class="fas fa-ban"></i>
-                        </div>
-                        <div class="troubleshoot-card-text">
-                            <strong>403 Forbidden on File Upload</strong>
-                            <span>CloudFront & WAF blocking PDF upload POST requests</span>
-                        </div>
-                        <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-ocr')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2);">
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <div class="troubleshoot-card" onclick="openModal('modal-waf')">
-                        <div class="troubleshoot-card-icon security">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="troubleshoot-card-text">
-                            <strong>Server Security: Scanning Attack to WAF</strong>
-                            <span>v1 attack response &rarr; v2 architecture cost trade-off</span>
-                        </div>
-                        <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                    <div class="troubleshoot-card-text">
+                        <strong>OCR Pipeline Optimization</strong>
+                        <span>Latency -52.8%, throughput +66.7%</span>
                     </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
                 </div>
             </div>
 
@@ -482,6 +465,75 @@
         </div>
     </div>
 
+    <!-- ===== Modal: Architecture Evolution ===== -->
+    <div class="ts-modal-overlay" id="modal-arch">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Architecture Evolution</h3>
+                <div class="arch-tabs" style="margin-bottom: 1rem;">
+                    <button class="arch-tab active" data-target="modal-arch-v1">v1: EC2 + Docker</button>
+                    <i class="fas fa-chevron-right arch-tab-arrow"></i>
+                    <button class="arch-tab" data-target="modal-arch-v2">v2: ECS + CloudFront + WAF</button>
+                </div>
+                <div class="arch-content active" id="modal-arch-v1">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-aws">EC2</span>
+                        <span class="platform-aws">ECR</span>
+                        <span class="mine">Docker</span>
+                        <span class="mine">GitHub Actions</span>
+                        <span class="mine">Nginx</span>
+                    </div>
+                    <div class="arch-img"><img src="../assets/images/Day-One/page/v1_FINAL.drawio.png" alt="v1 Architecture"></div>
+                    <p class="arch-label">v1: GitHub Actions → ECR → EC2 with Docker containers</p>
+                </div>
+                <div class="arch-content" id="modal-arch-v2">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-aws">ECS</span>
+                        <span class="platform-aws">CloudFront</span>
+                        <span class="platform-aws">WAF</span>
+                        <span class="platform-aws">Route 53</span>
+                    </div>
+                    <div class="arch-img"><img src="../assets/images/Day-One/page/v2_FINAL.drawio.png" alt="v2 Architecture"></div>
+                    <p class="arch-label">v2: GitHub Actions → ECR → ECS + CloudFront + WAF</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: CI/CD & IaC ===== -->
+    <div class="ts-modal-overlay" id="modal-cicd">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">CI/CD & Infrastructure as Code</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fab fa-docker"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Docker Containerization</h5>
+                            <p>Containerized all services (Frontend Nginx, FastAPI backend, Redis, MySQL) with Docker for consistent deployment across environments.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num result"><i class="fas fa-code-branch"></i></div>
+                        <div class="incident-step-content">
+                            <h5>GitHub Actions CI/CD</h5>
+                            <p>Automated build → push to ECR → deploy to ECS pipeline. Every push to main triggers automatic deployment with zero downtime.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num analyze"><i class="fas fa-layer-group"></i></div>
+                        <div class="incident-step-content">
+                            <h5>AWS CloudFormation</h5>
+                            <p>Provisioned and managed entire AWS infrastructure (EC2/ECS, CloudFront, WAF, Route 53) using CloudFormation templates for reproducible, version-controlled environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
         <a href="../index.html" class="detail-back" style="margin-bottom: 1rem; display: inline-flex;">
@@ -516,11 +568,12 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeAllModals();
         });
-        // Tab switching
+        // Tab switching - works in both .project-arch and .ts-modal-body
         document.querySelectorAll('.arch-tab').forEach(function(tab) {
             tab.addEventListener('click', function() {
                 var targetId = tab.dataset.target;
-                var parent = tab.closest('.project-arch');
+                var parent = tab.closest('.project-arch') || tab.closest('.ts-modal-body');
+                if (!parent) return;
                 parent.querySelectorAll('.arch-tab').forEach(function(t) { t.classList.remove('active'); });
                 parent.querySelectorAll('.arch-content').forEach(function(c) { c.classList.remove('active'); });
                 tab.classList.add('active');

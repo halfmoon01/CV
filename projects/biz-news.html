@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=2">
+    <link rel="stylesheet" href="../css/style.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body style="background: #0a0a0a; color: #fff;">
     <!-- Navigation -->
     <nav class="detail-nav">
         <div class="detail-nav-inner">
@@ -54,12 +54,87 @@
             </div>
 
             <p class="project-desc">
-                Kakao Tech Bootcamp Hackathon project. Graph RAG based news recommendation service using Neo4j graph database for intelligent summarization and personalized recommendations. Won 2nd place in the competition.
+                Kakao Tech Bootcamp Hackathon project. Graph RAG based news recommendation service using Neo4j graph database for intelligent summarization and personalized recommendations. Won 2nd place.
             </p>
 
-            <!-- Key Features - Tab Style -->
+            <!-- ===== KEY HIGHLIGHTS ===== -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
+                <div style="background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #fbbf24; line-height: 1;">48h</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">Hackathon</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">Full stack in 2 days</div>
+                </div>
+                <div style="background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: var(--green); line-height: 1;">2nd</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">Place</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">Kakao Tech Bootcamp</div>
+                </div>
+                <div style="background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #60a5fa; line-height: 1;">Dual DB</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.5rem; font-weight: 600;">Architecture</div>
+                    <div style="font-size: 0.7rem; color: var(--gray-600); margin-top: 0.25rem;">MySQL + Neo4j</div>
+                </div>
+            </div>
+
+            <!-- ===== WHAT I DID ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-tools" style="color: var(--green); margin-right: 0.5rem;"></i>What I Did
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-arch')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2);">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Cloud Infrastructure</strong>
+                        <span>AWS EC2 + RDS + Docker + Nginx</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-cicd')">
+                    <div class="troubleshoot-card-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>CI/CD & Data Pipeline</strong>
+                        <span>GitHub Actions + Public Data API integration</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+            </div>
+
+            <!-- ===== TROUBLESHOOTING ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-bug" style="color: #f87171; margin-right: 0.5rem;"></i>Troubleshooting
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div class="troubleshoot-card" onclick="openModal('modal-ts1')">
+                    <div class="troubleshoot-card-icon error">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>48h Time Constraint</strong>
+                        <span>Zero room for deployment errors</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+                <div class="troubleshoot-card" onclick="openModal('modal-ts2')">
+                    <div class="troubleshoot-card-icon security">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="troubleshoot-card-text">
+                        <strong>Dual Database Architecture</strong>
+                        <span>Neo4j + MySQL hybrid storage</span>
+                    </div>
+                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
+                </div>
+            </div>
+
+            <!-- ===== KEY FEATURES ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-star" style="color: #60a5fa; margin-right: 0.5rem;"></i>Key Features
+            </h4>
             <div class="project-arch" style="margin-bottom: 2.5rem;">
-                <h4>Key Features</h4>
                 <div class="arch-tabs">
                     <button class="arch-tab active" data-target="feat-summary">News Summary</button>
                     <button class="arch-tab" data-target="feat-graph">Keyword Graph</button>
@@ -67,34 +142,33 @@
                     <button class="arch-tab" data-target="feat-stock">Stock Market</button>
                 </div>
                 <div class="arch-content active" id="feat-summary">
-                    <div class="arch-img">
-                        <img src="../assets/images/BIZN/news_summary.jpg" alt="News Summary">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/BIZN/news_summary.jpg" alt="News Summary"></div>
                     <p class="arch-label">AI-powered news article summarization</p>
                 </div>
                 <div class="arch-content" id="feat-graph">
-                    <div class="arch-img">
-                        <img src="../assets/images/BIZN/Graph based on keyword.jpg" alt="Graph Based on Keyword">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/BIZN/Graph based on keyword.jpg" alt="Keyword Graph"></div>
                     <p class="arch-label">Neo4j graph visualization of keyword relationships</p>
                 </div>
                 <div class="arch-content" id="feat-keyword">
-                    <div class="arch-img">
-                        <img src="../assets/images/BIZN/news_keyword and company information.jpg" alt="News Keyword & Company Info">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/BIZN/news_keyword and company information.jpg" alt="Keyword & Company"></div>
                     <p class="arch-label">Extracted keywords and related company information</p>
                 </div>
                 <div class="arch-content" id="feat-stock">
-                    <div class="arch-img">
-                        <img src="../assets/images/BIZN/stockmarket_information.jpg" alt="Stock Market Information">
-                    </div>
+                    <div class="arch-img"><img src="../assets/images/BIZN/stockmarket_information.jpg" alt="Stock Market"></div>
                     <p class="arch-label">Real-time stock market data integration</p>
                 </div>
             </div>
 
-            <div class="project-arch">
-                <h4>System Architecture</h4>
-                <div class="project-techs arch-techs">
+        </div>
+    </section>
+
+    <!-- ===== Modal: Architecture ===== -->
+    <div class="ts-modal-overlay" id="modal-arch">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Cloud Infrastructure</h3>
+                <div class="project-techs arch-techs" style="margin-bottom: 1.5rem;">
                     <span class="platform-aws">AWS</span>
                     <span class="platform-aws">EC2</span>
                     <span class="platform-aws">RDS</span>
@@ -102,78 +176,104 @@
                     <span class="mine">Nginx</span>
                     <span class="mine">GitHub Actions</span>
                 </div>
-                <div class="arch-img">
-                    <img src="../assets/images/BIZN/project3_arc.png" alt="Biz-News Architecture">
-                </div>
-            </div>
-
-            <div class="project-contributions">
-                <h4>My Contributions</h4>
-                <div class="contribution-list">
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>Cloud Infrastructure</strong>
-                            <p>AWS EC2 and RDS management with Docker containerization and Nginx reverse proxy</p>
+                <div class="arch-img" style="margin-bottom: 1rem;"><img src="../assets/images/BIZN/project3_arc.png" alt="Biz-News Architecture"></div>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-server"></i></div>
+                        <div class="incident-step-content">
+                            <h5>AWS EC2 + RDS</h5>
+                            <p>EC2 for application hosting with Docker containerization. RDS (MySQL) for structured data storage. Nginx reverse proxy for routing.</p>
                         </div>
                     </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
-                            <i class="fas fa-rocket"></i>
+                    <div class="incident-step">
+                        <div class="incident-step-num result"><i class="fas fa-plug"></i></div>
+                        <div class="incident-step-content">
+                            <h5>API Integration</h5>
+                            <p>Designed frontend-backend REST API connection and data flow between React frontend, Node.js backend, and dual databases (MySQL + Neo4j).</p>
                         </div>
-                        <div class="contribution-text">
-                            <strong>CI/CD Automation</strong>
-                            <p>GitHub Actions pipeline for automated build, test, and deployment</p>
-                        </div>
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>Data Pipeline</strong>
-                            <p>Public data API integration and MySQL database storage logic</p>
-                        </div>
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contribution-icon" style="background: rgba(236,72,153,0.1); color: #ec4899;">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <div class="contribution-text">
-                            <strong>API Integration</strong>
-                            <p>Frontend-backend REST API connection and data flow design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-challenges">
-                <h4>Challenges & Solutions</h4>
-                <div class="challenge-item">
-                    <div class="problem">
-                        <span class="tag">Problem</span>
-                        <span class="text">48-hour hackathon required rapid infrastructure setup with zero room for deployment errors.</span>
-                    </div>
-                    <div class="solution">
-                        <span class="tag">Solution</span>
-                        <span class="text">Pre-configured Docker Compose templates and GitHub Actions workflows for instant CI/CD, enabling the team to focus on feature development.</span>
-                    </div>
-                </div>
-                <div class="challenge-item">
-                    <div class="problem">
-                        <span class="tag">Problem</span>
-                        <span class="text">Connecting Neo4j graph database with traditional MySQL for hybrid data storage was complex.</span>
-                    </div>
-                    <div class="solution">
-                        <span class="tag">Solution</span>
-                        <span class="text">Designed a dual-database architecture with clear API boundaries — MySQL for structured data and Neo4j for graph-based news relationships.</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- ===== Modal: CI/CD ===== -->
+    <div class="ts-modal-overlay" id="modal-cicd">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">CI/CD & Data Pipeline</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-rocket"></i></div>
+                        <div class="incident-step-content">
+                            <h5>GitHub Actions CI/CD</h5>
+                            <p>Automated build, test, and deployment pipeline. Pre-configured Docker Compose templates for instant setup during the 48-hour hackathon.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num result"><i class="fas fa-database"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Public Data API Integration</h5>
+                            <p>Integrated public data APIs for real-time news and stock market data. Built MySQL storage logic for structured data persistence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: 48h Constraint ===== -->
+    <div class="ts-modal-overlay" id="modal-ts1">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">48-Hour Time Constraint</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-clock"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Problem</h5>
+                            <p>48-hour hackathon required rapid infrastructure setup with <strong style="color: #f87171;">zero room for deployment errors</strong>. Any downtime would directly cut into feature development time.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Solution</h5>
+                            <p>Pre-configured <strong style="color: var(--green);">Docker Compose templates</strong> and <strong style="color: var(--green);">GitHub Actions workflows</strong> for instant CI/CD, enabling the team to focus entirely on feature development from hour one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Modal: Dual Database ===== -->
+    <div class="ts-modal-overlay" id="modal-ts2">
+        <div class="ts-modal">
+            <button class="ts-modal-close"><i class="fas fa-times"></i></button>
+            <div class="ts-modal-body">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">Dual Database Architecture</h3>
+                <div class="incident-timeline">
+                    <div class="incident-step">
+                        <div class="incident-step-num detect"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Problem</h5>
+                            <p>Connecting <strong style="color: #f87171;">Neo4j graph database</strong> with traditional <strong style="color: #f87171;">MySQL</strong> for hybrid data storage was complex — different query languages, data models, and connection patterns.</p>
+                        </div>
+                    </div>
+                    <div class="incident-step">
+                        <div class="incident-step-num resolve"><i class="fas fa-wrench"></i></div>
+                        <div class="incident-step-content">
+                            <h5>Solution</h5>
+                            <p>Designed a <strong style="color: var(--green);">dual-database architecture</strong> with clear API boundaries — MySQL for structured data (users, articles) and Neo4j for graph-based news keyword relationships and recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
@@ -185,13 +285,26 @@
 
     <script src="../js/main.js"></script>
     <script>
-        // Tab switching for all tab groups
-        document.querySelectorAll('.arch-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetId = tab.dataset.target;
-                const parent = tab.closest('.project-arch');
-                parent.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
-                parent.querySelectorAll('.arch-content').forEach(c => c.classList.remove('active'));
+        function closeAllModals() {
+            document.querySelectorAll('.ts-modal-overlay.show').forEach(function(m) { m.classList.remove('show'); });
+            document.body.style.overflow = '';
+        }
+        function openModal(id) {
+            document.getElementById(id).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        document.querySelectorAll('.ts-modal-close').forEach(function(btn) { btn.addEventListener('click', closeAllModals); });
+        document.querySelectorAll('.ts-modal-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) { if (e.target === overlay) closeAllModals(); });
+        });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeAllModals(); });
+        document.querySelectorAll('.arch-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var targetId = tab.dataset.target;
+                var parent = tab.closest('.project-arch') || tab.closest('.ts-modal-body');
+                if (!parent) return;
+                parent.querySelectorAll('.arch-tab').forEach(function(t) { t.classList.remove('active'); });
+                parent.querySelectorAll('.arch-content').forEach(function(c) { c.classList.remove('active'); });
                 tab.classList.add('active');
                 document.getElementById(targetId).classList.add('active');
             });
