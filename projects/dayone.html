@@ -56,6 +56,42 @@
                 and automatically saves key dates and assignments to Google Calendar.
             </p>
 
+            <!-- ===== SYSTEM ARCHITECTURE v1 / v2 ===== -->
+            <div class="project-arch" style="margin-bottom: 2.5rem;">
+                <h4>System Architecture</h4>
+                <div class="arch-tabs">
+                    <button class="arch-tab active" data-target="dayone-v1">v1</button>
+                    <span class="arch-tab-arrow">→</span>
+                    <button class="arch-tab" data-target="dayone-v2">v2</button>
+                </div>
+                <div class="arch-content active" id="dayone-v1">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-aws">EC2</span>
+                        <span class="platform-aws">ECR</span>
+                        <span class="mine">Docker</span>
+                        <span class="mine">GitHub Actions</span>
+                        <span class="mine">Nginx</span>
+                    </div>
+                    <div class="arch-img">
+                        <img src="../assets/images/Day-One/page/v1_FINAL.drawio.png" alt="Day-One v1 Architecture" style="background: #fff; border-radius: 0.5rem; padding: 0.5rem;">
+                    </div>
+                </div>
+                <div class="arch-content" id="dayone-v2">
+                    <div class="project-techs arch-techs">
+                        <span class="platform-aws">ECS</span>
+                        <span class="platform-aws">CloudFront</span>
+                        <span class="platform-aws">WAF</span>
+                        <span class="platform-aws">Route 53</span>
+                        <span class="mine">Docker</span>
+                        <span class="mine">GitHub Actions</span>
+                        <span class="mine">CloudFormation</span>
+                    </div>
+                    <div class="arch-img">
+                        <img src="../assets/images/Day-One/page/v2_FINAL.drawio.png" alt="Day-One v2 Architecture" style="background: #fff; border-radius: 0.5rem; padding: 0.5rem;">
+                    </div>
+                </div>
+            </div>
+
             <!-- ===== KEY HIGHLIGHTS — Big keyword cards ===== -->
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
                 <div style="background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.2); border-radius: 1rem; padding: 1.5rem; text-align: center;">
@@ -76,29 +112,45 @@
             </div>
 
             <!-- ===== WHAT I DID ===== -->
-            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
-                <i class="fas fa-tools" style="color: var(--green); margin-right: 0.5rem;"></i>What I Did
-            </h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
-                <div class="troubleshoot-card" onclick="openModal('modal-arch')">
-                    <div class="troubleshoot-card-icon" style="background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2);">
-                        <i class="fas fa-cloud"></i>
+            <div class="project-contributions" style="margin-bottom: 2.5rem;">
+                <h4><i class="fas fa-tools" style="color: var(--green); margin-right: 0.5rem;"></i>What I Did</h4>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Architecture Evolution: v1 → v2</strong>
+                            <p>Migrated from EC2+Docker to ECS+CloudFront+WAF. Achieved 70% cost savings ($88→$27/mo) by replacing Private Subnet+NAT Gateway with WAF-based perimeter defense.</p>
+                        </div>
                     </div>
-                    <div class="troubleshoot-card-text">
-                        <strong>Architecture: v1 → v2</strong>
-                        <span>EC2+Docker → ECS+CloudFront+WAF</span>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>CI/CD & IaC</strong>
+                            <p>GitHub Actions for automated build/deploy, CloudFormation for infrastructure-as-code, Docker containerization for all services.</p>
+                        </div>
                     </div>
-                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
-                </div>
-                <div class="troubleshoot-card" onclick="openModal('modal-cicd')">
-                    <div class="troubleshoot-card-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2);">
-                        <i class="fas fa-code-branch"></i>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Redis Queue — Async Pipeline</strong>
+                            <p>Decoupled file upload from AI processing. Login p95 dropped from 58s to 54ms (1000x improvement) under 15 concurrent users.</p>
+                        </div>
                     </div>
-                    <div class="troubleshoot-card-text">
-                        <strong>CI/CD & IaC</strong>
-                        <span>GitHub Actions + CloudFormation + Docker</span>
+                    <div class="contribution-item">
+                        <div class="contribution-icon" style="background: rgba(239,68,68,0.1); color: #f87171;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="contribution-text">
+                            <strong>Security — Scanning Attack Response</strong>
+                            <p>Detected production scanning attacks on Nginx. Deployed CloudFront+WAF+Security Group to eliminate direct server exposure.</p>
+                        </div>
                     </div>
-                    <i class="fas fa-arrow-right troubleshoot-card-arrow"></i>
                 </div>
             </div>
 

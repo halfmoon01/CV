@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Clone - CSE356 Cloud Computing | Sanghyun Jun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="background: #0a0a0a; color: #fff;">
+    <!-- Navigation -->
+    <nav class="detail-nav">
+        <div class="detail-nav-inner">
+            <a href="../index.html" class="detail-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <a href="../index.html" class="detail-logo">&lt;SANGHYUN JUN&gt;</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="detail-hero">
+        <div class="detail-hero-inner">
+            <div class="project-header">
+                <h3 class="project-name">Discord Clone<br><span class="project-subtitle">Real-time Bidirectional Chat Service</span></h3>
+                <div class="project-header-tags">
+                    <span class="project-badge badge-course">Coursework</span>
+                    <span class="project-badge badge-team" style="margin-left: 0.5rem;"><span class="tl-wip-badge" style="margin: 0;">In Progress</span></span>
+                    <span class="project-period">Mar 2026 - Present</span>
+                </div>
+            </div>
+            <div class="project-links" style="margin-bottom: 0; margin-top: 1.5rem;">
+                <a href="https://github.com/CSE356" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <section class="dark-section" style="padding-top: 3rem;">
+        <div class="project" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+
+            <div class="team-blocks">
+                <span class="team-block me"><i class="fas fa-user"></i> Cloud/Infra <strong>1</strong></span>
+                <span class="team-block"><i class="fas fa-user"></i> Backend <strong>2</strong></span>
+                <span class="team-block"><i class="fas fa-user"></i> Frontend <strong>1</strong></span>
+            </div>
+
+            <p class="project-desc">
+                CSE356 Cloud Computing course project. Building a full Discord clone with real-time bidirectional chat using WebSocket, deployed on a self-managed Kubernetes cluster provisioned with kubeadm. Kafka handles message pub/sub for scalable event-driven communication across services.
+            </p>
+
+            <!-- ===== SYSTEM ARCHITECTURE ===== -->
+            <div class="project-arch" style="margin-bottom: 2.5rem;">
+                <h4>System Architecture</h4>
+                <div class="project-techs arch-techs">
+                    <span class="tech-cloud" style="padding: 0.45rem 1rem; border-radius: 2rem; font-size: 0.88rem; font-weight: 600; background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2);">Clanode</span>
+                    <span class="mine">k8s (kubeadm)</span>
+                    <span class="mine">Jenkins</span>
+                    <span class="mine">Nginx Ingress</span>
+                    <span class="mine">Ansible</span>
+                </div>
+                <div class="arch-img">
+                    <img src="../assets/images/CSE356/CSE356-Copy of Page-1.drawio (5).png" alt="Discord Clone Architecture" style="background: #fff; border-radius: 0.5rem; padding: 0.5rem;">
+                </div>
+            </div>
+
+            <!-- ===== WHAT I DID ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-tools" style="color: var(--green); margin-right: 0.5rem;"></i>What I Did
+            </h4>
+            <div class="contribution-list" style="margin-bottom: 2.5rem;">
+                <div class="contribution-item">
+                    <div class="contribution-icon" style="background: rgba(74,222,128,0.1); color: var(--green);">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="contribution-text">
+                        <strong>Kubernetes Cluster Setup (kubeadm)</strong>
+                        <p>Manually provisioned multi-node k8s cluster using kubeadm — Control Plane + 2 Worker Nodes on Clanode bare-metal servers</p>
+                    </div>
+                </div>
+                <div class="contribution-item">
+                    <div class="contribution-icon" style="background: rgba(96,165,250,0.1); color: #60a5fa;">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="contribution-text">
+                        <strong>Nginx Ingress + Service Routing</strong>
+                        <p>Configured Nginx Ingress Controller for path-based routing to API Gateway, chat server, auth service, and frontend</p>
+                    </div>
+                </div>
+                <div class="contribution-item">
+                    <div class="contribution-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="contribution-text">
+                        <strong>Jenkins CI/CD Pipeline</strong>
+                        <p>Automated build and deploy pipeline — GitHub push triggers Jenkins to build Docker images and roll out to k8s pods</p>
+                    </div>
+                </div>
+                <div class="contribution-item">
+                    <div class="contribution-icon" style="background: rgba(251,191,36,0.1); color: #fbbf24;">
+                        <i class="fas fa-stream"></i>
+                    </div>
+                    <div class="contribution-text">
+                        <strong>Kafka Pub/Sub Messaging</strong>
+                        <p>Deployed Kafka cluster for real-time message distribution — Producer/Consumer pattern with WebSocket subscribers for bidirectional chat</p>
+                    </div>
+                </div>
+                <div class="contribution-item">
+                    <div class="contribution-icon" style="background: rgba(236,72,153,0.1); color: #ec4899;">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="contribution-text">
+                        <strong>Ansible Automation</strong>
+                        <p>Infrastructure provisioning and configuration management across cluster nodes using Ansible playbooks</p>
+                    </div>
+                </div>
+                <div class="contribution-item">
+                    <div class="contribution-icon" style="background: rgba(45,212,191,0.1); color: #2dd4bf;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="contribution-text">
+                        <strong>Grafana Monitoring</strong>
+                        <p>Cluster and application monitoring with Grafana dashboards for pod health, resource usage, and request metrics</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== TECH STACK ===== -->
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 1rem; font-weight: 600;">
+                <i class="fas fa-layer-group" style="color: #60a5fa; margin-right: 0.5rem;"></i>Tech Stack
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid #1a1a1a; border-radius: 0.75rem; padding: 1.25rem;">
+                    <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--green); font-weight: 700; margin-bottom: 0.75rem;">Infrastructure (My Part)</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">Kubernetes</span>
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">kubeadm</span>
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">Jenkins</span>
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">Nginx Ingress</span>
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">Ansible</span>
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">Kafka</span>
+                        <span class="mine" style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(74,222,128,0.12); color: var(--green); border: 1px solid rgba(74,222,128,0.3);">Grafana</span>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid #1a1a1a; border-radius: 0.75rem; padding: 1.25rem;">
+                    <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #60a5fa; font-weight: 700; margin-bottom: 0.75rem;">Application</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                        <span style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3);">React</span>
+                        <span style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3);">Node.js</span>
+                        <span style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3);">WebSocket</span>
+                        <span style="padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3);">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: var(--black); border-color: #1a1a1a;">
+        <a href="../index.html" class="detail-back" style="margin-bottom: 1rem; display: inline-flex;">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <p>&copy; 2025 Sanghyun Jun. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
